@@ -1,26 +1,4 @@
-/*
- * (C) 2001-2012 Marmalade. All Rights Reserved.
- *
- * This document is protected by copyright, and contains information
- * proprietary to Marmalade.
- *
- * This file consists of source code released by Marmalade under
- * the terms of the accompanying End User License Agreement (EULA).
- * Please do not use this program/source code before you have read the
- * EULA and have agreed to be bound by its terms.
- */
-
-#include "IwGx.h"
-#include "IwHashString.h"
-#include "s3eFlurry.h"
-
-#include "game.h"
-#include "main.h"
-#include "input.h"
-#include "audio.h"
-#include "explosion.h"
-#include "resources.h"
-#include "pauseMenu.h"
+#include "include.h"
 
 // Grid background offset
 #define GRID_OFFSET_X           41

@@ -1,38 +1,8 @@
-/*
- * (C) 2001-2012 Marmalade. All Rights Reserved.
- *
- * This document is protected by copyright, and contains information
- * proprietary to Marmalade.
- *
- * This file consists of source code released by Marmalade under
- * the terms of the accompanying End User License Agreement (EULA).
- * Please do not use this program/source code before you have read the
- * EULA and have agreed to be bound by its terms.
- */
-
 #if !defined(__GRID_H__)
 #define __GRID_H__
 
-#include "gem.h"
-#include "Iw2DSceneGraph.h"
-#include <list>
-
 #define MAX_GEM_TYPES   5
 
-using namespace Iw2DSceneGraphCore;
-using namespace Iw2DSceneGraph;
-
-/**
- * @class Grid
- *
- * @brief The game grid.
- *
- * The game grid is a class that is used to create and manage the game grid. This includes:
- * - Generating the initial grid and populating it each round
- * - Fixing up the game grid; removing any 3+ matches from the initial grid
- * - Checking for matching 3+ gems in rows or columns
- * - Removing matched gems and moving others into the spare spaces
- */
 class Grid
 {
 protected:

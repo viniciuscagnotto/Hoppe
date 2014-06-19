@@ -1,28 +1,6 @@
-/*
- * (C) 2001-2012 Marmalade. All Rights Reserved.
- *
- * This document is protected by copyright, and contains information
- * proprietary to Marmalade.
- *
- * This file consists of source code released by Marmalade under
- * the terms of the accompanying End User License Agreement (EULA).
- * Please do not use this program/source code before you have read the
- * EULA and have agreed to be bound by its terms.
- */
-
-#include "scene.h"
-#include "IwGx.h"
-#include "input.h"
-#include "main.h"
+#include "include.h"
 
 SceneManager* g_pSceneManager = 0;
-
-
-//
-//
-// Scene class
-//
-//
 
 Scene::Scene() : m_NameHash(0), m_IsActive(true), m_IsInputActive(false)
 {
@@ -58,13 +36,10 @@ void Scene::Render()
     CNode::Render();
 }
 
-//
-//
-// SceneManager class
-//
-//
+
 SceneManager::SceneManager() : m_Current(0), m_Next(0)
 {
+	Init();
 }
 
 SceneManager::~SceneManager()
@@ -72,6 +47,13 @@ SceneManager::~SceneManager()
     for (std::list<Scene*>::iterator it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
         delete *it;
 }
+
+void SceneManager::Init(){
+
+
+
+}
+
 
 void SceneManager::Add(Scene* scene)
 {

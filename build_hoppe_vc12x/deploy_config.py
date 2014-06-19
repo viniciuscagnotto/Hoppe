@@ -4,7 +4,7 @@
 # tool during the build process.
 
 config = {}
-cmdline = ['C:/Marmalade/7.2/s3e/makefile_builder/mkb.py', 'c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb', '--buildenv=VC12X', '--debug', '--x86', '--no-ide', '--execute', '--deploy-only']
+cmdline = ['C:/Marmalade/7.2/s3e/makefile_builder/mkb.py', 'c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb', '--buildenv=VC12X', '--fake-vc-call', '--deploy-only']
 mkb = 'c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb'
 mkf = ['c:\\marmalade\\7.2\\extensions\\s3ewebview\\s3ewebview.mkf', 'c:\\marmalade\\7.2\\modules\\iwutil\\iwutil.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\libjpeg\\libjpeg.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\libpng\\libpng.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\zlib\\zlib.mkf', 'c:\\marmalade\\7.2\\extensions\\s3efacebook\\s3efacebook.mkf', 'c:\\marmalade\\7.2\\modules\\iw2d\\iw2d.mkf', 'c:\\marmalade\\7.2\\modules\\iwgx\\iwgx.mkf', 'c:\\marmalade\\7.2\\modules\\iwgl\\iwgl.mkf', 'c:\\marmalade\\7.2\\modules\\iwgeom\\iwgeom.mkf', 'c:\\marmalade\\7.2\\modules\\iwresmanager\\iwresmanager.mkf', 'c:\\marmalade\\7.2\\modules\\iwgxfont\\iwgxfont.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\tiniconv\\tiniconv.mkf', 'c:\\marmalade\\7.2\\modules\\iw2dscenegraph\\iw2dscenegraph.mkf', 'c:\\marmalade\\7.2\\modules\\iw2dscenegraphcore\\iw2dscenegraphcore.mkf', 'c:\\marmalade\\7.2\\modules\\iwtween\\iwtween.mkf', 'c:\\users\\vinicius\\desktop\\yes or no\\hoppe\\modules\\soundengine\\soundengine.mkf', 'c:\\marmalade\\7.2\\extensions\\s3eflurry\\s3eflurry.mkf']
 
@@ -16,14 +16,14 @@ class DeployConfig(object):
 assets = {}
 
 assets['Default'] = [
+    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data/audio', 'audio', 0),
+    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data/textures', 'textures', 0),
+    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data-ram/data-gles1,c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data', '.', 0),
     ('c:/marmalade/7.2/extensions/s3ewebview/s3eWebView.js', 's3eWebView.js', 0),
     ('c:/marmalade/7.2/extensions/s3efacebook/source/iphone/facebook-ios-sdk/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle/FBDialog/images/fbicon.png', 'FacebookSDKResources.bundle/FBDialog/images/fbicon.png', 0),
     ('c:/marmalade/7.2/extensions/s3efacebook/source/iphone/facebook-ios-sdk/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle/FBDialog/images/close.png', 'FacebookSDKResources.bundle/FBDialog/images/close.png', 0),
     ('c:/marmalade/7.2/extensions/s3efacebook/source/iphone/facebook-ios-sdk/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle/FBDialog/images/close@2x.png', 'FacebookSDKResources.bundle/FBDialog/images/close@2x.png', 0),
     ('c:/marmalade/7.2/extensions/s3efacebook/facebook-winclient-sdk-master/Source/Facebook.Client-WindowsStore/FacebookDialogPage.xaml', 'FacebookDialogPage.xaml', 0),
-    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data/audio', 'audio', 0),
-    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data/textures', 'textures', 0),
-    ('c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data-ram/data-gles1,c:/Users/Vinicius/Desktop/Yes or No/Hoppe/data', '.', 0),
 ]
 
 assets['WebView32Assets'] = [

@@ -4,6 +4,53 @@ options
     module_path="modules"
 }
 
+files
+{
+    (source)
+	[hope main]
+	include.h
+    main.h
+    main.cpp
+
+	[hope managers]
+    audio.h
+    audio.cpp
+    input.h
+    input.cpp 
+    resources.h
+    resources.cpp
+    scene.h
+    scene.cpp
+	timer.h
+	timer.cpp
+
+	[hope resources]
+    explosion.h
+    explosion.cpp
+    gem.h
+    gem.cpp
+    grid.h
+    grid.cpp   
+
+	[hope scenes]
+    game.h
+    game.cpp
+    mainMenu.h
+    mainMenu.cpp
+    pauseMenu.h
+    pauseMenu.cpp
+}
+
+assets
+{
+    (data)
+    audio
+    textures
+
+    (data-ram/data-gles1, data)
+    .
+}
+
 subprojects
 {
     s3eWebView
@@ -16,47 +63,6 @@ subprojects
     s3eFlurry
 }
 
-files
-{
-    [source]
-    (source)
-    audio.cpp
-    explosion.cpp
-    game.cpp
-    gem.cpp
-    grid.cpp
-    input.cpp
-    main.cpp
-    mainMenu.cpp
-    pauseMenu.cpp
-    resources.cpp
-    scene.cpp
-    timer.cpp
-
-    audio.h
-    explosion.h
-    game.h
-    gem.h
-    grid.h
-    input.h
-    main.h
-    mainMenu.h
-    pauseMenu.h
-    resources.h
-    scene.h
-    timer.h
-}
-
-assets
-{
-    (data)
-    audio
-    textures
-
-    (data-ram/data-gles1, data)
-    .
-
-}
 deployments
 {
     iphone-bundle-url-name="ADD_YOUR_OWN_APP_ID"

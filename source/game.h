@@ -1,61 +1,27 @@
-/*
- * (C) 2001-2012 Marmalade. All Rights Reserved.
- *
- * This document is protected by copyright, and contains information
- * proprietary to Marmalade.
- *
- * This file consists of source code released by Marmalade under
- * the terms of the accompanying End User License Agreement (EULA).
- * Please do not use this program/source code before you have read the
- * EULA and have agreed to be bound by its terms.
- */
-
 #if !defined(__GAME_H__)
 #define __GAME_H__
 
-#include "grid.h"
-#include "scene.h"
-
 // Constants that change the games behaviour
-#define START_ROUND_TIME        110
-#define ROUND_TIME_STEP         10
-#define START_TARGET_SCORE      600
-#define TARGET_SCORE_STEP       100
+#define START_ROUND_TIME 110
+#define ROUND_TIME_STEP 10
+#define START_TARGET_SCORE 600
+#define TARGET_SCORE_STEP 100
 
 // Constants that are used to fit the game to different screen sizes
-#define FONT_HEIGHT             15
-#define FONT_DESIGN_WIDTH       320
-#define GRAPHIC_DESIGN_WIDTH    768
+#define FONT_HEIGHT 15
+#define FONT_DESIGN_WIDTH 320
+#define GRAPHIC_DESIGN_WIDTH 768
 
-/**
- * @enum  eGameState
- *
- * @brief List of game states.
- */
 enum eGameState
 {
-    paused              = 0,    // The game is paused
-    waitingFirstGem     = 1,    // The game is waiting for first gem selection
-    waitingSecondGem    = 2,    // The game is waiting for second gem selection
-    thinking            = 3,    // The game is analysing the move and removing blocks / adding new blocks
-    gemsFalling         = 4,    // The game is waiting for gems to stop falling
-    roundOver           = 5,    // The game round is over
+    paused = 0, // The game is paused
+    waitingFirstGem, // The game is waiting for first gem selection
+    waitingSecondGem, // The game is waiting for second gem selection
+    thinking, // The game is analysing the move and removing blocks / adding new blocks
+    gemsFalling, // The game is waiting for gems to stop falling
+    roundOver, // The game round is over
 };
 
-/**
- * @class Game
- *
- * @brief The main game scene.
- *
- * The main game scene containms all UI elements associated with the mani game as well as the game grid. The Game class is resopnsible for:
- * - Creating and updating the game areas user interface
- * - Detecting and responding to touches on the grid
- * - Managing the games state
- * - Keeping score and moving frmo round to round
- * - Updating the target gem
- * - Switching between the game, pause and main menu scenes
- * - Displaying end of round information via the info panel
- */
 class Game : public Scene
 {
 protected:
