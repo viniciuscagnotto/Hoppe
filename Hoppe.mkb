@@ -13,32 +13,20 @@ files
     main.cpp
 
 	[hope managers]
-    audio.h
-    audio.cpp
-    input.h
-    input.cpp 
-    resources.h
-    resources.cpp
-    scene.h
-    scene.cpp
-	timer.h
-	timer.cpp
-
-	[hope resources]
-    explosion.h
-    explosion.cpp
-    gem.h
-    gem.cpp
-    grid.h
-    grid.cpp   
+    audioManager.h
+    audioManager.cpp
+    inputManager.h
+    inputManager.cpp 
+    sceneManager.h
+    sceneManager.cpp
+	timerManager.h
+	timerManager.cpp 
 
 	[hope scenes]
     game.h
     game.cpp
     mainMenu.h
     mainMenu.cpp
-    pauseMenu.h
-    pauseMenu.cpp
 }
 
 assets

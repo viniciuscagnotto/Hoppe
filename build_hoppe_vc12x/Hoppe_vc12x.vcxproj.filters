@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="hope\resources">
-    </Filter>
     <Filter Include="(libjpeg)">
     </Filter>
     <Filter Include="'Marmalade Studio'\iwutil">
@@ -778,9 +776,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/assert.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/audio.h">
-      <Filter>hope\managers</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/byteswap.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
@@ -823,9 +818,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/exception.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/explosion.h">
-      <Filter>hope\resources</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/fcntl.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
@@ -843,9 +835,6 @@
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/game.h">
       <Filter>hope\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/gem.h">
-      <Filter>hope\resources</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/getopt.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
@@ -874,9 +863,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES/glplatform.h">
       <Filter>'Marmalade System (S3E)'\GL\GLES 1.x</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/grid.h">
-      <Filter>hope\resources</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/grp.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
@@ -888,9 +874,6 @@
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/include.h">
       <Filter>hope\main</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/input.h">
-      <Filter>hope\managers</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/inttypes.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
@@ -1000,9 +983,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/param.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/pauseMenu.h">
-      <Filter>hope\scenes</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libpng/h/png.h">
       <Filter>(libpng)\h</Filter>
     </ClInclude>
@@ -1032,9 +1012,6 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/resource.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/resources.h">
-      <Filter>hope\managers</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/rlocks.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
@@ -1180,9 +1157,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h">
       <Filter>'Marmalade System (S3E)'\Extensions</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/scene.h">
-      <Filter>hope\managers</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sched.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
@@ -1273,9 +1247,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/time.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/timer.h">
-      <Filter>hope\managers</Filter>
-    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/times.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
@@ -1330,6 +1301,18 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h">
       <Filter>(zlib)\h</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/audioManager.h">
+      <Filter>hope\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/inputManager.h">
+      <Filter>hope\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/sceneManager.h">
+      <Filter>hope\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/timerManager.h">
+      <Filter>hope\managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp">
@@ -1371,35 +1354,14 @@
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp">
       <Filter>(iwtween)</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\audio.cpp">
-      <Filter>hope\managers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\explosion.cpp">
-      <Filter>hope\resources</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\game.cpp">
       <Filter>hope\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\gem.cpp">
-      <Filter>hope\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\grid.cpp">
-      <Filter>hope\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\input.cpp">
-      <Filter>hope\managers</Filter>
     </ClCompile>
     <ClCompile Include="..\source\main.cpp">
       <Filter>hope\main</Filter>
     </ClCompile>
     <ClCompile Include="..\source\mainMenu.cpp">
       <Filter>hope\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\pauseMenu.cpp">
-      <Filter>hope\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\resources.cpp">
-      <Filter>hope\managers</Filter>
     </ClCompile>
     <ClCompile Include="c:\marmalade\7.2\extensions\s3efacebook\interface\s3eFacebook_interface.cpp">
       <Filter>Extensions\s3eFacebook\interface</Filter>
@@ -1410,10 +1372,16 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp">
       <Filter>Extensions\s3eWebView\interface</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\scene.cpp">
+    <ClCompile Include="..\source\audioManager.cpp">
       <Filter>hope\managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\timer.cpp">
+    <ClCompile Include="..\source\inputManager.cpp">
+      <Filter>hope\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\sceneManager.cpp">
+      <Filter>hope\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\timerManager.cpp">
       <Filter>hope\managers</Filter>
     </ClCompile>
   </ItemGroup>

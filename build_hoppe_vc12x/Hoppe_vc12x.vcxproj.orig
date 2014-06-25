@@ -831,40 +831,40 @@
     <None Include="c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf" />
     <CustomBuild Include="..\Hoppe.mkb">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--fake-vc-call" "--default-buildenv=vc12x" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Hoppe/Hoppe.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">Hoppe_vc12x.stamp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">c:/marmalade/7.2/modules/iwgeom/iwgeom.mkf;c:/marmalade/7.2/extensions/s3eflurry/s3eflurry.mkf;c:/marmalade/7.2/modules/iwutil/iwutil.mkf;c:/marmalade/7.2/s3e/s3e.mkf;c:/marmalade/7.2/modules/iwtween/iwtween.mkf;c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf;c:/marmalade/7.2/modules/third_party/libpng/libpng.mkf;c:/marmalade/7.2/modules/iw2d/iw2d.mkf;c:/marmalade/7.2/modules/iw2dscenegraph/iw2dscenegraph.mkf;c:/marmalade/7.2/modules/iwgx/iwgx.mkf;c:/marmalade/7.2/modules/iwgl/iwgl.mkf;c:/marmalade/7.2/modules/third_party/tiniconv/tiniconv.mkf;c:/marmalade/7.2/modules/iwresmanager/iwresmanager.mkf;c:/marmalade/7.2/modules/iwgxfont/iwgxfont.mkf;c:/marmalade/7.2/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;c:/marmalade/7.2/modules/third_party/libjpeg/libjpeg.mkf;c:/marmalade/7.2/extensions/s3ewebview/s3ewebview.mkf;c:/users/vinicius/desktop/yes or no/hoppe/modules/soundengine/soundengine.mkf;c:/marmalade/7.2/extensions/s3efacebook/s3efacebook.mkf</AdditionalInputs>
     </CustomBuild>
@@ -1004,7 +1004,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/MarmaladeVersion.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/alloca.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/assert.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/audio.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/audioManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/byteswap.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cderror.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cdjpeg.h" />
@@ -1019,14 +1019,12 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/endian.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/errno.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/exception.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/explosion.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/fcntl.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/file.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/float.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/fnmatch.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/fstream.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/game.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/gem.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/getopt.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES/gl.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES2/gl2.h" />
@@ -1036,12 +1034,11 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES/glext.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/glob.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES/glplatform.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/grid.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/grp.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/iconv.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/ifaddrs.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/include.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/input.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/inputManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/inttypes.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/ioctl.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/iomanip.h" />
@@ -1078,7 +1075,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/new.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/ostream.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/param.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/pauseMenu.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libpng/h/png.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libpng/h/pngconf.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/poll.h" />
@@ -1089,7 +1085,6 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/pthread_types.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/pwd.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/resource.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/resources.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/rlocks.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/s3e.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/s3eAccelerometer.h" />
@@ -1138,7 +1133,7 @@
     <ClInclude Include="c:/marmalade/7.2/extensions/s3ewebview/h/s3eWebView.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3eWindow.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/scene.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/sceneManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sched.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/select.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/sem.h" />
@@ -1169,7 +1164,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/termios.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/time.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/time.h" />
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/timer.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Hoppe/source/timerManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/times.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/tiniconv/source/tiniconv.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/tiniconv/source/tiniconv_int.h" />
@@ -1203,21 +1198,16 @@
     <ClCompile Include="..\modules\soundengine\source\IwSoundSpec.cpp" />
     <ClCompile Include="..\modules\soundengine\source\IwSoundWAV.cpp" />
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp" />
-    <ClCompile Include="..\source\audio.cpp" />
-    <ClCompile Include="..\source\explosion.cpp" />
+    <ClCompile Include="..\source\audioManager.cpp" />
     <ClCompile Include="..\source\game.cpp" />
-    <ClCompile Include="..\source\gem.cpp" />
-    <ClCompile Include="..\source\grid.cpp" />
-    <ClCompile Include="..\source\input.cpp" />
+    <ClCompile Include="..\source\inputManager.cpp" />
     <ClCompile Include="..\source\main.cpp" />
     <ClCompile Include="..\source\mainMenu.cpp" />
-    <ClCompile Include="..\source\pauseMenu.cpp" />
-    <ClCompile Include="..\source\resources.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3efacebook\interface\s3eFacebook_interface.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3eflurry\interface\s3eFlurry_interface.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp" />
-    <ClCompile Include="..\source\scene.cpp" />
-    <ClCompile Include="..\source\timer.cpp" />
+    <ClCompile Include="..\source\sceneManager.cpp" />
+    <ClCompile Include="..\source\timerManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

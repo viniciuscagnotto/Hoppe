@@ -9,32 +9,15 @@ CTweenManager*  g_pTweener = 0;
 int main()
 {
     Iw2DInit();
-    g_pResources = new Resources();
     g_pTweener = new CTweenManager();
-    g_pInput = new Input();
-    g_pAudio = new Audio();
+    g_pInput = new InputManager();
+    g_pAudio = new AudioManager();
     g_pSceneManager = new SceneManager();
 
     if (s3eFlurryAvailable())
         s3eFlurryStartSession(FLURRY_API_KEY);
 
-    Game* game = new Game();
-    game->SetName("game");
-    game->Init(8, 8);
-    g_pSceneManager->Add(game);
-    game->newGame();
-
-    MainMenu* main_menu = new MainMenu();
-    main_menu->SetName("mainmenu");
-    main_menu->Init();
-    g_pSceneManager->Add(main_menu);
-
-    PauseMenu* pause_menu = new PauseMenu();
-    pause_menu->SetName("pausemenu");
-    pause_menu->Init();
-    g_pSceneManager->Add(pause_menu);
-
-    g_pSceneManager->SwitchTo(main_menu);
+	g_pSceneManager->Resume();
 
     while (!s3eDeviceCheckQuitRequest())
     {
@@ -63,7 +46,6 @@ int main()
     delete g_pInput;
     delete g_pSceneManager;
     delete g_pTweener;
-    delete g_pResources;
     Iw2DTerminate();
 
     return 0;

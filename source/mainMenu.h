@@ -4,18 +4,16 @@
 class MainMenu : public Scene
 {
 protected:
-    // UI components
-    CSprite*    playButton;
-    CSprite*    playText;
+   
 
 public:
-    MainMenu() {}
+	MainMenu();
     ~MainMenu();
 
     void Init();
+	void Cleanup();
     void Update(float deltaTime = 0.0f, float alphaMul = 1.0f);
     void Render();
-    static void startGame(CTween* pTween);
 
 };
 

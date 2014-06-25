@@ -2,22 +2,24 @@
 
 SceneManager* g_pSceneManager = 0;
 
-Scene::Scene() : m_NameHash(0), m_IsActive(true), m_IsInputActive(false)
+Scene::Scene() : m_IsActive(true), m_IsInputActive(false), m_type(kScene_None)
 {
     m_X = -(float)IwGxGetScreenWidth();
 }
 
 Scene::~Scene()
 {
-}
 
-void Scene::SetName(const char* name)
-{
-    m_NameHash = IwHashString(name);
 }
 
 void Scene::Init()
 {
+	 
+}
+
+void Scene::Cleanup()
+{
+
 }
 
 void Scene::Update(float deltaTime, float alphaMul)
@@ -44,21 +46,18 @@ SceneManager::SceneManager() : m_Current(0), m_Next(0)
 
 SceneManager::~SceneManager()
 {
-    for (std::list<Scene*>::iterator it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
+	for (std::list<Scene*>::iterator it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
         delete *it;
 }
 
 void SceneManager::Init(){
-
-
-
+	Add(new MainMenu());
+	Add(new Game());
 }
-
 
 void SceneManager::Add(Scene* scene)
 {
     m_Scenes.push_back(scene);
-    scene->SetManager(this);
 }
 
 void SceneManager::Remove(Scene* scene)
@@ -66,12 +65,11 @@ void SceneManager::Remove(Scene* scene)
     m_Scenes.remove(scene);
 }
 
-Scene* SceneManager::Find(const char* name)
+Scene* SceneManager::Find(Scene::EScenes type)
 {
-    unsigned int name_hash = IwHashString(name);
     for (std::list<Scene*>::iterator it = m_Scenes.begin(); it != m_Scenes.end(); ++it)
     {
-        if ((*it)->GetNameHash() == name_hash)
+		if ((*it)->GetType() == type)
             return *it;
     }
 
@@ -90,6 +88,14 @@ void SceneManager::Render()
         (*it)->Render();
 }
 
+void SceneManager::Resume()
+{
+	//TODO Save state check
+	//for now load main menu
+
+	SwitchTo(Find(Scene::kScene_MainMenu));
+}
+
 void SceneManager::OnSwitchComplete(CTween* pTween)
 {
     g_pSceneManager->FinishSwitch();
@@ -97,10 +103,14 @@ void SceneManager::OnSwitchComplete(CTween* pTween)
 
 void SceneManager::FinishSwitch()
 {
+	m_Current->Cleanup();
+	
     m_Next->SetInputActive(true);
     m_Next->SetActive(true);
-    m_Current->Update(0);           // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
+	m_Current->Update(0);           // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
     m_Current->SetActive(false);
+	
+	m_Next->Init();
     m_Current = m_Next;
     m_Next = 0;
 }
@@ -111,9 +121,10 @@ void SceneManager::SwitchTo(Scene* scene)
     if (m_Current == 0)
     {
         m_Current = m_Next;
-        m_Current ->m_X = 0;
+        m_Current->m_X = 0;
         m_Current->SetActive(true);
         m_Current->SetInputActive(true);
+		m_Current->Init();
         m_Next = 0;
     }
     else

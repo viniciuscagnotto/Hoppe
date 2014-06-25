@@ -22,18 +22,11 @@ using namespace Iw2DSceneGraph;
 #include "main.h"
 
 //managers
-#include "input.h"
-#include "audio.h"
-#include "timer.h"
-#include "scene.h"
-#include "resources.h"
-
-//resources
-#include "explosion.h"
-#include "gem.h"
-#include "grid.h"
+#include "inputManager.h"
+#include "audioManager.h"
+#include "timerManager.h"
+#include "sceneManager.h"
 
 //scenes
 #include "game.h"
 #include "mainMenu.h"
-#include "pauseMenu.h"
