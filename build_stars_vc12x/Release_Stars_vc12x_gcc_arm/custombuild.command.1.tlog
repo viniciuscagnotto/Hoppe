@@ -1,0 +1,2 @@
+^C:\USERS\VINICIUS\DESKTOP\YES OR NO\STARS\STARS.MKB
+"C:\Marmalade\7.2\s3e\python\python.exe" "C:\Marmalade\7.2\s3e\makefile_builder\mkb.py" "c:/Users/Vinicius/Desktop/Yes or No/Stars/Stars.mkb" "--buildenv=VC12X" "--default-buildenv=vc12x" --msvc-project

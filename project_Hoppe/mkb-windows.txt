@@ -1,1 +1,0 @@
-VC12X;build_hoppe_vc12x;
