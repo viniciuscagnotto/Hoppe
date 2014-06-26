@@ -15,13 +15,14 @@ public:
 
 		kScene_Count
 	};
+
 protected:
     bool m_IsActive; // Active state
     bool m_IsInputActive; // Input active state
     CTweenManager m_Tweener; // Scene local tween manager
     TimerManager m_Timers; // Timers manager
 	EScenes m_type;
-
+	
 public:
     bool IsActive() const { return m_IsActive; }
     void SetActive(bool active) { m_IsActive = active; }
@@ -32,6 +33,11 @@ public:
 	void SetType(EScenes sceneType) { m_type = sceneType; };
 	EScenes GetType(){ return m_type; };
 
+	bool CheckCurrent();
+	bool CheckTouch();
+	void SwitchTo(EScenes sceneType);
+	void SafeDeleteObject(SpriteObject *pSpriteObject);
+	
 public:
     Scene();
     virtual ~Scene();
@@ -40,6 +46,8 @@ public:
 	virtual void Cleanup();
     virtual void Update(float deltaTime = 0.0f, float alphaMul = 1.0f);
     virtual void Render();
+	virtual void HandleTouch();
+
 };
 
 class SceneManager

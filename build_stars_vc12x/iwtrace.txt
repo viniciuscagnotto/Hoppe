@@ -11,392 +11,408 @@ System Info:
  Unique ID    : SIMULATOR_ID
  Device Name  : My Computer
  Memory       : 1048576KiB
-25/06/14 01:35:20.885: [0x8f8] DEVICE: Initialising FIBRE
-25/06/14 01:35:20.889: [0x8f8] DEVICE: Initialising THREAD
-25/06/14 01:35:20.892: [0x8f8] THREAD: s3eThreadCreateMain
-25/06/14 01:35:20.896: [0xfa0] DEVICE: Initialising SURFACE
-25/06/14 01:35:20.900: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB888, pitch=0, ptr=0x00000000, blit=0
-25/06/14 01:35:20.904: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
-25/06/14 01:35:20.907: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
-25/06/14 01:35:20.911: [0xfa0] SURFACE: done s3eSurfaceInit: 800x600 p:1600 (800x600 p:1600) o:0
-25/06/14 01:35:20.915: [0xfa0] DEVICE: Initialising EXT
-25/06/14 01:35:20.918: [0xfa0] EXT: registering extension: s3eLibrary [0xe6dd6ce5]
-25/06/14 01:35:20.922: [0xfa0] EXT: registering extension: s3eExtLoadLibaray [0xf23d6d85]
-25/06/14 01:35:20.925: [0xfa0] EXT: registering extension: s3eCamera [0xa3e23039]
-25/06/14 01:35:20.929: [0xfa0] EXT: registering extension: s3eWindow [0xd31aa8a8]
-25/06/14 01:35:20.934: [0xfa0] EXT: registering extension: s3eVFS [0x17f48c9f]
-25/06/14 01:35:20.937: [0xfa0] EXT: registering extension: s3eContacts [0x5e39d2af]
-25/06/14 01:35:20.941: [0xfa0] EXT: registering extension: s3eSoundRecord [0x579dbf78]
-25/06/14 01:35:20.945: [0xfa0] EXT: registering extension: s3eTouchpad [0x1dbd7ce8]
-25/06/14 01:35:20.949: [0xfa0] EXT: registering extension: s3eCompass [0x40d632c6]
-25/06/14 01:35:20.953: [0xfa0] EXT: registering extension: Compass [0xd3653f1b]
-25/06/14 01:35:20.957: [0xfa0] EXT: registering extension: s3eDebugHeap [0xc667a795]
-25/06/14 01:35:20.960: [0xfa0] EXT: registering extension: s3eExtDebugHeap [0xff96de46]
-25/06/14 01:35:21.000: [0xfa0] EXT: registering extension: s3eClipboard [0xd68f3420]
-25/06/14 01:35:21.003: [0xfa0] EXT: registering extension: s3eOSExec [0xc121bcf7]
-25/06/14 01:35:21.007: [0xfa0] EXT: registering extension: s3eExtOSExec [0x20380948]
-25/06/14 01:35:21.010: [0xfa0] EXT: registering extension: s3eEval [0x167d1038]
-25/06/14 01:35:21.015: [0xfa0] EXT: registering extension: s3eExtEval [0xf0421449]
-25/06/14 01:35:21.018: [0xfa0] EXT: registering extension: s3eHighResTimer [0x41f2dedb]
-25/06/14 01:35:21.022: [0xfa0] EXT: registering extension: s3eOSReadString [0x9fe3ea45]
-25/06/14 01:35:21.038: [0xfa0] EXT: registering extension: s3eCameraCapture [0xd36aceed]
-25/06/14 01:35:21.041: [0xfa0] EXT: registering extension: s3eTestEmulatorConfig [0x4a0d0a4f]
-25/06/14 01:35:21.046: [0xfa0] EXT: registering extension: s3eThread [0xcc0b4a28]
-25/06/14 01:35:21.050: [0xfa0] EXT: registering extension: s3eSocketOpt [0x09cdcdec]
-25/06/14 01:35:21.054: [0xfa0] EXT: registering extension: s3eExtSocketOpt [0x42fd049d]
-25/06/14 01:35:21.058: [0xfa0] EXT: registering extension: s3eImagePicker [0xd2fc1d51]
-25/06/14 01:35:21.062: [0xfa0] EXT: registering extension: s3eTest [0x168503f0]
-25/06/14 01:35:21.066: [0xfa0] EXT: registering extension: s3eSMS [0x17f480c3]
-25/06/14 01:35:21.071: [0xfa0] EXT: registering extension: s3eMetrics [0x2bc8e047]
-25/06/14 01:35:21.075: [0xfa0] EXT: registering extension: Metrics [0xbe57ec9c]
-25/06/14 01:35:21.079: [0xfa0] EXT: registering extension: s3eLocation [0x91944229]
-25/06/14 01:35:21.083: [0xfa0] EXT: registering extension: Location [0x7604d91e]
-25/06/14 01:35:21.088: [0xfa0] EXT: registering extension: Win32Surface [0x909755c1]
-25/06/14 01:35:21.092: [0xfa0] EXT: registering extension: Win32UIProcessMessage [0x48f2a5ba]
-25/06/14 01:35:21.096: [0xfa0] EXT: registering extension: Win32DataDirChange [0xbfcfc057]
-25/06/14 01:35:21.101: [0xfa0] DEVICE: Initialising CONFIG
-25/06/14 01:35:21.105: [0xfa0] DEVICE: Initialising TIMER
-25/06/14 01:35:21.109: [0xfa0] DEVICE: Initialising COMPRESSION
-25/06/14 01:35:21.114: [0xfa0] DEVICE: DeviceInit done: services=0x0a216148
-25/06/14 01:35:21.118: [0xfa0] EXT: s3eExtGetHash: 0xd31aa8a8 [0x00000000 size=0]
-25/06/14 01:35:21.122: [0xfa0] EXT: initializing extension: s3eWindow
-25/06/14 01:35:21.126: [0xfa0] EXT: initializing extension: s3eWindow 0x00cd62d0
-25/06/14 01:35:21.131: [0xfa0] DEVICE: SetupPaths: NULL
-25/06/14 01:35:21.135: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via"]
-25/06/14 01:35:21.139: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.144: [0xfa0] LOADER: parsing via file: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.148: [0xfa0] FILE: s3eFileOpen('c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via', 'r') succeeded, id=14212992 p=0x00d8df80
-25/06/14 01:35:21.152: [0xfa0] LOADER: reading 1240 bytes from via files
-25/06/14 01:35:21.157: [0xfa0] FILE: s3eFileClose h=0x00d8df80
-25/06/14 01:35:21.161: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via" --dll="c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86"
+25/06/14 22:13:34.945: [0x218c] DEVICE: Initialising FIBRE
+25/06/14 22:13:34.951: [0x218c] DEVICE: Initialising THREAD
+25/06/14 22:13:34.954: [0x218c] THREAD: s3eThreadCreateMain
+25/06/14 22:13:34.958: [0xfa0] DEVICE: Initialising SURFACE
+25/06/14 22:13:34.961: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB888, pitch=0, ptr=0x00000000, blit=0
+25/06/14 22:13:34.966: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+25/06/14 22:13:34.970: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+25/06/14 22:13:34.973: [0xfa0] SURFACE: done s3eSurfaceInit: 800x600 p:1600 (800x600 p:1600) o:0
+25/06/14 22:13:34.977: [0xfa0] DEVICE: Initialising EXT
+25/06/14 22:13:34.982: [0xfa0] EXT: registering extension: s3eLibrary [0xe6dd6ce5]
+25/06/14 22:13:34.986: [0xfa0] EXT: registering extension: s3eExtLoadLibaray [0xf23d6d85]
+25/06/14 22:13:34.989: [0xfa0] EXT: registering extension: s3eCamera [0xa3e23039]
+25/06/14 22:13:34.993: [0xfa0] EXT: registering extension: s3eWindow [0xd31aa8a8]
+25/06/14 22:13:34.999: [0xfa0] EXT: registering extension: s3eVFS [0x17f48c9f]
+25/06/14 22:13:35.004: [0xfa0] EXT: registering extension: s3eContacts [0x5e39d2af]
+25/06/14 22:13:35.008: [0xfa0] EXT: registering extension: s3eSoundRecord [0x579dbf78]
+25/06/14 22:13:35.012: [0xfa0] EXT: registering extension: s3eTouchpad [0x1dbd7ce8]
+25/06/14 22:13:35.018: [0xfa0] EXT: registering extension: s3eCompass [0x40d632c6]
+25/06/14 22:13:35.021: [0xfa0] EXT: registering extension: Compass [0xd3653f1b]
+25/06/14 22:13:35.025: [0xfa0] EXT: registering extension: s3eDebugHeap [0xc667a795]
+25/06/14 22:13:35.029: [0xfa0] EXT: registering extension: s3eExtDebugHeap [0xff96de46]
+25/06/14 22:13:35.034: [0xfa0] EXT: registering extension: s3eClipboard [0xd68f3420]
+25/06/14 22:13:35.038: [0xfa0] EXT: registering extension: s3eOSExec [0xc121bcf7]
+25/06/14 22:13:35.042: [0xfa0] EXT: registering extension: s3eExtOSExec [0x20380948]
+25/06/14 22:13:35.047: [0xfa0] EXT: registering extension: s3eEval [0x167d1038]
+25/06/14 22:13:35.051: [0xfa0] EXT: registering extension: s3eExtEval [0xf0421449]
+25/06/14 22:13:35.055: [0xfa0] EXT: registering extension: s3eHighResTimer [0x41f2dedb]
+25/06/14 22:13:35.059: [0xfa0] EXT: registering extension: s3eOSReadString [0x9fe3ea45]
+25/06/14 22:13:35.066: [0xfa0] EXT: registering extension: s3eCameraCapture [0xd36aceed]
+25/06/14 22:13:35.070: [0xfa0] EXT: registering extension: s3eTestEmulatorConfig [0x4a0d0a4f]
+25/06/14 22:13:35.074: [0xfa0] EXT: registering extension: s3eThread [0xcc0b4a28]
+25/06/14 22:13:35.078: [0xfa0] EXT: registering extension: s3eSocketOpt [0x09cdcdec]
+25/06/14 22:13:35.084: [0xfa0] EXT: registering extension: s3eExtSocketOpt [0x42fd049d]
+25/06/14 22:13:35.089: [0xfa0] EXT: registering extension: s3eImagePicker [0xd2fc1d51]
+25/06/14 22:13:35.093: [0xfa0] EXT: registering extension: s3eTest [0x168503f0]
+25/06/14 22:13:35.099: [0xfa0] EXT: registering extension: s3eSMS [0x17f480c3]
+25/06/14 22:13:35.111: [0xfa0] EXT: registering extension: s3eMetrics [0x2bc8e047]
+25/06/14 22:13:35.117: [0xfa0] EXT: registering extension: Metrics [0xbe57ec9c]
+25/06/14 22:13:35.121: [0xfa0] EXT: registering extension: s3eLocation [0x91944229]
+25/06/14 22:13:35.125: [0xfa0] EXT: registering extension: Location [0x7604d91e]
+25/06/14 22:13:35.131: [0xfa0] EXT: registering extension: Win32Surface [0x909755c1]
+25/06/14 22:13:35.135: [0xfa0] EXT: registering extension: Win32UIProcessMessage [0x48f2a5ba]
+25/06/14 22:13:35.140: [0xfa0] EXT: registering extension: Win32DataDirChange [0xbfcfc057]
+25/06/14 22:13:35.144: [0xfa0] DEVICE: Initialising CONFIG
+25/06/14 22:13:35.151: [0xfa0] DEVICE: Initialising TIMER
+25/06/14 22:13:35.159: [0xfa0] DEVICE: Initialising COMPRESSION
+25/06/14 22:13:35.168: [0xfa0] DEVICE: DeviceInit done: services=0x0a216148
+25/06/14 22:13:35.173: [0xfa0] EXT: s3eExtGetHash: 0xd31aa8a8 [0x00000000 size=0]
+25/06/14 22:13:35.185: [0xfa0] EXT: initializing extension: s3eWindow
+25/06/14 22:13:35.191: [0xfa0] EXT: initializing extension: s3eWindow 0x00cd62d0
+25/06/14 22:13:35.199: [0xfa0] DEVICE: SetupPaths: NULL
+25/06/14 22:13:35.206: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via"]
+25/06/14 22:13:35.215: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.221: [0xfa0] LOADER: parsing via file: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.228: [0xfa0] FILE: s3eFileOpen('c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via', 'r') succeeded, id=14212992 p=0x00d8df80
+25/06/14 22:13:35.236: [0xfa0] LOADER: reading 1240 bytes from via files
+25/06/14 22:13:35.249: [0xfa0] FILE: s3eFileClose h=0x00d8df80
+25/06/14 22:13:35.255: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via" --dll="c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86"
 --da
-25/06/14 01:35:21.165: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.170: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
-25/06/14 01:35:21.174: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Vinicius\Desktop\Yes or No\Stars\data
-25/06/14 01:35:21.179: [0xfa0] LOADER: setting [commandline]  checks3edir=1
-25/06/14 01:35:21.184: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
-25/06/14 01:35:21.188: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView.dll
-25/06/14 01:35:21.193: [0xfa0] LOADER: setting [commandline]  win32-ext-dll2=c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry.dll
-25/06/14 01:35:21.198: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt
-25/06/14 01:35:21.202: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt
-25/06/14 01:35:21.207: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt
-25/06/14 01:35:21.211: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt
-25/06/14 01:35:21.216: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt
-25/06/14 01:35:21.220: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt
-25/06/14 01:35:21.225: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt
-25/06/14 01:35:21.230: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt
-25/06/14 01:35:21.235: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/7.2/s3e/s3e.config.txt
-25/06/14 01:35:21.240: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt
-25/06/14 01:35:21.244: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/7.2/s3e\s3e.config.txt
-25/06/14 01:35:21.249: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/7.2/s3e
-25/06/14 01:35:21.255: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
-25/06/14 01:35:21.259: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
-25/06/14 01:35:21.265: [0xfa0] FILE: fs[03]: system[raw://] ''
-25/06/14 01:35:21.270: [0xfa0] FILE: listed 2 active filesystems
-25/06/14 01:35:21.274: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
-25/06/14 01:35:21.279: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
-25/06/14 01:35:21.284: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram'
-25/06/14 01:35:21.289: [0xfa0] FILE: fs[03]: system[raw://] ''
-25/06/14 01:35:21.294: [0xfa0] FILE: listed 3 active filesystems
-25/06/14 01:35:21.316: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
-25/06/14 01:35:21.321: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
-25/06/14 01:35:21.326: [0xfa0] LOADER: Using data directory c:\Users\Vinicius\Desktop\Yes or No\Stars\data as ROM drive
-25/06/14 01:35:21.331: [0xfa0] LOADER: Using directory c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram as RAM drive
-25/06/14 01:35:21.335: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt', 'r') succeeded, id=1000 p=0x00d8f5fc
-25/06/14 01:35:21.339: [0xfa0] FILE: s3eFileClose h=0x00d8f5fc
-25/06/14 01:35:21.344: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt', 'r') succeeded, id=1001 p=0x00d8f718
-25/06/14 01:35:21.348: [0xfa0] FILE: s3eFileClose h=0x00d8f718
-25/06/14 01:35:21.353: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt', 'r') succeeded, id=1002 p=0x00d8f834
-25/06/14 01:35:21.357: [0xfa0] FILE: s3eFileClose h=0x00d8f834
-25/06/14 01:35:21.362: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt', 'r') succeeded, id=1003 p=0x00d8f950
-25/06/14 01:35:21.367: [0xfa0] FILE: s3eFileClose h=0x00d8f950
-25/06/14 01:35:21.371: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt', 'r') succeeded, id=1004 p=0x00d8fa6c
-25/06/14 01:35:21.376: [0xfa0] FILE: s3eFileClose h=0x00d8fa6c
-25/06/14 01:35:21.381: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt', 'r') succeeded, id=1005 p=0x00d8fb88
-25/06/14 01:35:21.386: [0xfa0] FILE: s3eFileClose h=0x00d8fb88
-25/06/14 01:35:21.390: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt', 'r') succeeded, id=1006 p=0x00d8fca4
-25/06/14 01:35:21.394: [0xfa0] FILE: s3eFileClose h=0x00d8fca4
-25/06/14 01:35:21.399: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt', 'r') succeeded, id=1007 p=0x00d8fdc0
-25/06/14 01:35:21.404: [0xfa0] FILE: s3eFileClose h=0x00d8fdc0
-25/06/14 01:35:21.408: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/s3e/s3e.config.txt', 'r') succeeded, id=1008 p=0x00d8fedc
-25/06/14 01:35:21.420: [0xfa0] FILE: s3eFileClose h=0x00d8fedc
-25/06/14 01:35:21.424: [0xfa0] FILE: s3eFileOpen('raw://c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt', 'r') succeeded, id=1009 p=0x00d8fff8
-25/06/14 01:35:21.429: [0xfa0] FILE: s3eFileClose h=0x00d8fff8
-25/06/14 01:35:21.434: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/s3e\s3e.config.txt', 'r') succeeded, id=1010 p=0x00d90114
-25/06/14 01:35:21.445: [0xfa0] FILE: s3eFileClose h=0x00d90114
-25/06/14 01:35:21.451: [0xfa0] FILE: s3eFileOpen('raw://c:\marmalade\7.2\s3e/s3e.icf', 'rb') succeeded, id=1011 p=0x00d90230
-25/06/14 01:35:21.455: [0xfa0] LOADER: Loading config from: c:\marmalade\7.2\s3e/s3e.icf
-25/06/14 01:35:21.460: [0xfa0] FILE: s3eFileClose h=0x00d90230
-25/06/14 01:35:21.465: [0xfa0] LOADER: Loading app-icf from command line specified location c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
-25/06/14 01:35:21.470: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf', 'rb') succeeded, id=1012 p=0x00d9034c
-25/06/14 01:35:21.474: [0xfa0] LOADER: Loading config from: raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
-25/06/14 01:35:21.479: [0xfa0] FILE: s3eFileClose h=0x00d9034c
-25/06/14 01:35:21.484: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via"]
-25/06/14 01:35:21.488: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.493: [0xfa0] LOADER: parsing via file: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.497: [0xfa0] FILE: s3eFileOpen('c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via', 'r') succeeded, id=1013 p=0x00d90468
-25/06/14 01:35:21.501: [0xfa0] LOADER: reading 1240 bytes from via files
-25/06/14 01:35:21.506: [0xfa0] FILE: s3eFileClose h=0x00d90468
-25/06/14 01:35:21.510: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via" --dll="c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86"
+25/06/14 22:13:35.264: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.271: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
+25/06/14 22:13:35.277: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Vinicius\Desktop\Yes or No\Stars\data
+25/06/14 22:13:35.289: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+25/06/14 22:13:35.294: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
+25/06/14 22:13:35.303: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView.dll
+25/06/14 22:13:35.312: [0xfa0] LOADER: setting [commandline]  win32-ext-dll2=c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry.dll
+25/06/14 22:13:35.319: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt
+25/06/14 22:13:35.326: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt
+25/06/14 22:13:35.337: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt
+25/06/14 22:13:35.342: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt
+25/06/14 22:13:35.350: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt
+25/06/14 22:13:35.358: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt
+25/06/14 22:13:35.369: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt
+25/06/14 22:13:35.373: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt
+25/06/14 22:13:35.378: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/7.2/s3e/s3e.config.txt
+25/06/14 22:13:35.384: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt
+25/06/14 22:13:35.389: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/7.2/s3e\s3e.config.txt
+25/06/14 22:13:35.393: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/7.2/s3e
+25/06/14 22:13:35.399: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+25/06/14 22:13:35.404: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
+25/06/14 22:13:35.411: [0xfa0] FILE: fs[03]: system[raw://] ''
+25/06/14 22:13:35.417: [0xfa0] FILE: listed 2 active filesystems
+25/06/14 22:13:35.422: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+25/06/14 22:13:35.427: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
+25/06/14 22:13:35.433: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram'
+25/06/14 22:13:35.439: [0xfa0] FILE: fs[03]: system[raw://] ''
+25/06/14 22:13:35.444: [0xfa0] FILE: listed 3 active filesystems
+25/06/14 22:13:35.469: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+25/06/14 22:13:35.475: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+25/06/14 22:13:35.483: [0xfa0] LOADER: Using data directory c:\Users\Vinicius\Desktop\Yes or No\Stars\data as ROM drive
+25/06/14 22:13:35.488: [0xfa0] LOADER: Using directory c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram as RAM drive
+25/06/14 22:13:35.493: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt', 'r') succeeded, id=1000 p=0x00d8f5fc
+25/06/14 22:13:35.502: [0xfa0] FILE: s3eFileClose h=0x00d8f5fc
+25/06/14 22:13:35.508: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt', 'r') succeeded, id=1001 p=0x00d8f718
+25/06/14 22:13:35.513: [0xfa0] FILE: s3eFileClose h=0x00d8f718
+25/06/14 22:13:35.519: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt', 'r') succeeded, id=1002 p=0x00d8f834
+25/06/14 22:13:35.523: [0xfa0] FILE: s3eFileClose h=0x00d8f834
+25/06/14 22:13:35.528: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt', 'r') succeeded, id=1003 p=0x00d8f950
+25/06/14 22:13:35.535: [0xfa0] FILE: s3eFileClose h=0x00d8f950
+25/06/14 22:13:35.539: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt', 'r') succeeded, id=1004 p=0x00d8fa6c
+25/06/14 22:13:35.545: [0xfa0] FILE: s3eFileClose h=0x00d8fa6c
+25/06/14 22:13:35.550: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt', 'r') succeeded, id=1005 p=0x00d8fb88
+25/06/14 22:13:35.554: [0xfa0] FILE: s3eFileClose h=0x00d8fb88
+25/06/14 22:13:35.559: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt', 'r') succeeded, id=1006 p=0x00d8fca4
+25/06/14 22:13:35.564: [0xfa0] FILE: s3eFileClose h=0x00d8fca4
+25/06/14 22:13:35.569: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt', 'r') succeeded, id=1007 p=0x00d8fdc0
+25/06/14 22:13:35.573: [0xfa0] FILE: s3eFileClose h=0x00d8fdc0
+25/06/14 22:13:35.578: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/s3e/s3e.config.txt', 'r') succeeded, id=1008 p=0x00d8fedc
+25/06/14 22:13:35.589: [0xfa0] FILE: s3eFileClose h=0x00d8fedc
+25/06/14 22:13:35.594: [0xfa0] FILE: s3eFileOpen('raw://c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt', 'r') succeeded, id=1009 p=0x00d8fff8
+25/06/14 22:13:35.598: [0xfa0] FILE: s3eFileClose h=0x00d8fff8
+25/06/14 22:13:35.603: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/7.2/s3e\s3e.config.txt', 'r') succeeded, id=1010 p=0x00d90114
+25/06/14 22:13:35.617: [0xfa0] FILE: s3eFileClose h=0x00d90114
+25/06/14 22:13:35.627: [0xfa0] FILE: s3eFileOpen('raw://c:\marmalade\7.2\s3e/s3e.icf', 'rb') succeeded, id=1011 p=0x00d90230
+25/06/14 22:13:35.632: [0xfa0] LOADER: Loading config from: c:\marmalade\7.2\s3e/s3e.icf
+25/06/14 22:13:35.638: [0xfa0] FILE: s3eFileClose h=0x00d90230
+25/06/14 22:13:35.642: [0xfa0] LOADER: Loading app-icf from command line specified location c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
+25/06/14 22:13:35.647: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf', 'rb') succeeded, id=1012 p=0x00d9034c
+25/06/14 22:13:35.652: [0xfa0] LOADER: Loading config from: raw://c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
+25/06/14 22:13:35.657: [0xfa0] FILE: s3eFileClose h=0x00d9034c
+25/06/14 22:13:35.661: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via"]
+25/06/14 22:13:35.666: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.671: [0xfa0] LOADER: parsing via file: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.675: [0xfa0] FILE: s3eFileOpen('c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via', 'r') succeeded, id=1013 p=0x00d90468
+25/06/14 22:13:35.679: [0xfa0] LOADER: reading 1240 bytes from via files
+25/06/14 22:13:35.684: [0xfa0] FILE: s3eFileClose h=0x00d90468
+25/06/14 22:13:35.688: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via" --dll="c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86"
 --da
-25/06/14 01:35:21.514: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
-25/06/14 01:35:21.518: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
-25/06/14 01:35:21.522: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Vinicius\Desktop\Yes or No\Stars\data
-25/06/14 01:35:21.526: [0xfa0] LOADER: setting [commandline]  checks3edir=1
-25/06/14 01:35:21.530: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
-25/06/14 01:35:21.534: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView.dll
-25/06/14 01:35:21.541: [0xfa0] LOADER: setting [commandline]  win32-ext-dll2=c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry.dll
-25/06/14 01:35:21.551: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt
-25/06/14 01:35:21.555: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt
-25/06/14 01:35:21.560: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt
-25/06/14 01:35:21.568: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt
-25/06/14 01:35:21.573: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt
-25/06/14 01:35:21.578: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt
-25/06/14 01:35:21.583: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt
-25/06/14 01:35:21.588: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt
-25/06/14 01:35:21.593: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/7.2/s3e/s3e.config.txt
-25/06/14 01:35:21.597: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt
-25/06/14 01:35:21.602: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/7.2/s3e\s3e.config.txt
-25/06/14 01:35:21.608: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/7.2/s3e
-25/06/14 01:35:21.613: [0xfa0] LOADER: s3eExecMemoryCheck: Memory free: 1048576K
-25/06/14 01:35:21.619: [0xfa0] FILE: s3eFileOpen('raw://C:\Users\Vinicius\AppData\Local\Temp\\_marm_temp_test_', 'w') succeeded, id=1014 p=0x00d90584
-25/06/14 01:35:21.624: [0xfa0] FILE: s3eFileClose h=0x00d90584
-25/06/14 01:35:21.631: [0xfa0] FILE: new filesystem: drive=4 type=0 ro=0 name=tmp://
-25/06/14 01:35:21.637: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
-25/06/14 01:35:21.644: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram'
-25/06/14 01:35:21.650: [0xfa0] FILE: fs[03]: system[raw://] ''
-25/06/14 01:35:21.655: [0xfa0] FILE: fs[04]: system[tmp://] 'C:\Users\Vinicius\AppData\Local\Temp\'
-25/06/14 01:35:21.659: [0xfa0] FILE: listed 4 active filesystems
-25/06/14 01:35:21.672: [0xfa0] SURFACE: scaling=1
-25/06/14 01:35:21.770: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB888, pitch=0, ptr=0x00000000, blit=0
-25/06/14 01:35:21.774: [0xfa0] SURFACE: s3eSurfaceSetup: does not match native type (requested=RGB888 native=RGB565)
-25/06/14 01:35:21.786: [0xfa0] EXT: Registering user-supplied extensions
-25/06/14 01:35:21.793: [0xfa0] EXT: Loading extension dll c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView_d.dll
-25/06/14 01:35:21.802: [0xfa0] LOADER: GL not present, resolving all GL symbols to unavailable
-25/06/14 01:35:21.811: [0xfa0] EXT: registering extension: s3eWebView [0x2c4bb889]
-25/06/14 01:35:21.818: [0xfa0] EXT: Loading extension dll c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry_d.dll
-25/06/14 01:35:21.824: [0xfa0] LOADER: GL not present, resolving all GL symbols to unavailable
-25/06/14 01:35:21.836: [0xfa0] EXT: registering extension: s3eFlurry [0xabad5214]
-25/06/14 01:35:21.842: [0xfa0] FIBRE: stack switch : enabled
-25/06/14 01:35:21.847: [0xfa0] FIBRE: fast switch  : disabled
-25/06/14 01:35:21.852: [0xfa0] FIBRE: global lock  : enabled
-25/06/14 01:35:21.856: [0xfa0] FIBRE: fast lock    : disabled
-25/06/14 01:35:21.861: [0xfa0] FIBRE: thunks       : enabled
-25/06/14 01:35:21.866: [0xfa0] LOADER: Calling s3eDeviceInit()
-25/06/14 01:35:21.871: [0xfa0] DEVICE: DeviceInit: services=0xfffdffff [0xe5dc9eb7]
-25/06/14 01:35:21.876: [0xfa0] DEVICE: Initialising CALLBACKS
-25/06/14 01:35:21.881: [0xfa0] DEVICE: Initialising CRYPTO
-25/06/14 01:35:21.886: [0xfa0] DEVICE: Initialising ERROR
-25/06/14 01:35:21.890: [0xfa0] DEVICE: Initialising SOCKET
-25/06/14 01:35:21.896: [0xfa0] DEVICE: Initialising STORAGE
-25/06/14 01:35:21.901: [0xfa0] DEVICE: Initialising VIBRA
-25/06/14 01:35:21.905: [0xfa0] DEVICE: Initialising KEYBOARD
-25/06/14 01:35:21.910: [0xfa0] DEVICE: Initialising POINTER
-25/06/14 01:35:21.916: [0xfa0] DEVICE: Initialising ACCELEROMETER
-25/06/14 01:35:21.920: [0xfa0] ACCELEROMETER: damping=0 scaling=0
-25/06/14 01:35:21.925: [0xfa0] DEVICE: Initialising SOUND
-25/06/14 01:35:22.139: [0xfa0] SOUND: stereo sound enabled
-25/06/14 01:35:22.143: [0xfa0] SOUND: s3eSoundStop: started=0
-25/06/14 01:35:22.149: [0xfa0] SOUND: SetMasterVolume: 255 -> 256
-25/06/14 01:35:22.153: [0xfa0] DEVICE: Initialising AUDIO
-25/06/14 01:35:22.158: [0xfa0] AUDIO: Number of channels = 16
-25/06/14 01:35:22.163: [0xfa0] DEVICE: Initialising VIDEO
-25/06/14 01:35:22.168: [0xfa0] DEVICE: Initialising LICENSE
-25/06/14 01:35:22.173: [0xfa0] DEVICE: Initialising GL
-25/06/14 01:35:22.177: [0xfa0] DEVICE: DeviceInit done: services=0xfffdffff
-25/06/14 01:35:22.186: [0xfa0] SPLASH: displaying debug splash-screen
-25/06/14 01:35:22.193: [0xfa0] SPLASH: No splash screen specified
-25/06/14 01:35:22.209: [0xfa0] LOADER: s3eExecInit Done
-25/06/14 01:35:22.222: [0xfa0] LOADER: found initial S3E file: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
-25/06/14 01:35:22.226: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86 [root=NULL 0x00000000 0x00000000]
-25/06/14 01:35:22.232: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
-25/06/14 01:35:22.237: [0xfa0] LOADER: s3eExecDoExecuteLoop
-25/06/14 01:35:22.332: [0xfa0] LOADER: AppVersion: 4 37
-25/06/14 01:35:22.337: [0xfa0] LOADER: S3E Version    : 4.37.0
-25/06/14 01:35:22.342: [0xfa0] LOADER: Arch           : X86
-25/06/14 01:35:22.347: [0xfa0] LOADER: VFP            : 1
-25/06/14 01:35:22.352: [0xfa0] LOADER: App S3E Version: 4.37.0
-25/06/14 01:35:22.358: [0xfa0] LOADER: App arch       : X86
-25/06/14 01:35:22.363: [0xfa0] LOADER: App VFP        : 0
-25/06/14 01:35:22.368: [0xfa0] LOADER: new s3eExecHandle = 0x02d54a40
-25/06/14 01:35:24.194: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
-25/06/14 01:35:24.199: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
-25/06/14 01:35:24.203: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
-25/06/14 01:35:24.208: [0xfa0] LOADER: Calling s3eDeviceInit(S3E_DEVICE_INIT_MEMORY)
-25/06/14 01:35:24.212: [0xfa0] DEVICE: DeviceInit: services=0x00020000 [0x00020000]
-25/06/14 01:35:24.217: [0xfa0] DEVICE: Initialising MEMORY
-25/06/14 01:35:24.221: [0xfa0] MEMORY: Loader heap size=30000
-25/06/14 01:35:24.236: [0xfa0] MEMORY: Initialised heap 0 [0x061c1f64-0x074d4c64] size=20000000
-25/06/14 01:35:24.241: [0xfa0] MEMORY: Initialised heap 7 [0x03941464-0x0394dc64] size=51200
-25/06/14 01:35:24.245: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x00c01d80 0x00c01fc0 0x00c01a98
-25/06/14 01:35:24.250: [0xfa0] DEVICE: DeviceInit done: services=0x00020000
-25/06/14 01:35:24.254: [0xfa0] LOADER: IwS3EGetEntryPoint -> 0x0f48efd0
-25/06/14 01:35:24.258: [0xfa0] LOADER: Executing S3E 0x02d54a40 [c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86] entry=0x0f48efd0
-25/06/14 01:35:24.263: [0xfa0] EXT: s3eExtGetHash: 0xcc0b4a28 [0x13041a38 size=76]
-25/06/14 01:35:24.689: [0xfa0] EXT: initializing extension: s3eThread
-25/06/14 01:35:24.693: [0xfa0] EXT: initializing extension: s3eThread 0x00cb2960
-25/06/14 01:35:24.697: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x0f454380 0x0f4543a0 0x0f454390
-25/06/14 01:35:24.703: [0xfa0] GX_VERBOSE: IwGxInitBase()
-25/06/14 01:35:24.707: [0xfa0] EXT: s3eExtGetHash: 0x2bc8e047 [0x13041858 size=72]
-25/06/14 01:35:24.711: [0xfa0] EXT: initializing extension: s3eMetrics
-25/06/14 01:35:24.716: [0xfa0] EXT: s3eExtGetHash: 0xc667a795 [0x130418a8 size=8]
-25/06/14 01:35:24.720: [0xfa0] EXT: initializing extension: s3eDebugHeap
-25/06/14 01:35:24.724: [0xfa0] MEMORY: s3eExtDebugHeapAlloc: 5242880 bytes allocated for system debug heap
-25/06/14 01:35:24.741: [0xfa0] UTIL: IwCallStackInit
-25/06/14 01:35:24.747: [0xfa0] GX_VERBOSE: Registering for S3E_SURFACE_SCREENSIZE callback
-25/06/14 01:35:24.751: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
-25/06/14 01:35:24.755: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
-25/06/14 01:35:24.759: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
-25/06/14 01:35:24.764: [0xfa0] GX: IwGxSetScreenOrient: 0
-25/06/14 01:35:24.780: [0xfa0] IW_GL: EGL: eglGetDisplay returned 07E12958
-25/06/14 01:35:24.790: [0xfa0] IW_GL: eglInitialise succeeded - version 1.4
-25/06/14 01:35:24.795: [0xfa0] IW_GL: S3E_EGL_VERSION: 0104
-25/06/14 01:35:24.799: [0xfa0] IW_GL: S3E_GL_VERSION: 0200
-25/06/14 01:35:24.803: [0xfa0] IW_GL: EGL_VENDOR: Google Inc.
-25/06/14 01:35:24.808: [0xfa0] IW_GL: EGL_VERSION: 1.4 (ANGLE 1.0.0.1275)
-25/06/14 01:35:24.812: [0xfa0] IW_GL:     EGL_EXT_create_context_robustness
-25/06/14 01:35:24.817: [0xfa0] IW_GL:     EGL_ANGLE_d3d_share_handle_client_buffer
-25/06/14 01:35:24.822: [0xfa0] IW_GL:     EGL_ANGLE_query_surface_pointer
-25/06/14 01:35:24.826: [0xfa0] IW_GL:     EGL_ANGLE_surface_d3d_texture_2d_share_handle
-25/06/14 01:35:24.830: [0xfa0] IW_GL:     EGL_NV_post_sub_buffer
-25/06/14 01:35:24.835: [0xfa0] GL_CORE: rejecting config 0: EGL_DEPTH_SIZE < 16
-25/06/14 01:35:24.840: [0xfa0] GL_CORE: rejecting config 4: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.844: [0xfa0] GL_CORE: rejecting config 5 RGB < 565
-25/06/14 01:35:24.849: [0xfa0] GL_CORE: rejecting config 6: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.853: [0xfa0] GL_CORE: rejecting config 7 RGB < 565
-25/06/14 01:35:24.857: [0xfa0] GL_CORE: rejecting config 8: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.862: [0xfa0] GL_CORE: rejecting config 9 RGB < 565
-25/06/14 01:35:24.866: [0xfa0] GL_CORE: rejecting config 10: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.871: [0xfa0] GL_CORE: rejecting config 11 RGB < 565
-25/06/14 01:35:24.875: [0xfa0] GL_CORE: rejecting config 12: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.879: [0xfa0] GL_CORE: rejecting config 13: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.884: [0xfa0] GL_CORE: rejecting config 14: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.888: [0xfa0] GL_CORE: rejecting config 15: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
-25/06/14 01:35:24.892: [0xfa0] GL_CORE: EGL: Chose EGL_CONFIG_ID 3
-25/06/14 01:35:24.918: [0xfa0] IW_GL: GL_VENDOR: Google Inc.
-25/06/14 01:35:24.922: [0xfa0] IW_GL: GL_RENDERER: ANGLE (Intel(R) HD Graphics)
-25/06/14 01:35:24.927: [0xfa0] IW_GL: GL_VERSION: OpenGL ES 2.0 (ANGLE 1.0.0.1275)
-25/06/14 01:35:24.931: [0xfa0] IW_GL: GL properties reported by driver:
-25/06/14 01:35:24.936: [0xfa0] IW_GL:     GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: 20
-25/06/14 01:35:24.940: [0xfa0] IW_GL:     GL_SHADER_COMPILER: 1
-25/06/14 01:35:24.944: [0xfa0] IW_GL:     GL_MAX_VERTEX_ATTRIBS: 16
-25/06/14 01:35:24.948: [0xfa0] IW_GL:     GL_MAX_VERTEX_UNIFORM_VECTORS: 254
-25/06/14 01:35:24.952: [0xfa0] IW_GL:     GL_MAX_VARYING_VECTORS: 10
-25/06/14 01:35:24.956: [0xfa0] IW_GL:     GL_MAX_TEXTURE_IMAGE_UNITS: 16
-25/06/14 01:35:24.960: [0xfa0] IW_GL:     GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS: 4
-25/06/14 01:35:24.964: [0xfa0] IW_GL:     GL_MAX_FRAGMENT_UNIFORM_VECTORS: 221
-25/06/14 01:35:24.969: [0xfa0] IW_GL:     GL_MAX_CUBE_MAP_TEXTURE_SIZE: 8192
-25/06/14 01:35:24.973: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_FORMAT: GL_RGB
-25/06/14 01:35:24.977: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_TYPE: GL_UNSIGNED_SHORT_5_6_5
-25/06/14 01:35:24.982: [0xfa0] IW_GL:     GL_MAX_RENDERBUFFER_SIZE: 8192
-25/06/14 01:35:24.986: [0xfa0] IW_GL:     GL_POINT_SIZE_MAX: -1
-25/06/14 01:35:24.990: [0xfa0] IW_GL:     GL_MAX_TEXTURE_SIZE: 8192
-25/06/14 01:35:24.994: [0xfa0] IW_GL:     GL_MAX_VIEWPORT_DIMS: (8192, 8192)
-25/06/14 01:35:24.999: [0xfa0] IW_GL: Supported GL_EXTENSIONS:
-25/06/14 01:35:25.003: [0xfa0] IW_GL:     GL_OES_packed_depth_stencil
-25/06/14 01:35:25.007: [0xfa0] IW_GL:     GL_OES_element_index_uint
-25/06/14 01:35:25.011: [0xfa0] IW_GL:     GL_OES_texture_half_float_linear
-25/06/14 01:35:25.016: [0xfa0] IW_GL:     GL_NV_fence
-25/06/14 01:35:25.020: [0xfa0] IW_GL:     GL_EXT_read_format_bgra
-25/06/14 01:35:25.024: [0xfa0] IW_GL:     GL_OES_get_program_binary
-25/06/14 01:35:25.028: [0xfa0] IW_GL:     GL_OES_rgb8_rgba8
-25/06/14 01:35:25.032: [0xfa0] IW_GL:     GL_EXT_texture_compression_dxt1
-25/06/14 01:35:25.036: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt3
-25/06/14 01:35:25.040: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt5
-25/06/14 01:35:25.045: [0xfa0] IW_GL:     GL_ARB_texture_env_combine
-25/06/14 01:35:25.153: [0xfa0] IW_GL:     GL_OES_texture_npot
-25/06/14 01:35:25.157: [0xfa0] IW_GL:     GL_EXT_texture_format_BGRA8888
-25/06/14 01:35:25.161: [0xfa0] IW_GL:     GL_OES_texture_half_float
-25/06/14 01:35:25.165: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_multisample
-25/06/14 01:35:25.169: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_blit
-25/06/14 01:35:25.173: [0xfa0] IW_GL:     GL_OES_standard_derivatives
-25/06/14 01:35:25.177: [0xfa0] IW_GL:     GL_OES_texture_float
-25/06/14 01:35:25.181: [0xfa0] IW_GL:     GL_OES_texture_float_linear
-25/06/14 01:35:25.186: [0xfa0] IW_GL:     GL_EXT_texture_filter_anisotropic
-25/06/14 01:35:25.189: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
-25/06/14 01:35:25.194: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
-25/06/14 01:35:25.197: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
-25/06/14 01:35:25.228: [0xfa0] GX: Parsing GL driver strings
-25/06/14 01:35:25.233: [0xfa0] GX_VERBOSE: Hardware capabilities:
-25/06/14 01:35:25.238: [0xfa0] FILE: s3eFileOpen('resource_cache/cachedSize.bin', 'rb') succeeded, id=1015 p=0x00d906a0
-25/06/14 01:35:25.243: [0xfa0] FILE: s3eFileClose h=0x00d906a0
-25/06/14 01:35:25.247: [0xfa0] UTIL: Added class factory for CIwGxShaderTechnique (hash 0x62ab11c4)
-25/06/14 01:35:25.252: [0xfa0] UTIL: Added class factory for CIwGxCubeMap (hash 0x5474a064)
-25/06/14 01:35:25.256: [0xfa0] GX_VERBOSE: IwGxInit() end
-25/06/14 01:35:25.260: [0xfa0] GX_VERBOSE: _IwGxInitGL()
-25/06/14 01:35:25.264: [0xfa0] GX_VERBOSE: Reported: Max texture stages 20. Max dimensions 8192x8192
-25/06/14 01:35:25.269: [0xfa0] GX_VERBOSE: Default framebuffer binding is 0
-25/06/14 01:35:25.274: [0xfa0] GX_VERBOSE: _IwGxInitGL() end
-25/06/14 01:35:25.278: [0xfa0] FILE: s3eFileClose h=0x00d907bc
-25/06/14 01:35:25.283: [0xfa0] EXT: s3eExtGetHash: 0x167d1038 [0x13041918 size=8]
-25/06/14 01:35:25.288: [0xfa0] EXT: initializing extension: s3eEval
-25/06/14 01:35:25.292: [0xfa0] FILE: s3eFileClose h=0x00d908d8
-25/06/14 01:35:25.297: [0xfa0] UTIL: Added class factory for CIwResTemplateImage (hash 0x4d5ab6b1)
-25/06/14 01:35:25.302: [0xfa0] UTIL: Added class factory for CIwResTemplateMTL (hash 0x3a22b5bb)
-25/06/14 01:35:25.307: [0xfa0] UTIL: Added class factory for CIwResTemplateGROUP (hash 0x4d3980fb)
-25/06/14 01:35:25.311: [0xfa0] UTIL: Added class factory for CIwMaterial (hash 0x2544f997)
-25/06/14 01:35:25.316: [0xfa0] UTIL: Added class factory for CIwResGroup (hash 0xf446397f)
-25/06/14 01:35:25.320: [0xfa0] UTIL: Added class factory for CIwTexture (hash 0x3521f539)
-25/06/14 01:35:25.324: [0xfa0] UTIL: Added class factory for CIwResBuildStyle (hash 0xa59f2593)
-25/06/14 01:35:25.329: [0xfa0] RESMANAGER: Added serialise block for ResGroupMembers
-25/06/14 01:35:25.334: [0xfa0] RESMANAGER: Added serialise block for ResGroupBuildData
-25/06/14 01:35:25.338: [0xfa0] RESMANAGER: Added serialise block for ResGroupChildPaths
-25/06/14 01:35:25.343: [0xfa0] RESMANAGER: Added serialise block for ResGroupHST
-25/06/14 01:35:25.347: [0xfa0] RESMANAGER: Added serialise block for ResGroupDirectory
-25/06/14 01:35:25.352: [0xfa0] RESMANAGER: Added serialise block for ResGroupResources
-25/06/14 01:35:25.356: [0xfa0] RESMANAGER: Added serialise block for ResGroupResourcesOptimised
-25/06/14 01:35:25.522: [0xfa0] RESMANAGER: Setting build style to 'gles1'
-25/06/14 01:35:25.531: [0xfa0] UTIL: Added class factory for CIwGxFont (hash 0xa68776be)
-25/06/14 01:35:25.540: [0xfa0] UTIL: Added class factory for CIwGxFontTTFont (hash 0xc084661d)
-25/06/14 01:35:25.546: [0xfa0] UTIL: Added class factory for CIwResTemplateGXFONT (hash 0xf4d12aa4)
-25/06/14 01:35:25.551: [0xfa0] UTIL: Added class factory for CIwSoundData (hash 0xd5610dab)
-25/06/14 01:35:25.556: [0xfa0] UTIL: Added class factory for CIwSoundDataADPCM (hash 0x430758f0)
-25/06/14 01:35:25.560: [0xfa0] UTIL: Added class factory for CIwSoundGroup (hash 0x81c24cbe)
-25/06/14 01:35:25.564: [0xfa0] UTIL: Added class factory for CIwSoundSpec (hash 0xd569853c)
-25/06/14 01:35:25.569: [0xfa0] EXT: s3eExtGetHash: 0xabad5214 [0x0f5eba68 size=52]
-25/06/14 01:35:25.574: [0xfa0] EXT: initializing extension: s3eFlurry
-25/06/14 01:35:25.578: [0xfa0] EXT: initializing extension: s3eFlurry 0x5fbf6d6b
-25/06/14 01:35:25.582: [0xfa0] FLURRY_VERBOSE: calling s3eFlurry[0] func: s3eFlurryStartSession
-25/06/14 01:35:27.008: [0xfa0] THREAD: *** Warning: The application is not calling s3eDeviceYield often enough. This can cause problems during suspend and resume. Time since last yield: 2745 ms
-25/06/14 01:35:29.627: [0x1424] DEVICE: s3eDeviceNotify 2
-25/06/14 01:35:29.632: [0x1424] DEVICE: done s3eDeviceNotify
-25/06/14 01:35:29.636: [0x1424] DEVICE: done RequestQuit
-25/06/14 01:35:29.642: [0xfa0] FLURRY_VERBOSE: calling s3eFlurry[1] func: s3eFlurryEndSession
-25/06/14 01:35:29.696: [0xfa0] GX_VERBOSE: IwGxTerminate
-25/06/14 01:35:29.705: [0xfa0] IW_GL: Terminating EGL...
-25/06/14 01:35:29.722: [0xfa0] IW_GL: Terminating EGL... Done
-25/06/14 01:35:29.731: [0xfa0] UTIL: IwCallStackTerm
-25/06/14 01:35:29.741: [0xfa0] FIBRE: calling s3eFibreExit() (rtn=0x00000000)
-25/06/14 01:35:29.748: [0xfa0] FIBRE: s3eFibreExit() 0x030429a8
-25/06/14 01:35:29.753: [0xfa0] FIBRE: s3eFibreExit() to 0x03042984 from 0x030429a8
-25/06/14 01:35:29.758: [0xfa0] THREAD: s3eThreadCancelAll
-25/06/14 01:35:29.762: [0xfa0] THREAD: done s3eThreadCancelAll
-25/06/14 01:35:29.768: [0xfa0] THREAD: all threads now dead (current=0x00000fa0)
-25/06/14 01:35:29.774: [0xfa0] LOADER: Application has exited, starting cleanup
-25/06/14 01:35:29.778: [0xfa0] LOADER: Done execute S3E 0x02d54a40 [rtn=0]
-25/06/14 01:35:29.782: [0xfa0] SOUND: s3eSoundStop: started=0
-25/06/14 01:35:29.787: [0xfa0] LOADER: Unloading S3E 0x02d54a40 [c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86]
-25/06/14 01:35:29.791: [0xfa0] LOADER: deleting DLL: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
-25/06/14 01:35:29.797: [0xfa0] DEVICE: Terminating LICENSE
-25/06/14 01:35:29.802: [0xfa0] DEVICE: Terminating VIDEO
-25/06/14 01:35:29.806: [0xfa0] DEVICE: Terminating AUDIO
-25/06/14 01:35:29.810: [0xfa0] DEVICE: Terminating SOUND
-25/06/14 01:35:29.834: [0xfa0] DEVICE: Terminating POINTER
-25/06/14 01:35:29.838: [0xfa0] DEVICE: Terminating ACCELEROMETER
-25/06/14 01:35:29.842: [0xfa0] DEVICE: Terminating GL
-25/06/14 01:35:29.846: [0xfa0] DEVICE: Terminating VIBRA
-25/06/14 01:35:29.851: [0xfa0] DEVICE: Terminating TIMER
-25/06/14 01:35:29.855: [0xfa0] DEVICE: Terminating STORAGE
-25/06/14 01:35:29.859: [0xfa0] DEVICE: Terminating SOCKET
-25/06/14 01:35:29.863: [0xfa0] DEVICE: Terminating CONFIG
-25/06/14 01:35:29.867: [0xfa0] DEVICE: Terminating ERROR
-25/06/14 01:35:29.871: [0xfa0] DEVICE: Terminating MEMORY
-25/06/14 01:35:29.881: [0xfa0] DEVICE: Terminating CRYPTO
-25/06/14 01:35:29.885: [0xfa0] DEVICE: Terminating EXT
-25/06/14 01:35:29.889: [0xfa0] EXT: terminating extension: s3eWindow
-25/06/14 01:35:29.893: [0xfa0] EXT: terminating extension: s3eThread
-25/06/14 01:35:29.897: [0xfa0] EXT: terminating extension: s3eFlurry
-25/06/14 01:35:29.902: [0xfa0] DEVICE: Terminating SURFACE
-25/06/14 01:35:29.913: [0xfa0] DEVICE: Terminating KEYBOARD
-25/06/14 01:35:29.918: [0xfa0] DEVICE: Terminating DEBUG
+25/06/14 22:13:35.692: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Stars_vc12x_debug.via
+25/06/14 22:13:35.696: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
+25/06/14 22:13:35.701: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Vinicius\Desktop\Yes or No\Stars\data
+25/06/14 22:13:35.705: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+25/06/14 22:13:35.709: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf
+25/06/14 22:13:35.713: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView.dll
+25/06/14 22:13:35.718: [0xfa0] LOADER: setting [commandline]  win32-ext-dll2=c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry.dll
+25/06/14 22:13:35.722: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt
+25/06/14 22:13:35.726: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/7.2/modules/iw2d/docs/iw2d.config.txt
+25/06/14 22:13:35.730: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/7.2/modules/iwgeom/docs/iwgeom.config.txt
+25/06/14 22:13:35.734: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/7.2/modules/iwgl/docs/iwgl.config.txt
+25/06/14 22:13:35.739: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/7.2/modules/iwgx/docs/iwgx.config.txt
+25/06/14 22:13:35.743: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/7.2/modules/iwgxfont/docs/iwgxfont.config.txt
+25/06/14 22:13:35.749: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/7.2/modules/iwresmanager/docs/iwresmanager.config.txt
+25/06/14 22:13:35.753: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/7.2/modules/iwutil/docs/iwutil.config.txt
+25/06/14 22:13:35.758: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/7.2/s3e/s3e.config.txt
+25/06/14 22:13:35.763: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/users/vinicius/desktop/yes or no/stars/modules/soundengine/docs/iwsound.config.txt
+25/06/14 22:13:35.768: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/7.2/s3e\s3e.config.txt
+25/06/14 22:13:35.774: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/7.2/s3e
+25/06/14 22:13:35.779: [0xfa0] LOADER: s3eExecMemoryCheck: Memory free: 1048576K
+25/06/14 22:13:35.785: [0xfa0] FILE: s3eFileOpen('raw://C:\Users\Vinicius\AppData\Local\Temp\\_marm_temp_test_', 'w') succeeded, id=1014 p=0x00d90584
+25/06/14 22:13:35.790: [0xfa0] FILE: s3eFileClose h=0x00d90584
+25/06/14 22:13:35.798: [0xfa0] FILE: new filesystem: drive=4 type=0 ro=0 name=tmp://
+25/06/14 22:13:35.804: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data'
+25/06/14 22:13:35.810: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Vinicius\Desktop\Yes or No\Stars\data-ram'
+25/06/14 22:13:35.815: [0xfa0] FILE: fs[03]: system[raw://] ''
+25/06/14 22:13:35.822: [0xfa0] FILE: fs[04]: system[tmp://] 'C:\Users\Vinicius\AppData\Local\Temp\'
+25/06/14 22:13:35.827: [0xfa0] FILE: listed 4 active filesystems
+25/06/14 22:13:35.839: [0xfa0] SURFACE: scaling=1
+25/06/14 22:13:35.944: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB888, pitch=0, ptr=0x00000000, blit=0
+25/06/14 22:13:35.950: [0xfa0] SURFACE: s3eSurfaceSetup: does not match native type (requested=RGB888 native=RGB565)
+25/06/14 22:13:35.958: [0xfa0] EXT: Registering user-supplied extensions
+25/06/14 22:13:36.011: [0xfa0] EXT: Loading extension dll c:/marmalade/7.2/extensions/s3ewebview/lib/win32/s3eWebView_d.dll
+25/06/14 22:13:36.019: [0xfa0] LOADER: GL not present, resolving all GL symbols to unavailable
+25/06/14 22:13:36.027: [0xfa0] EXT: registering extension: s3eWebView [0x2c4bb889]
+25/06/14 22:13:36.033: [0xfa0] EXT: Loading extension dll c:/marmalade/7.2/extensions/s3eflurry/lib/win32/s3eFlurry_d.dll
+25/06/14 22:13:36.039: [0xfa0] LOADER: GL not present, resolving all GL symbols to unavailable
+25/06/14 22:13:36.047: [0xfa0] EXT: registering extension: s3eFlurry [0xabad5214]
+25/06/14 22:13:36.053: [0xfa0] FIBRE: stack switch : enabled
+25/06/14 22:13:36.059: [0xfa0] FIBRE: fast switch  : disabled
+25/06/14 22:13:36.064: [0xfa0] FIBRE: global lock  : enabled
+25/06/14 22:13:36.069: [0xfa0] FIBRE: fast lock    : disabled
+25/06/14 22:13:36.074: [0xfa0] FIBRE: thunks       : enabled
+25/06/14 22:13:36.078: [0xfa0] LOADER: Calling s3eDeviceInit()
+25/06/14 22:13:36.084: [0xfa0] DEVICE: DeviceInit: services=0xfffdffff [0xe5dc9eb7]
+25/06/14 22:13:36.089: [0xfa0] DEVICE: Initialising CALLBACKS
+25/06/14 22:13:36.094: [0xfa0] DEVICE: Initialising CRYPTO
+25/06/14 22:13:36.102: [0xfa0] DEVICE: Initialising ERROR
+25/06/14 22:13:36.108: [0xfa0] DEVICE: Initialising SOCKET
+25/06/14 22:13:36.117: [0xfa0] DEVICE: Initialising STORAGE
+25/06/14 22:13:36.123: [0xfa0] DEVICE: Initialising VIBRA
+25/06/14 22:13:36.129: [0xfa0] DEVICE: Initialising KEYBOARD
+25/06/14 22:13:36.139: [0xfa0] DEVICE: Initialising POINTER
+25/06/14 22:13:36.145: [0xfa0] DEVICE: Initialising ACCELEROMETER
+25/06/14 22:13:36.152: [0xfa0] ACCELEROMETER: damping=0 scaling=0
+25/06/14 22:13:36.162: [0xfa0] DEVICE: Initialising SOUND
+25/06/14 22:13:36.388: [0xfa0] SOUND: stereo sound enabled
+25/06/14 22:13:36.396: [0xfa0] SOUND: s3eSoundStop: started=0
+25/06/14 22:13:36.407: [0xfa0] SOUND: SetMasterVolume: 255 -> 256
+25/06/14 22:13:36.411: [0xfa0] DEVICE: Initialising AUDIO
+25/06/14 22:13:36.419: [0xfa0] AUDIO: Number of channels = 16
+25/06/14 22:13:36.424: [0xfa0] DEVICE: Initialising VIDEO
+25/06/14 22:13:36.429: [0xfa0] DEVICE: Initialising LICENSE
+25/06/14 22:13:36.437: [0xfa0] DEVICE: Initialising GL
+25/06/14 22:13:36.442: [0xfa0] DEVICE: DeviceInit done: services=0xfffdffff
+25/06/14 22:13:36.453: [0xfa0] SPLASH: displaying debug splash-screen
+25/06/14 22:13:36.460: [0xfa0] SPLASH: No splash screen specified
+25/06/14 22:13:36.478: [0xfa0] LOADER: s3eExecInit Done
+25/06/14 22:13:36.493: [0xfa0] LOADER: found initial S3E file: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
+25/06/14 22:13:36.501: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86 [root=NULL 0x00000000 0x00000000]
+25/06/14 22:13:36.506: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
+25/06/14 22:13:36.510: [0xfa0] LOADER: s3eExecDoExecuteLoop
+25/06/14 22:13:36.585: [0xfa0] LOADER: AppVersion: 4 37
+25/06/14 22:13:36.591: [0xfa0] LOADER: S3E Version    : 4.37.0
+25/06/14 22:13:36.596: [0xfa0] LOADER: Arch           : X86
+25/06/14 22:13:36.604: [0xfa0] LOADER: VFP            : 1
+25/06/14 22:13:36.609: [0xfa0] LOADER: App S3E Version: 4.37.0
+25/06/14 22:13:36.617: [0xfa0] LOADER: App arch       : X86
+25/06/14 22:13:36.633: [0xfa0] LOADER: App VFP        : 0
+25/06/14 22:13:36.640: [0xfa0] LOADER: new s3eExecHandle = 0x02764a38
+25/06/14 22:13:38.456: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+25/06/14 22:13:38.461: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+25/06/14 22:13:38.467: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+25/06/14 22:13:38.472: [0xfa0] LOADER: Calling s3eDeviceInit(S3E_DEVICE_INIT_MEMORY)
+25/06/14 22:13:38.476: [0xfa0] DEVICE: DeviceInit: services=0x00020000 [0x00020000]
+25/06/14 22:13:38.483: [0xfa0] DEVICE: Initialising MEMORY
+25/06/14 22:13:38.488: [0xfa0] MEMORY: Loader heap size=30000
+25/06/14 22:13:38.504: [0xfa0] MEMORY: Initialised heap 0 [0x099a1f64-0x0acb4c64] size=20000000
+25/06/14 22:13:38.508: [0xfa0] MEMORY: Initialised heap 7 [0x033a1464-0x033adc64] size=51200
+25/06/14 22:13:38.513: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x00bc1d80 0x00bc1fc0 0x00bc1a98
+25/06/14 22:13:38.519: [0xfa0] DEVICE: DeviceInit done: services=0x00020000
+25/06/14 22:13:38.523: [0xfa0] LOADER: IwS3EGetEntryPoint -> 0x05dcefd0
+25/06/14 22:13:38.528: [0xfa0] LOADER: Executing S3E 0x02764a38 [c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86] entry=0x05dcefd0
+25/06/14 22:13:38.536: [0xfa0] EXT: s3eExtGetHash: 0xcc0b4a28 [0x09981a60 size=76]
+25/06/14 22:13:39.829: [0xfa0] EXT: initializing extension: s3eThread
+25/06/14 22:13:39.834: [0xfa0] EXT: initializing extension: s3eThread 0x00cb2960
+25/06/14 22:13:39.841: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x05d94380 0x05d943a0 0x05d94390
+25/06/14 22:13:39.851: [0xfa0] GX_VERBOSE: IwGxInitBase()
+25/06/14 22:13:39.874: [0xfa0] EXT: s3eExtGetHash: 0x2bc8e047 [0x09981880 size=72]
+25/06/14 22:13:39.952: [0xfa0] EXT: initializing extension: s3eMetrics
+25/06/14 22:13:39.971: [0xfa0] EXT: s3eExtGetHash: 0xc667a795 [0x099818d0 size=8]
+25/06/14 22:13:39.984: [0xfa0] EXT: initializing extension: s3eDebugHeap
+25/06/14 22:13:39.991: [0xfa0] MEMORY: s3eExtDebugHeapAlloc: 5242880 bytes allocated for system debug heap
+25/06/14 22:13:40.014: [0xfa0] UTIL: IwCallStackInit
+25/06/14 22:13:40.030: [0xfa0] GX_VERBOSE: Registering for S3E_SURFACE_SCREENSIZE callback
+25/06/14 22:13:40.037: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+25/06/14 22:13:40.045: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+25/06/14 22:13:40.053: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+25/06/14 22:13:40.071: [0xfa0] GX: IwGxSetScreenOrient: 0
+25/06/14 22:13:40.097: [0xfa0] IW_GL: EGL: eglGetDisplay returned 0B652950
+25/06/14 22:13:40.116: [0xfa0] IW_GL: eglInitialise succeeded - version 1.4
+25/06/14 22:13:40.124: [0xfa0] IW_GL: S3E_EGL_VERSION: 0104
+25/06/14 22:13:40.129: [0xfa0] IW_GL: S3E_GL_VERSION: 0200
+25/06/14 22:13:40.139: [0xfa0] IW_GL: EGL_VENDOR: Google Inc.
+25/06/14 22:13:40.159: [0xfa0] IW_GL: EGL_VERSION: 1.4 (ANGLE 1.0.0.1275)
+25/06/14 22:13:40.173: [0xfa0] IW_GL:     EGL_EXT_create_context_robustness
+25/06/14 22:13:40.225: [0xfa0] IW_GL:     EGL_ANGLE_d3d_share_handle_client_buffer
+25/06/14 22:13:40.254: [0xfa0] IW_GL:     EGL_ANGLE_query_surface_pointer
+25/06/14 22:13:40.261: [0xfa0] IW_GL:     EGL_ANGLE_surface_d3d_texture_2d_share_handle
+25/06/14 22:13:40.280: [0xfa0] IW_GL:     EGL_NV_post_sub_buffer
+25/06/14 22:13:40.294: [0xfa0] GL_CORE: rejecting config 0: EGL_DEPTH_SIZE < 16
+25/06/14 22:13:40.327: [0xfa0] GL_CORE: rejecting config 4: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.343: [0xfa0] GL_CORE: rejecting config 5 RGB < 565
+25/06/14 22:13:40.351: [0xfa0] GL_CORE: rejecting config 6: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.357: [0xfa0] GL_CORE: rejecting config 7 RGB < 565
+25/06/14 22:13:40.364: [0xfa0] GL_CORE: rejecting config 8: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.372: [0xfa0] GL_CORE: rejecting config 9 RGB < 565
+25/06/14 22:13:40.378: [0xfa0] GL_CORE: rejecting config 10: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.386: [0xfa0] GL_CORE: rejecting config 11 RGB < 565
+25/06/14 22:13:40.394: [0xfa0] GL_CORE: rejecting config 12: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.403: [0xfa0] GL_CORE: rejecting config 13: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.409: [0xfa0] GL_CORE: rejecting config 14: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.418: [0xfa0] GL_CORE: rejecting config 15: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+25/06/14 22:13:40.427: [0xfa0] GL_CORE: EGL: Chose EGL_CONFIG_ID 3
+25/06/14 22:13:40.452: [0xfa0] IW_GL: GL_VENDOR: Google Inc.
+25/06/14 22:13:40.458: [0xfa0] IW_GL: GL_RENDERER: ANGLE (Intel(R) HD Graphics)
+25/06/14 22:13:40.465: [0xfa0] IW_GL: GL_VERSION: OpenGL ES 2.0 (ANGLE 1.0.0.1275)
+25/06/14 22:13:40.471: [0xfa0] IW_GL: GL properties reported by driver:
+25/06/14 22:13:40.477: [0xfa0] IW_GL:     GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: 20
+25/06/14 22:13:40.485: [0xfa0] IW_GL:     GL_SHADER_COMPILER: 1
+25/06/14 22:13:40.490: [0xfa0] IW_GL:     GL_MAX_VERTEX_ATTRIBS: 16
+25/06/14 22:13:40.495: [0xfa0] IW_GL:     GL_MAX_VERTEX_UNIFORM_VECTORS: 254
+25/06/14 22:13:40.501: [0xfa0] IW_GL:     GL_MAX_VARYING_VECTORS: 10
+25/06/14 22:13:40.506: [0xfa0] IW_GL:     GL_MAX_TEXTURE_IMAGE_UNITS: 16
+25/06/14 22:13:40.512: [0xfa0] IW_GL:     GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS: 4
+25/06/14 22:13:40.520: [0xfa0] IW_GL:     GL_MAX_FRAGMENT_UNIFORM_VECTORS: 221
+25/06/14 22:13:40.526: [0xfa0] IW_GL:     GL_MAX_CUBE_MAP_TEXTURE_SIZE: 8192
+25/06/14 22:13:40.534: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_FORMAT: GL_RGB
+25/06/14 22:13:40.543: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_TYPE: GL_UNSIGNED_SHORT_5_6_5
+25/06/14 22:13:40.551: [0xfa0] IW_GL:     GL_MAX_RENDERBUFFER_SIZE: 8192
+25/06/14 22:13:40.557: [0xfa0] IW_GL:     GL_POINT_SIZE_MAX: -1
+25/06/14 22:13:40.563: [0xfa0] IW_GL:     GL_MAX_TEXTURE_SIZE: 8192
+25/06/14 22:13:40.585: [0xfa0] IW_GL:     GL_MAX_VIEWPORT_DIMS: (8192, 8192)
+25/06/14 22:13:40.607: [0xfa0] IW_GL: Supported GL_EXTENSIONS:
+25/06/14 22:13:40.613: [0xfa0] IW_GL:     GL_OES_packed_depth_stencil
+25/06/14 22:13:40.640: [0xfa0] IW_GL:     GL_OES_element_index_uint
+25/06/14 22:13:40.647: [0xfa0] IW_GL:     GL_OES_texture_half_float_linear
+25/06/14 22:13:40.656: [0xfa0] IW_GL:     GL_NV_fence
+25/06/14 22:13:40.664: [0xfa0] IW_GL:     GL_EXT_read_format_bgra
+25/06/14 22:13:40.673: [0xfa0] IW_GL:     GL_OES_get_program_binary
+25/06/14 22:13:40.679: [0xfa0] IW_GL:     GL_OES_rgb8_rgba8
+25/06/14 22:13:40.690: [0xfa0] IW_GL:     GL_EXT_texture_compression_dxt1
+25/06/14 22:13:40.696: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt3
+25/06/14 22:13:40.704: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt5
+25/06/14 22:13:40.713: [0xfa0] IW_GL:     GL_ARB_texture_env_combine
+25/06/14 22:13:40.724: [0xfa0] IW_GL:     GL_OES_texture_npot
+25/06/14 22:13:40.730: [0xfa0] IW_GL:     GL_EXT_texture_format_BGRA8888
+25/06/14 22:13:40.739: [0xfa0] IW_GL:     GL_OES_texture_half_float
+25/06/14 22:13:40.746: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_multisample
+25/06/14 22:13:40.763: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_blit
+25/06/14 22:13:40.784: [0xfa0] IW_GL:     GL_OES_standard_derivatives
+25/06/14 22:13:40.793: [0xfa0] IW_GL:     GL_OES_texture_float
+25/06/14 22:13:40.800: [0xfa0] IW_GL:     GL_OES_texture_float_linear
+25/06/14 22:13:40.806: [0xfa0] IW_GL:     GL_EXT_texture_filter_anisotropic
+25/06/14 22:13:40.819: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+25/06/14 22:13:40.828: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+25/06/14 22:13:40.834: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+25/06/14 22:13:40.890: [0xfa0] GX: Parsing GL driver strings
+25/06/14 22:13:40.944: [0xfa0] GX_VERBOSE: Hardware capabilities:
+25/06/14 22:13:40.969: [0xfa0] FILE: s3eFileOpen('resource_cache/cachedSize.bin', 'rb') succeeded, id=1015 p=0x00d906a0
+25/06/14 22:13:40.978: [0xfa0] FILE: s3eFileClose h=0x00d906a0
+25/06/14 22:13:41.001: [0xfa0] UTIL: Added class factory for CIwGxShaderTechnique (hash 0x62ab11c4)
+25/06/14 22:13:41.008: [0xfa0] UTIL: Added class factory for CIwGxCubeMap (hash 0x5474a064)
+25/06/14 22:13:41.022: [0xfa0] GX_VERBOSE: IwGxInit() end
+25/06/14 22:13:41.029: [0xfa0] GX_VERBOSE: _IwGxInitGL()
+25/06/14 22:13:41.039: [0xfa0] GX_VERBOSE: Reported: Max texture stages 20. Max dimensions 8192x8192
+25/06/14 22:13:41.046: [0xfa0] GX_VERBOSE: Default framebuffer binding is 0
+25/06/14 22:13:41.070: [0xfa0] GX_VERBOSE: _IwGxInitGL() end
+25/06/14 22:13:41.080: [0xfa0] FILE: s3eFileClose h=0x00d907bc
+25/06/14 22:13:41.099: [0xfa0] EXT: s3eExtGetHash: 0x167d1038 [0x09981940 size=8]
+25/06/14 22:13:41.109: [0xfa0] EXT: initializing extension: s3eEval
+25/06/14 22:13:41.119: [0xfa0] FILE: s3eFileClose h=0x00d908d8
+25/06/14 22:13:41.126: [0xfa0] UTIL: Added class factory for CIwResTemplateImage (hash 0x4d5ab6b1)
+25/06/14 22:13:41.134: [0xfa0] UTIL: Added class factory for CIwResTemplateMTL (hash 0x3a22b5bb)
+25/06/14 22:13:41.147: [0xfa0] UTIL: Added class factory for CIwResTemplateGROUP (hash 0x4d3980fb)
+25/06/14 22:13:41.157: [0xfa0] UTIL: Added class factory for CIwMaterial (hash 0x2544f997)
+25/06/14 22:13:41.163: [0xfa0] UTIL: Added class factory for CIwResGroup (hash 0xf446397f)
+25/06/14 22:13:41.175: [0xfa0] UTIL: Added class factory for CIwTexture (hash 0x3521f539)
+25/06/14 22:13:41.181: [0xfa0] UTIL: Added class factory for CIwResBuildStyle (hash 0xa59f2593)
+25/06/14 22:13:41.193: [0xfa0] RESMANAGER: Added serialise block for ResGroupMembers
+25/06/14 22:13:41.204: [0xfa0] RESMANAGER: Added serialise block for ResGroupBuildData
+25/06/14 22:13:41.211: [0xfa0] RESMANAGER: Added serialise block for ResGroupChildPaths
+25/06/14 22:13:41.219: [0xfa0] RESMANAGER: Added serialise block for ResGroupHST
+25/06/14 22:13:41.317: [0xfa0] RESMANAGER: Added serialise block for ResGroupDirectory
+25/06/14 22:13:41.355: [0xfa0] RESMANAGER: Added serialise block for ResGroupResources
+25/06/14 22:13:41.362: [0xfa0] RESMANAGER: Added serialise block for ResGroupResourcesOptimised
+25/06/14 22:13:41.503: [0xfa0] RESMANAGER: Setting build style to 'gles1'
+25/06/14 22:13:41.543: [0xfa0] UTIL: Added class factory for CIwGxFont (hash 0xa68776be)
+25/06/14 22:13:41.550: [0xfa0] UTIL: Added class factory for CIwGxFontTTFont (hash 0xc084661d)
+25/06/14 22:13:41.555: [0xfa0] UTIL: Added class factory for CIwResTemplateGXFONT (hash 0xf4d12aa4)
+25/06/14 22:13:41.564: [0xfa0] UTIL: Added class factory for CIwSoundData (hash 0xd5610dab)
+25/06/14 22:13:41.571: [0xfa0] UTIL: Added class factory for CIwSoundDataADPCM (hash 0x430758f0)
+25/06/14 22:13:41.579: [0xfa0] UTIL: Added class factory for CIwSoundGroup (hash 0x81c24cbe)
+25/06/14 22:13:41.587: [0xfa0] UTIL: Added class factory for CIwSoundSpec (hash 0xd569853c)
+25/06/14 22:13:41.598: [0xfa0] EXT: s3eExtGetHash: 0xabad5214 [0x05f2ba90 size=52]
+25/06/14 22:13:41.607: [0xfa0] EXT: initializing extension: s3eFlurry
+25/06/14 22:13:41.613: [0xfa0] EXT: initializing extension: s3eFlurry 0x0f976d6b
+25/06/14 22:13:41.619: [0xfa0] FLURRY_VERBOSE: calling s3eFlurry[0] func: s3eFlurryStartSession
+25/06/14 22:13:41.628: [0xfa0] UTIL: Found 'textures/start_game.png' using default path
+25/06/14 22:13:41.634: [0xfa0] FILE: s3eFileOpen('textures/start_game.png', 'rb') succeeded, id=1018 p=0x00d909f4
+25/06/14 22:13:41.643: [0xfa0] FILE: s3eFileClose h=0x00d909f4
+25/06/14 22:13:41.657: [0xfa0] GX_VERBOSE: Generating default shader: #define FRAGMENT 
+#define UV0_STREAM 
+#define COL_STREAM 
+#define TEX0 
+25/06/14 22:13:41.664: [0xfa0] GX_VERBOSE: Generating default shader: #define UV0_STREAM 
+#define COL_STREAM 
+25/06/14 22:13:41.704: [0xfa0] THREAD: *** Warning: The application is not calling s3eDeviceYield often enough. This can cause problems during suspend and resume. Time since last yield: 3168 ms
+25/06/14 22:13:41.724: [0xfa0] THREAD: *** Warning: The application is not calling s3eDeviceYield often enough. This can cause problems during suspend and resume. Time since last yield: 3188 ms
+25/06/14 22:13:45.805: [0xfa0] UTIL: Found 'textures/star.png' using default path
+25/06/14 22:13:45.811: [0xfa0] FILE: s3eFileOpen('textures/star.png', 'rb') succeeded, id=1019 p=0x00d90b10
+25/06/14 22:13:45.817: [0xfa0] FILE: s3eFileClose h=0x00d90b10
+25/06/14 22:13:46.918: [0xfa0] UTIL: Found 'textures/start_game.png' using default path
+25/06/14 22:13:46.923: [0xfa0] FILE: s3eFileOpen('textures/start_game.png', 'rb') succeeded, id=1020 p=0x00d90c2c
+25/06/14 22:13:46.929: [0xfa0] FILE: s3eFileClose h=0x00d90c2c
+25/06/14 22:13:47.859: [0xb60] DEVICE: s3eDeviceNotify 2
+25/06/14 22:13:47.864: [0xb60] DEVICE: done s3eDeviceNotify
+25/06/14 22:13:47.871: [0xb60] DEVICE: done RequestQuit
+25/06/14 22:13:47.878: [0xfa0] FLURRY_VERBOSE: calling s3eFlurry[1] func: s3eFlurryEndSession
+25/06/14 22:13:47.933: [0xfa0] GX_VERBOSE: IwGxTerminate
+25/06/14 22:13:47.940: [0xfa0] IW_GL: Terminating EGL...
+25/06/14 22:13:47.949: [0xfa0] IW_GL: Terminating EGL... Done
+25/06/14 22:13:47.955: [0xfa0] UTIL: IwCallStackTerm
+25/06/14 22:13:47.960: [0xfa0] FIBRE: calling s3eFibreExit() (rtn=0x00000000)
+25/06/14 22:13:47.966: [0xfa0] FIBRE: s3eFibreExit() 0x02760538
+25/06/14 22:13:47.971: [0xfa0] FIBRE: s3eFibreExit() to 0x02760514 from 0x02760538
+25/06/14 22:13:47.977: [0xfa0] THREAD: s3eThreadCancelAll
+25/06/14 22:13:47.982: [0xfa0] THREAD: done s3eThreadCancelAll
+25/06/14 22:13:47.988: [0xfa0] THREAD: all threads now dead (current=0x00000fa0)
+25/06/14 22:13:47.993: [0xfa0] LOADER: Application has exited, starting cleanup
+25/06/14 22:13:47.998: [0xfa0] LOADER: Done execute S3E 0x02764a38 [rtn=0]
+25/06/14 22:13:48.003: [0xfa0] SOUND: s3eSoundStop: started=0
+25/06/14 22:13:48.008: [0xfa0] LOADER: Unloading S3E 0x02764a38 [c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86]
+25/06/14 22:13:48.014: [0xfa0] LOADER: deleting DLL: c:\Users\Vinicius\Desktop\Yes or No\Stars\build_stars_vc12x\Debug_Stars_VC12X_x86\Stars.s86
+25/06/14 22:13:48.022: [0xfa0] DEVICE: Terminating LICENSE
+25/06/14 22:13:48.027: [0xfa0] DEVICE: Terminating VIDEO
+25/06/14 22:13:48.032: [0xfa0] DEVICE: Terminating AUDIO
+25/06/14 22:13:48.038: [0xfa0] DEVICE: Terminating SOUND
+25/06/14 22:13:48.064: [0xfa0] DEVICE: Terminating POINTER
+25/06/14 22:13:48.073: [0xfa0] DEVICE: Terminating ACCELEROMETER
+25/06/14 22:13:48.078: [0xfa0] DEVICE: Terminating GL
+25/06/14 22:13:48.083: [0xfa0] DEVICE: Terminating VIBRA
+25/06/14 22:13:48.090: [0xfa0] DEVICE: Terminating TIMER
+25/06/14 22:13:48.095: [0xfa0] DEVICE: Terminating STORAGE
+25/06/14 22:13:48.100: [0xfa0] DEVICE: Terminating SOCKET
+25/06/14 22:13:48.106: [0xfa0] DEVICE: Terminating CONFIG
+25/06/14 22:13:48.111: [0xfa0] DEVICE: Terminating ERROR
+25/06/14 22:13:48.116: [0xfa0] DEVICE: Terminating MEMORY
+25/06/14 22:13:48.126: [0xfa0] DEVICE: Terminating CRYPTO
+25/06/14 22:13:48.131: [0xfa0] DEVICE: Terminating EXT
+25/06/14 22:13:48.138: [0xfa0] EXT: terminating extension: s3eWindow
+25/06/14 22:13:48.143: [0xfa0] EXT: terminating extension: s3eThread
+25/06/14 22:13:48.148: [0xfa0] EXT: terminating extension: s3eFlurry
+25/06/14 22:13:48.153: [0xfa0] DEVICE: Terminating SURFACE
+25/06/14 22:13:48.164: [0xfa0] DEVICE: Terminating KEYBOARD
+25/06/14 22:13:48.180: [0xfa0] DEVICE: Terminating DEBUG
 -- END TRACE --

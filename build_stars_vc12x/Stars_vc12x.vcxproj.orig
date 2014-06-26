@@ -1147,6 +1147,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/signal.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/signal.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/socket.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/stat.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/stdarg.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/stdbool.h" />
@@ -1207,6 +1208,7 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3eflurry\interface\s3eFlurry_interface.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp" />
     <ClCompile Include="..\source\sceneManager.cpp" />
+    <ClCompile Include="..\source\spriteManager.cpp" />
     <ClCompile Include="..\source\timerManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

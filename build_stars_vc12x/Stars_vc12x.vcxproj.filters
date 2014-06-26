@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="(libpng)">
@@ -92,10 +92,12 @@
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </None>
     <None Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.config.txt">
-      <Filter></Filter>
+      <Filter>
+      </Filter>
     </None>
     <None Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/data/app.icf">
-      <Filter></Filter>
+      <Filter>
+      </Filter>
     </None>
     <None Include="c:/marmalade/7.2/s3e/h/std/c++/bitset">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
@@ -370,9 +372,6 @@
     <None Include="c:/marmalade/7.2/modules/third_party/zlib/zlib.mkf">
       <Filter>(zlib)</Filter>
     </None>
-    <CustomBuild Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/Stars.mkb">
-      <Filter></Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/AirplayVersion.h">
@@ -1314,6 +1313,9 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h">
       <Filter>(zlib)\h</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\spriteManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp">
@@ -1385,5 +1387,11 @@
     <ClCompile Include="..\source\timerManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\spriteManager.cpp">
+      <Filter>stars\managers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Stars.mkb" />
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ int main()
     g_pTweener = new CTweenManager();
     g_pInput = new InputManager();
     g_pAudio = new AudioManager();
+	g_pSpriteManager = new SpriteManager();
     g_pSceneManager = new SceneManager();
 
     if (s3eFlurryAvailable())
@@ -45,6 +46,7 @@ int main()
     delete g_pAudio;
     delete g_pInput;
     delete g_pSceneManager;
+	delete g_pSpriteManager;
     delete g_pTweener;
     Iw2DTerminate();
 

@@ -13,6 +13,8 @@ files
     main.cpp
 
 	[stars managers]
+	spriteManager.h
+	spriteManager.cpp
     audioManager.h
     audioManager.cpp
     inputManager.h

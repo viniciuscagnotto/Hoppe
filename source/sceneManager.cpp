@@ -2,9 +2,9 @@
 
 SceneManager* g_pSceneManager = 0;
 
-Scene::Scene() : m_IsActive(true), m_IsInputActive(false), m_type(kScene_None)
+Scene::Scene() : m_IsActive(true), m_IsInputActive(false)
 {
-    m_X = -(float)IwGxGetScreenWidth();
+
 }
 
 Scene::~Scene()
@@ -14,12 +14,15 @@ Scene::~Scene()
 
 void Scene::Init()
 {
-	 
+	m_X = 0;
+	m_IsActive = true;
+	m_IsInputActive = true;
 }
 
 void Scene::Cleanup()
 {
-
+	m_IsActive = false;
+	m_IsInputActive = false;
 }
 
 void Scene::Update(float deltaTime, float alphaMul)
@@ -38,6 +41,44 @@ void Scene::Render()
     CNode::Render();
 }
 
+bool Scene::CheckCurrent()
+{
+	if (g_pSceneManager->GetCurrent() == this && m_IsActive)
+	{
+		return true;
+	}
+	
+	return false;
+}
+
+bool Scene::CheckTouch()
+{
+	if (m_IsInputActive && !g_pInput->m_Touched && g_pInput->m_PrevTouched)
+		return true;
+
+	return false;	
+}
+
+void Scene::HandleTouch()
+{
+	g_pInput->Reset();
+}
+
+void Scene::SwitchTo(Scene::EScenes sceneType)
+{
+	g_pSceneManager->SwitchTo(g_pSceneManager->Find(sceneType));
+}
+
+void Scene::SafeDeleteObject(SpriteObject *pSpriteObject)
+{
+	if (!pSpriteObject)
+		return;
+
+	if (IsChild(pSpriteObject))
+		RemoveChild(pSpriteObject);
+
+	g_pSpriteManager->DeleteSpriteObject(pSpriteObject);
+}
 
 SceneManager::SceneManager() : m_Current(0), m_Next(0)
 {
@@ -91,7 +132,7 @@ void SceneManager::Render()
 void SceneManager::Resume()
 {
 	//TODO Save state check
-	//for now load main menu
+	//for now, load main menu
 
 	SwitchTo(Find(Scene::kScene_MainMenu));
 }
@@ -103,12 +144,8 @@ void SceneManager::OnSwitchComplete(CTween* pTween)
 
 void SceneManager::FinishSwitch()
 {
+	m_Current->Update(0); // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
 	m_Current->Cleanup();
-	
-    m_Next->SetInputActive(true);
-    m_Next->SetActive(true);
-	m_Current->Update(0);           // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
-    m_Current->SetActive(false);
 	
 	m_Next->Init();
     m_Current = m_Next;
@@ -117,27 +154,30 @@ void SceneManager::FinishSwitch()
 
 void SceneManager::SwitchTo(Scene* scene)
 {
+	if (!scene)
+		return;
+
+	if (scene == m_Current)
+		return;
+
     m_Next = scene;
     if (m_Current == 0)
     {
         m_Current = m_Next;
-        m_Current->m_X = 0;
-        m_Current->SetActive(true);
-        m_Current->SetInputActive(true);
 		m_Current->Init();
         m_Next = 0;
     }
     else
     {
         m_Current->SetInputActive(false);
-        m_Next->SetActive(true);
-        m_Next->m_X = -(float)IwGxGetScreenWidth();
-        g_pTweener->Tween(0.5f,
-                        FLOAT, &m_Next->m_X, 0.0f,
-                        FLOAT, &m_Current->m_X, (float)IwGxGetScreenWidth(),
-                        EASING, Ease::sineIn,
-                        ONCOMPLETE, OnSwitchComplete,
-                        END);
-    }
+		m_Next->SetActive(true);
+		m_Next->m_Alpha = 0.0f;
+		g_pTweener->Tween(0.5f,
+						  FLOAT, &m_Current->m_Alpha, 0.0f,
+						  FLOAT, &m_Next->m_Alpha, 1.0f,
+						  EASING, Ease::zero,
+						  ONCOMPLETE, OnSwitchComplete,
+						  END);
+     }
 }
 

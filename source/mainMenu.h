@@ -3,8 +3,11 @@
 
 class MainMenu : public Scene
 {
-protected:
-   
+public:
+
+
+private:
+	SpriteObject* m_pStartGame;
 
 public:
 	MainMenu();
@@ -14,6 +17,7 @@ public:
 	void Cleanup();
     void Update(float deltaTime = 0.0f, float alphaMul = 1.0f);
     void Render();
+	void HandleTouch();
 
 };
 
