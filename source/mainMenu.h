@@ -8,6 +8,8 @@ public:
 
 private:
 	SpriteObject* m_pStartGame;
+	SpriteObject* m_pOptions;
+	SpriteObject* m_pStuff;
 
 public:
 	MainMenu();

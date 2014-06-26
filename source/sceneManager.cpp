@@ -93,6 +93,8 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init(){
 	Add(new MainMenu());
+	Add(new Options());
+	Add(new Stuff());
 	Add(new Game());
 }
 

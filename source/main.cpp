@@ -9,6 +9,7 @@ CTweenManager*  g_pTweener = 0;
 int main()
 {
     Iw2DInit();
+	g_pSaveDataManager = new SaveDataManager();
     g_pTweener = new CTweenManager();
     g_pInput = new InputManager();
     g_pAudio = new AudioManager();
@@ -48,6 +49,7 @@ int main()
     delete g_pSceneManager;
 	delete g_pSpriteManager;
     delete g_pTweener;
+	delete g_pSaveDataManager;
     Iw2DTerminate();
 
     return 0;

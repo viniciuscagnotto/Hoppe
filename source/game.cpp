@@ -48,8 +48,7 @@ void Game::Update(float deltaTime, float alphaMul)
 void Game::Render()
 {
 	Scene::Render();
-	if (!CheckCurrent())
-		return;
+	
 }
 
 void Game::HandleTouch()

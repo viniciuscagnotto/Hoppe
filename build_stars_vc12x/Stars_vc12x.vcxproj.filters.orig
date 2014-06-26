@@ -984,6 +984,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/new.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/options.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/ostream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
@@ -1164,6 +1167,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h">
       <Filter>'Marmalade System (S3E)'\Extensions</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/sceneManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
@@ -1247,6 +1253,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/strstream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/stuff.h">
+      <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/syslog.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
@@ -1373,6 +1382,9 @@
     <ClCompile Include="..\source\mainMenu.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\options.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
     <ClCompile Include="c:\marmalade\7.2\extensions\s3efacebook\interface\s3eFacebook_interface.cpp">
       <Filter>Extensions\s3eFacebook\interface</Filter>
     </ClCompile>
@@ -1382,11 +1394,17 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp">
       <Filter>Extensions\s3eWebView\interface</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\savedataManager.cpp">
+      <Filter>stars\managers</Filter>
+    </ClCompile>
     <ClCompile Include="..\source\sceneManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
     <ClCompile Include="..\source\spriteManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\stuff.cpp">
+      <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\timerManager.cpp">
       <Filter>stars\managers</Filter>

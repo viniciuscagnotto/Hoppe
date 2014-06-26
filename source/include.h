@@ -22,6 +22,7 @@ using namespace Iw2DSceneGraph;
 #include "main.h"
 
 //managers
+#include "savedataManager.h"
 #include "spriteManager.h"
 #include "inputManager.h"
 #include "audioManager.h"
@@ -29,5 +30,7 @@ using namespace Iw2DSceneGraph;
 #include "sceneManager.h"
 
 //scenes
-#include "game.h"
 #include "mainMenu.h"
+#include "options.h"
+#include "stuff.h"
+#include "game.h"

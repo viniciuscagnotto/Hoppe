@@ -13,6 +13,8 @@ files
     main.cpp
 
 	[stars managers]
+	savedataManager.cpp
+	savedataManager.h
 	spriteManager.h
 	spriteManager.cpp
     audioManager.h
@@ -29,6 +31,10 @@ files
     game.cpp
     mainMenu.h
     mainMenu.cpp
+	options.h
+	options.cpp
+	stuff.h
+	stuff.cpp
 }
 
 assets
