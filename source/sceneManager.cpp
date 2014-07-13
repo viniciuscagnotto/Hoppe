@@ -94,7 +94,10 @@ SceneManager::~SceneManager()
 void SceneManager::Init(){
 	Add(new MainMenu());
 	Add(new Options());
-	Add(new Stuff());
+	Add(new Store());
+	Add(new Customize());
+	Add(new Items());
+	Add(new GetStars());
 	Add(new Game());
 }
 
@@ -146,7 +149,7 @@ void SceneManager::OnSwitchComplete(CTween* pTween)
 
 void SceneManager::FinishSwitch()
 {
-	m_Current->Update(0); // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
+	//m_Current->Update(0); // Update one last time to ensure that last tweened values get set because on the next frame the scene will inactive
 	m_Current->Cleanup();
 	
 	m_Next->Init();
@@ -174,12 +177,14 @@ void SceneManager::SwitchTo(Scene* scene)
         m_Current->SetInputActive(false);
 		m_Next->SetActive(true);
 		m_Next->m_Alpha = 0.0f;
-		g_pTweener->Tween(0.5f,
+
+		OnSwitchComplete(0);
+		/*g_pTweener->Tween(0.5f,
 						  FLOAT, &m_Current->m_Alpha, 0.0f,
 						  FLOAT, &m_Next->m_Alpha, 1.0f,
 						  EASING, Ease::zero,
 						  ONCOMPLETE, OnSwitchComplete,
-						  END);
+						  END);*/
      }
 }
 

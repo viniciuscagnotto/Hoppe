@@ -1,30 +1,30 @@
 #include "include.h"
 
-Stuff::Stuff()
+GetStars::GetStars()
 {
-	m_type = kScene_Stuff;
+	m_type = kScene_GetStars;
 
 }
 
 
-Stuff::~Stuff()
+GetStars::~GetStars()
 {
 	Cleanup();
 }
 
-void Stuff::Init()
+void GetStars::Init()
 {
 	Scene::Init();
 
 }
 
-void Stuff::Cleanup()
+void GetStars::Cleanup()
 {
 
 	Scene::Cleanup();
 }
 
-void Stuff::Update(float deltaTime, float alphaMul)
+void GetStars::Update(float deltaTime, float alphaMul)
 {
 	if (!CheckCurrent())
 		return;
@@ -36,13 +36,13 @@ void Stuff::Update(float deltaTime, float alphaMul)
 
 }
 
-void Stuff::Render()
+void GetStars::Render()
 {
 	Scene::Render();
 
 }
 
-void Stuff::HandleTouch()
+void GetStars::HandleTouch()
 {
 	Scene::HandleTouch();
 	SwitchTo(kScene_MainMenu);

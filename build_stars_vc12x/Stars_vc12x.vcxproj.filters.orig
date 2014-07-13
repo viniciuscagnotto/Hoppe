@@ -792,6 +792,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/ctype.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/customize.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/dir.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
@@ -838,6 +841,9 @@
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/game.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/getStars.h">
       <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/getopt.h">
@@ -902,6 +908,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/istream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/items.h">
+      <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/jchuff.h">
       <Filter>(libjpeg)\h</Filter>
@@ -1242,6 +1251,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/stl_user_config.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/store.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/streambuf.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
@@ -1253,9 +1265,6 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/strstream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/stuff.h">
-      <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/syslog.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
@@ -1370,11 +1379,20 @@
     <ClCompile Include="..\source\audioManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\customize.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
     <ClCompile Include="..\source\game.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\getStars.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\inputManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\items.cpp">
+      <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\main.cpp">
       <Filter>stars\main</Filter>
@@ -1403,7 +1421,7 @@
     <ClCompile Include="..\source\spriteManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\stuff.cpp">
+    <ClCompile Include="..\source\store.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\timerManager.cpp">

@@ -11,7 +11,10 @@ public:
 		kScene_MainMenu,
 		kScene_Options,
 		kScene_Game,
-		kScene_Stuff,
+		kScene_Store,
+		kScene_Customize,
+		kScene_Items,
+		kScene_GetStars,
 
 		kScene_Count
 	};

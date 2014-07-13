@@ -68,7 +68,7 @@ class DefaultConfig(DeployConfig):
     ws8_ext_managed_dll = []
     ws8_ext_sdk_manifest_part = []
     ws8_ext_device_capabilities = []
-    iphone_appid = 'com.ideaworks3d.s3eIOSGameCenter'
+    iphone_appid = 'com.yesornogames.countingstarts'
     android_external_jars = ['c:/marmalade/7.2/extensions/s3ewebview/lib/android/s3eWebView.jar', 'c:/marmalade/7.2/extensions/s3efacebook/lib/android/s3eFacebook.jar', 'c:/marmalade/7.2/extensions/s3efacebook/facebook-android-sdk/libs/android-support-v4.jar', 'c:/marmalade/7.2/extensions/s3efacebook/lib/android/annotations-4.1.1.4.jar', 'c:/marmalade/7.2/extensions/s3eflurry/lib/android/s3eFlurry.jar', 'c:/marmalade/7.2/extensions/s3eflurry/lib/android/FlurryAgent.jar']
     android_supports_gl_texture = []
     ws81_ext_sdk_manifest_part = []

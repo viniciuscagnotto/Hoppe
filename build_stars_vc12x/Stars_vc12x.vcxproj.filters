@@ -83,6 +83,9 @@
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
     </Filter>
+    <Filter Include="stars\entities">
+      <UniqueIdentifier>{f46db6de-162b-472b-ad82-ca8451569caf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="c:/marmalade/7.2/modules/iwgx/h/IwClip.inl">
@@ -1316,14 +1319,23 @@
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/options.h">
       <Filter>stars\scenes</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/stuff.h">
-      <Filter>stars\scenes</Filter>
-    </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
       <Filter>stars\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/customize.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/getStars.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/items.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/store.h">
+      <Filter>stars\scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1402,11 +1414,20 @@
     <ClCompile Include="..\source\options.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\stuff.cpp">
-      <Filter>stars\scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\savedataManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\store.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\customize.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\items.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\getStars.cpp">
+      <Filter>stars\scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

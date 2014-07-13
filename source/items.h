@@ -1,8 +1,8 @@
-#if !defined(__STUFF_H__)
-#define __STUFF_H__
+#if !defined(__ITEMS_H__)
+#define __ITEMS_H__
 
 
-class Stuff : public Scene
+class Items : public Scene
 {
 public:
 
@@ -11,8 +11,8 @@ private:
 
 
 public:
-	Stuff();
-	~Stuff();
+	Items();
+	~Items();
 
 	void Init();
 	void Cleanup();
@@ -21,5 +21,5 @@ public:
 	void HandleTouch();
 };
 
-#endif  // __STUFF_H__
+#endif  // __ITEMS_H__
 

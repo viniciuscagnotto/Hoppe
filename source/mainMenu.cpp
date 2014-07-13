@@ -3,7 +3,7 @@
 MainMenu::MainMenu():
 m_pStartGame(0),
 m_pOptions(0),
-m_pStuff(0)
+m_pStore(0)
 {
 	m_type = kScene_MainMenu;
 
@@ -25,27 +25,27 @@ void MainMenu::Init()
 	m_pStartGame->m_Y = IwGxGetScreenHeight() * 0.5f - 120.0f;
 	AddChild(m_pStartGame);
 
+	m_pStore = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
+	m_pStore->m_X = IwGxGetScreenWidth() * 0.5f;
+	m_pStore->m_Y = IwGxGetScreenHeight() * 0.5f + 120.0f;
+	AddChild(m_pStore);
+
 	m_pOptions = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
 	m_pOptions->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pOptions->m_Y = IwGxGetScreenHeight() * 0.5f;
 	AddChild(m_pOptions);
-
-	m_pStuff = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
-	m_pStuff->m_X = IwGxGetScreenWidth() * 0.5f;
-	m_pStuff->m_Y = IwGxGetScreenHeight() * 0.5f + 120.0f;
-	AddChild(m_pStuff);
 }
 
 void MainMenu::Cleanup()
 {
+	SafeDeleteObject(m_pOptions);
+	m_pOptions = 0;
+	
 	SafeDeleteObject(m_pStartGame);
 	m_pStartGame = 0;
 
-	SafeDeleteObject(m_pOptions);
-	m_pOptions = 0;
-
-	SafeDeleteObject(m_pStuff);
-	m_pStuff = 0;
+	SafeDeleteObject(m_pStore);
+	m_pStore = 0;
 
 	Scene::Cleanup();
 }
@@ -77,11 +77,12 @@ void MainMenu::HandleTouch()
 		if (m_pStartGame->HitTest(g_pInput->m_X, g_pInput->m_Y))
 			SwitchTo(kScene_Game);
 
+	if (m_pStore)
+		if (m_pStore->HitTest(g_pInput->m_X, g_pInput->m_Y))
+			SwitchTo(kScene_Store);
+
 	if (m_pOptions)
 		if (m_pOptions->HitTest(g_pInput->m_X, g_pInput->m_Y))
 			SwitchTo(kScene_Options);
 
-	if (m_pStuff)
-		if (m_pStuff->HitTest(g_pInput->m_X, g_pInput->m_Y))
-			SwitchTo(kScene_Stuff);
 }

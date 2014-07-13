@@ -83,6 +83,9 @@
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
     </Filter>
+    <Filter Include="stars\entities">
+      <UniqueIdentifier>{f46db6de-162b-472b-ad82-ca8451569caf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="c:/marmalade/7.2/modules/iwgx/h/IwClip.inl">
@@ -1322,6 +1325,9 @@
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp">
@@ -1401,6 +1407,9 @@
     </ClCompile>
     <ClCompile Include="..\source\stuff.cpp">
       <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\savedataManager.cpp">
+      <Filter>stars\managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

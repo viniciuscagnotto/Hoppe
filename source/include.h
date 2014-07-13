@@ -32,5 +32,8 @@ using namespace Iw2DSceneGraph;
 //scenes
 #include "mainMenu.h"
 #include "options.h"
-#include "stuff.h"
+#include "store.h"
+#include "customize.h"
+#include "items.h"
+#include "getStars.h"
 #include "game.h"
