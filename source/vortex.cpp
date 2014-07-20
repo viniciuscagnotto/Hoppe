@@ -26,7 +26,7 @@ void Vortex::Update()
 	GameObject::Update();
 
 	if (GetAlpha() > 0){
-		ChangeAlpha(-0.05f);
+		AddAlpha(-0.05f);
 	}else{
 		m_destroyMe = true;
 	}

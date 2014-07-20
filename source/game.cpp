@@ -80,16 +80,15 @@ void Game::UpdateVortexList(){
 				pVortex->Cleanup();
 				delete pVortex;
 				m_vortexList.RemoveAt(i);
+				i--;
 				continue;
 			}
 
 			if (pVortex->CheckHit(&m_player)){
 				if (pVortex->GetDistanceX(&m_player) >= 0){
 					m_player.SetSpeed(3.0f);
-					IwTrace(Game, ("ADD SPEED"));
 				}else{
 					m_player.SetSpeed(-3.0f);
-					IwTrace(Game, ("REMOVE SPEED"));
 				}
 			}
 		}

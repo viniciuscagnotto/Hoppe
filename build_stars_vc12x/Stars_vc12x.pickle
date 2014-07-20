@@ -75,8 +75,7 @@ p35
 g4
 sS'execute'
 p36
-I01
-sS'compile-static'
+NsS'compile-static'
 p37
 NsS'msvc-project'
 p38
@@ -329,11 +328,12 @@ aS'--x86'
 p145
 aS'--no-ide'
 p146
-aS'--execute'
+aS'--make'
 p147
 asS'make'
 p148
-NsS'optimise-speed'
+I01
+sS'optimise-speed'
 p149
 NsS'internal'
 p150

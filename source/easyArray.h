@@ -39,10 +39,9 @@ public:
 
 	void RemoveAt(unsigned int index){
 		m_items[index] = 0;
-		for (unsigned int i = index; i < m_numItems-1; i++){
+		for (unsigned int i = index; i < m_numItems; i++){
 			m_items[i] = m_items[i + 1];
 		}
-
 		m_numItems--;
 	}
 
@@ -55,7 +54,7 @@ public:
 	unsigned int Size(){ return m_numItems; };
 	unsigned int MaxSize(){ return m_maxItems; };
 
-	T& operator[](unsigned int index){ return GetAt(nIndex); };
+	T& operator[](unsigned int index){ return GetAt(index); };
 };
 
 #endif  // __EASY_ARRAY_H__

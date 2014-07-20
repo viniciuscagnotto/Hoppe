@@ -25,7 +25,8 @@ public:
 
 	void AddSpeed(float amount){ m_speed += amount; };
 	void SetSpeed(float newSpeed){ m_speed = newSpeed; };
-	void ChangeAlpha(float amount);
+	void AddAlpha(float amount);
+	void SetAlpha(float newAlpha);
 	float GetAlpha(){ return (m_pSprite1 ? m_pSprite1->m_Alpha : 0.0f); };
 	bool CanDestroyMe(){ return m_destroyMe; };
 

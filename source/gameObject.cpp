@@ -85,12 +85,36 @@ void GameObject::AddTo(Scene *pScene)
 	m_pParent = pScene;
 }
 
-void GameObject::ChangeAlpha(float amount){
+void GameObject::AddAlpha(float amount){
 	if (!m_pSprite1 || !m_pSprite2)
 		return;
 
 	m_pSprite1->m_Alpha += amount;
 	m_pSprite2->m_Alpha += amount;
+
+	if (m_pSprite1->m_Alpha < 0){
+		m_pSprite1->m_Alpha = 0;
+		m_pSprite2->m_Alpha = 0;
+	}else if (m_pSprite1->m_Alpha > 1.0f){
+		m_pSprite1->m_Alpha = 1.0f;
+		m_pSprite2->m_Alpha = 1.0f;
+	}
+}
+
+void GameObject::SetAlpha(float newAlpha){
+	if (!m_pSprite1 || !m_pSprite2)
+		return;
+
+	m_pSprite1->m_Alpha = newAlpha;
+	m_pSprite2->m_Alpha = newAlpha;
+
+	if (m_pSprite1->m_Alpha < 0){
+		m_pSprite1->m_Alpha = 0;
+		m_pSprite2->m_Alpha = 0;
+	}else if (m_pSprite1->m_Alpha > 1.0f){
+		m_pSprite1->m_Alpha = 1.0f;
+		m_pSprite2->m_Alpha = 1.0f;
+	}
 }
 
 bool GameObject::CheckHit(GameObject* gameObject){
