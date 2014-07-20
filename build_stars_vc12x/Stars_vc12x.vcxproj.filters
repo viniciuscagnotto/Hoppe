@@ -1351,11 +1351,11 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h">
       <Filter>(zlib)\h</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\vortex.h">
-      <Filter>stars\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\easyArray.h">
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/easyArray.h">
       <Filter>stars\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/vortex.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1463,9 +1463,6 @@
     </ClCompile>
     <ClCompile Include="..\source\vortex.cpp">
       <Filter>stars\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\easyArray.cpp">
-      <Filter>stars\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

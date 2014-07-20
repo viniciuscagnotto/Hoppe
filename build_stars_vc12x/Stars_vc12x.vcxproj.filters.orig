@@ -1404,9 +1404,6 @@
     <ClCompile Include="..\source\customize.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\easyArray.cpp">
-      <Filter>stars\utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\game.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>

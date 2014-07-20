@@ -949,8 +949,6 @@ chdir /d "c:\marmalade\7.2\s3e\bin"
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\source\easyArray.h" />
-    <ClInclude Include="..\source\vortex.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/AirplayVersion.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/iw2d/h/Iw2D.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/iw2dscenegraph/h/Iw2DSceneGraph.h" />
@@ -1094,6 +1092,7 @@ chdir /d "c:\marmalade\7.2\s3e\bin"
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/dir.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/dirent.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/dlfcn.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/easyArray.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/EGL/egl.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/GLES/egl.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/EGL/eglext.h" />
@@ -1270,6 +1269,7 @@ chdir /d "c:\marmalade\7.2\s3e\bin"
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/unistd.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/utime.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/utsname.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/vortex.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/wait.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/wchar.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/wctype.h" />
@@ -1277,8 +1277,6 @@ chdir /d "c:\marmalade\7.2\s3e\bin"
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\easyArray.cpp" />
-    <ClCompile Include="..\source\vortex.cpp" />
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp" />
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraphcore\source\Iw2DSceneGraphCore.cpp" />
     <ClCompile Include="..\modules\soundengine\source\IwResHandlerWAV.cpp" />
@@ -1313,6 +1311,7 @@ chdir /d "c:\marmalade\7.2\s3e\bin"
     <ClCompile Include="..\source\spriteManager.cpp" />
     <ClCompile Include="..\source\store.cpp" />
     <ClCompile Include="..\source\timerManager.cpp" />
+    <ClCompile Include="..\source\vortex.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

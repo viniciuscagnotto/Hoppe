@@ -1213,7 +1213,6 @@
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp" />
     <ClCompile Include="..\source\audioManager.cpp" />
     <ClCompile Include="..\source\customize.cpp" />
-    <ClCompile Include="..\source\easyArray.cpp" />
     <ClCompile Include="..\source\game.cpp" />
     <ClCompile Include="..\source\gameObject.cpp" />
     <ClCompile Include="..\source\getStars.cpp" />

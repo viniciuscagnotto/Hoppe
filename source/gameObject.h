@@ -5,9 +5,9 @@ class GameObject
 {
 protected:
 	bool m_destroyMe;
-	float m_speed; 
+	float m_speed;
 	Scene *m_pParent;
-	
+
 	SpriteObject* m_pSprite1;
 	SpriteObject* m_pSprite2;
 
@@ -21,9 +21,10 @@ public:
 
 	void AddTo(Scene *pScene);
 	bool CheckHit(GameObject* gameObject);
-	bool CheckHit(SpriteObject* spriteObject);
+	float GetDistanceX(GameObject* gameObject);
 
 	void AddSpeed(float amount){ m_speed += amount; };
+	void SetSpeed(float newSpeed){ m_speed = newSpeed; };
 	void ChangeAlpha(float amount);
 	float GetAlpha(){ return (m_pSprite1 ? m_pSprite1->m_Alpha : 0.0f); };
 	bool CanDestroyMe(){ return m_destroyMe; };

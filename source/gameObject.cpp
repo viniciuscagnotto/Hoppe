@@ -51,17 +51,17 @@ void GameObject::Update()
 	m_pSprite2->m_X += m_speed;
 
 	if (m_speed > 0){ // Going Right
-		if (m_pSprite1->m_X - m_pSprite1->m_W * 0.5f > IwGxGetScreenWidth())
+		if (m_pSprite1->m_X - m_pSprite1->RealW() * 0.5f > IwGxGetScreenWidth())
 			m_pSprite1->m_X = m_pSprite2->m_X - IwGxGetScreenWidth();
 
-		if (m_pSprite2->m_X - m_pSprite2->m_W * 0.5f > IwGxGetScreenWidth())
+		if (m_pSprite2->m_X - m_pSprite2->RealW() * 0.5f > IwGxGetScreenWidth())
 			m_pSprite2->m_X = m_pSprite1->m_X - IwGxGetScreenWidth();
 
 	}else if (m_speed < 0){ // Going Left
-		if (m_pSprite1->m_X + m_pSprite1->m_W * 0.5f < 0)
+		if (m_pSprite1->m_X + m_pSprite1->RealW() * 0.5f < 0)
 			m_pSprite1->m_X = m_pSprite2->m_X + IwGxGetScreenWidth();
 
-		if (m_pSprite2->m_X + m_pSprite2->m_W * 0.5f < 0)
+		if (m_pSprite2->m_X + m_pSprite2->RealW() * 0.5f < 0)
 			m_pSprite2->m_X = m_pSprite1->m_X + IwGxGetScreenWidth();
 	}else{
 		if (m_pSprite1->m_X > IwGxGetScreenWidth() * 0.5f)
@@ -95,32 +95,54 @@ void GameObject::ChangeAlpha(float amount){
 
 bool GameObject::CheckHit(GameObject* gameObject){
 
-	if (CheckHit(gameObject->GetSprite1()))
-		return true;
-
-	if (CheckHit(gameObject->GetSprite2()))
+	if (g_pSpriteManager->Intersects(m_pSprite1, gameObject->GetSprite1()) ||
+		g_pSpriteManager->Intersects(m_pSprite1, gameObject->GetSprite2()) ||
+		g_pSpriteManager->Intersects(m_pSprite2, gameObject->GetSprite1()) ||
+		g_pSpriteManager->Intersects(m_pSprite2, gameObject->GetSprite2()))
 		return true;
 
 	return false;
 }
 
-bool GameObject::CheckHit(SpriteObject* spriteObject){
+float GameObject::GetDistanceX(GameObject* gameObject){
+	SpriteObject *pInSceneObject = 0;
+	SpriteObject *pInSceneObject2 = 0;
 
-	float leftPosX = spriteObject->m_X - spriteObject->m_W * 0.5f;
-	float rightPosX = spriteObject->m_X + spriteObject->m_W * 0.5f;
+	if (m_pSprite1->IsInScene() && m_pSprite2->IsInScene()){
+		if (gameObject->GetSprite1()->IsInScene() && gameObject->GetSprite2()->IsInScene()){
+			pInSceneObject = m_pSprite1;
+			pInSceneObject2 = gameObject->GetSprite1();
+			float distance = fabsf(pInSceneObject->m_X - gameObject->GetSprite1()->m_X);
+			if (fabsf(pInSceneObject->m_X - gameObject->GetSprite2()->m_X) < distance)
+				pInSceneObject2 = gameObject->GetSprite2();
+		}else{
+			pInSceneObject2 = gameObject->GetSprite1();
+			if (gameObject->GetSprite2()->IsInScene())
+				pInSceneObject2 = gameObject->GetSprite2();
+			
+			pInSceneObject = m_pSprite1;
+			float distance = fabsf(pInSceneObject2->m_X - m_pSprite1->m_X);
+			if (fabsf(pInSceneObject2->m_X - m_pSprite2->m_X) < distance)
+				pInSceneObject = m_pSprite2;
+		}
+	}else{
+		pInSceneObject = m_pSprite1;
+		if (m_pSprite2->IsInScene())
+			pInSceneObject = m_pSprite2;
 
-	float upPosX = spriteObject->m_Y - spriteObject->m_H * 0.5f;
-	float downPosX = spriteObject->m_Y + spriteObject->m_H * 0.5f;
-
-	if (m_pSprite1->HitTest(leftPosX, upPosX) ||
-		m_pSprite1->HitTest(leftPosX, downPosX) ||
-		m_pSprite1->HitTest(rightPosX, upPosX) ||
-		m_pSprite1->HitTest(rightPosX, downPosX) ||
-		m_pSprite2->HitTest(leftPosX, upPosX) ||
-		m_pSprite2->HitTest(leftPosX, downPosX) ||
-		m_pSprite2->HitTest(rightPosX, upPosX) ||
-		m_pSprite2->HitTest(rightPosX, downPosX))
-		return true;
-
-	return false;
+		if (gameObject->GetSprite1()->IsInScene() && gameObject->GetSprite2()->IsInScene()){
+			pInSceneObject2 = gameObject->GetSprite1();
+			float distance = fabsf(pInSceneObject->m_X - gameObject->GetSprite1()->m_X);
+			if (fabsf(pInSceneObject->m_X - gameObject->GetSprite2()->m_X) < distance)
+				pInSceneObject2 = gameObject->GetSprite2();
+		}else{
+			pInSceneObject2 = gameObject->GetSprite1();
+			if (gameObject->GetSprite2()->IsInScene())
+				pInSceneObject2 = gameObject->GetSprite2();
+		}
+	}
+	
+	if (pInSceneObject && pInSceneObject2)
+		return pInSceneObject2->m_X - pInSceneObject->m_X;
+	return 0;
 }

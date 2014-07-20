@@ -22,7 +22,6 @@ files
 
 	[stars utils]
 	easyArray.h
-	easyArray.cpp
 
 	[stars managers]
 	savedataManager.h

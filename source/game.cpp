@@ -31,12 +31,7 @@ void Game::Init()
 	//Loading Player
 	m_player.Init();
 	m_player.AddTo(this);
-	//m_player.AddSpeed(1.0f);
-
-	//Vortex List
-	for (unsigned int i = 0; i < s_kMaxVortex; i++)
-		m_vortexList[i] = 0;
-	m_numVortex = 0;
+	
 }
 
 void Game::Cleanup()
@@ -77,28 +72,26 @@ void Game::Update(float deltaTime, float alphaMul)
 }
 
 void Game::UpdateVortexList(){
-	for (unsigned int i = 0; i < m_numVortex; i++){
-		Vortex *pVortex = m_vortexList[i];
+	for (unsigned int i = 0; i < m_vortexList.Size(); i++){
+		Vortex *pVortex = m_vortexList.GetAt(i);
 		if (pVortex){
 			pVortex->Update();
 			if (pVortex->CanDestroyMe()){
 				pVortex->Cleanup();
 				delete pVortex;
-				m_vortexList[i] = 0;
-
-				//test
-				for (unsigned int j = i+1; j < m_numVortex; j++){
-					m_vortexList[i] = m_vortexList[j];
-				}
-
-				m_numVortex--;
+				m_vortexList.RemoveAt(i);
 				continue;
 			}
 
 			if (pVortex->CheckHit(&m_player)){
-				m_player.AddSpeed(0.04f);
+				if (pVortex->GetDistanceX(&m_player) >= 0){
+					m_player.SetSpeed(3.0f);
+					IwTrace(Game, ("ADD SPEED"));
+				}else{
+					m_player.SetSpeed(-3.0f);
+					IwTrace(Game, ("REMOVE SPEED"));
+				}
 			}
-
 		}
 	}
 }
@@ -106,16 +99,15 @@ void Game::UpdateVortexList(){
 
 
 void Game::CleanupVortexList(){
-	for (unsigned int i = 0; i < m_numVortex; i++){
-		Vortex *pVortex = m_vortexList[i];
+	for (unsigned int i = 0; i < m_vortexList.Size(); i++){
+		Vortex *pVortex = m_vortexList.GetAt(i);
 		if (pVortex){
 			pVortex->Cleanup();
 			delete pVortex;
-			m_vortexList[i] = 0;
-
 		}
 	}
-	m_numVortex = 0;
+
+	m_vortexList.RemoveAll();
 }
 
 void Game::Render()
@@ -131,5 +123,5 @@ void Game::HandleTouch()
 	Vortex *newVortex = new Vortex();
 	newVortex->Init((float)g_pInput->m_X, (float)g_pInput->m_Y);
 	newVortex->AddTo(this);
-	m_vortexList[m_numVortex++] = newVortex;
+	m_vortexList.Add(newVortex);
 }

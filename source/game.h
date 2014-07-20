@@ -5,15 +5,14 @@
 class Game : public Scene
 {
 public:
-	static const int s_kMaxVortex = 8;
+	static const int s_kMaxVortex = 16;
 
 private:
 	ParallaxManager m_background;
 	ParallaxManager m_backEarth;
 	ParallaxManager m_backSatellite;
 
-	Vortex* m_vortexList[s_kMaxVortex];
-	unsigned int m_numVortex;
+	EasyArray<Vortex *, s_kMaxVortex> m_vortexList;
 	Player m_player;
 
 public:
