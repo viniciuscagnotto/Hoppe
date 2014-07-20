@@ -20,17 +20,17 @@ void MainMenu::Init()
 	Scene::Init();
 
 	//Loading Buttons
-	m_pStartGame = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
+	m_pStartGame = g_pSpriteManager->CreateSpriteObject(ResourceManager::kResource_Button_StartGame);
 	m_pStartGame->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pStartGame->m_Y = IwGxGetScreenHeight() * 0.5f - 120.0f;
 	AddChild(m_pStartGame);
 
-	m_pStore = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
+	m_pStore = g_pSpriteManager->CreateSpriteObject(ResourceManager::kResource_Button_StartGame);
 	m_pStore->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pStore->m_Y = IwGxGetScreenHeight() * 0.5f + 120.0f;
 	AddChild(m_pStore);
 
-	m_pOptions = g_pSpriteManager->CreateSpriteObject("textures/start_game.png");
+	m_pOptions = g_pSpriteManager->CreateSpriteObject(ResourceManager::kResource_Button_StartGame);
 	m_pOptions->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pOptions->m_Y = IwGxGetScreenHeight() * 0.5f;
 	AddChild(m_pOptions);

@@ -16,18 +16,31 @@ using namespace Iw2DSceneGraph;
 #include "s3eFlurry.h"
 
 //C++
+#include <iostream>
 #include <list>
+#include <map>
+#include <vector>
 
 //main
 #include "main.h"
 
+//utils
+#include "easyArray.h"
+
 //managers
 #include "savedataManager.h"
+#include "resourceManager.h"
 #include "spriteManager.h"
+#include "parallaxManager.h"
 #include "inputManager.h"
 #include "audioManager.h"
 #include "timerManager.h"
 #include "sceneManager.h"
+
+//entities
+#include "gameObject.h"
+#include "player.h"
+#include "vortex.h"
 
 //scenes
 #include "mainMenu.h"

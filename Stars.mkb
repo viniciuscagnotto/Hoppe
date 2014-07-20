@@ -8,16 +8,27 @@ files
 {
     (source)
 	[stars entities]
-
+	gameObject.h
+	gameObject.cpp
+	player.h
+	player.cpp
+	vortex.h
+	vortex.cpp
 
 	[stars main]
 	include.h
     main.h
     main.cpp
 
+	[stars utils]
+	easyArray.h
+	easyArray.cpp
+
 	[stars managers]
-	savedataManager.cpp
 	savedataManager.h
+	savedataManager.cpp
+	resourceManager.h
+	resourceManager.cpp
 	spriteManager.h
 	spriteManager.cpp
     audioManager.h
@@ -28,6 +39,8 @@ files
     sceneManager.cpp
 	timerManager.h
 	timerManager.cpp 
+	parallaxManager.h
+	parallaxManager.cpp
 
 	[stars scenes]
     game.h
@@ -70,7 +83,7 @@ subprojects
 
 deployments
 {
-    iphone-bundle-url-name="ADD_YOUR_OWN_APP_ID"
+    iphone-bundle-url-name="com.yesornogames.countingstarts"
     iphone-bundle-url-schemes="fd<FACEBOOK_APP_ID>"
 	
 	# Note the App/Bundle ID must be set to the same value as an app registered

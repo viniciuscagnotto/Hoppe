@@ -9,17 +9,10 @@ public:
 	SpriteObject() : m_pTexture(0){};
 };
 
-class GameObject
-{
-public:
-	SpriteObject *m_pFirstObject;
-	SpriteObject *m_pSecondObject;
-};
-
 class SpriteManager
 {
 public:
-	SpriteObject* CreateSpriteObject(const char* filename);
+	SpriteObject* CreateSpriteObject(ResourceManager::EResources id);
 	void DeleteSpriteObject(SpriteObject *pSpriteObject);
 };
 

@@ -63,6 +63,8 @@
     </Filter>
     <Filter Include="Extensions">
     </Filter>
+    <Filter Include="stars\entities">
+    </Filter>
     <Filter Include="Extensions\s3eFacebook\interface">
     </Filter>
     <Filter Include="Extensions\s3eFlurry">
@@ -83,8 +85,8 @@
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
     </Filter>
-    <Filter Include="stars\entities">
-      <UniqueIdentifier>{f46db6de-162b-472b-ad82-ca8451569caf}</UniqueIdentifier>
+    <Filter Include="stars\utils">
+      <UniqueIdentifier>{29a9042c-1c4f-4abb-801b-5e6206a331c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -794,6 +796,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/ctype.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/customize.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/dir.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
@@ -840,6 +845,12 @@
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/game.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/gameObject.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/getStars.h">
       <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/getopt.h">
@@ -904,6 +915,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/istream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/items.h">
+      <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/jchuff.h">
       <Filter>(libjpeg)\h</Filter>
@@ -986,11 +1000,20 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/new.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/options.h">
+      <Filter>stars\scenes</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/ostream.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/parallaxManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/param.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/player.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libpng/h/png.h">
       <Filter>(libpng)\h</Filter>
@@ -1021,6 +1044,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/resource.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/resourceManager.h">
+      <Filter>stars\managers</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/rlocks.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
@@ -1166,6 +1192,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h">
       <Filter>'Marmalade System (S3E)'\Extensions</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/sceneManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
@@ -1208,6 +1237,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/socket.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/stat.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
@@ -1234,6 +1266,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/stl_user_config.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/store.h">
+      <Filter>stars\scenes</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/streambuf.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
@@ -1316,26 +1351,11 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h">
       <Filter>(zlib)\h</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/options.h">
-      <Filter>stars\scenes</Filter>
+    <ClInclude Include="..\source\vortex.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h">
-      <Filter>stars\managers</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
-      <Filter>stars\managers</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/customize.h">
-      <Filter>stars\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/getStars.h">
-      <Filter>stars\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/items.h">
-      <Filter>stars\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/store.h">
-      <Filter>stars\scenes</Filter>
+    <ClInclude Include="..\source\easyArray.h">
+      <Filter>stars\utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1381,17 +1401,41 @@
     <ClCompile Include="..\source\audioManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\customize.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
     <ClCompile Include="..\source\game.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\gameObject.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\getStars.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\inputManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\items.cpp">
+      <Filter>stars\scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\source\main.cpp">
       <Filter>stars\main</Filter>
     </ClCompile>
     <ClCompile Include="..\source\mainMenu.cpp">
       <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\options.cpp">
+      <Filter>stars\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\parallaxManager.cpp">
+      <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\player.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\resourceManager.cpp">
+      <Filter>stars\managers</Filter>
     </ClCompile>
     <ClCompile Include="c:\marmalade\7.2\extensions\s3efacebook\interface\s3eFacebook_interface.cpp">
       <Filter>Extensions\s3eFacebook\interface</Filter>
@@ -1402,32 +1446,26 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp">
       <Filter>Extensions\s3eWebView\interface</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\sceneManager.cpp">
+    <ClCompile Include="..\source\savedataManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\timerManager.cpp">
+    <ClCompile Include="..\source\sceneManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
     <ClCompile Include="..\source\spriteManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\options.cpp">
-      <Filter>stars\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\savedataManager.cpp">
-      <Filter>stars\managers</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\store.cpp">
       <Filter>stars\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\customize.cpp">
-      <Filter>stars\scenes</Filter>
+    <ClCompile Include="..\source\timerManager.cpp">
+      <Filter>stars\managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\items.cpp">
-      <Filter>stars\scenes</Filter>
+    <ClCompile Include="..\source\vortex.cpp">
+      <Filter>stars\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\getStars.cpp">
-      <Filter>stars\scenes</Filter>
+    <ClCompile Include="..\source\easyArray.cpp">
+      <Filter>stars\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
