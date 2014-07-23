@@ -49,13 +49,13 @@
     </Filter>
     <Filter Include="'Marmalade Studio'\iwgl">
     </Filter>
-    <Filter Include="stars\managers">
+    <Filter Include="'Marmalade System (S3E)'\GL\GLES 2.0">
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\GL">
     </Filter>
     <Filter Include="'Marmalade Studio'\iwresmanager">
     </Filter>
-    <Filter Include="'Marmalade System (S3E)'\GL\GLES 2.0">
+    <Filter Include="stars\managers">
     </Filter>
     <Filter Include="stars\main">
     </Filter>
@@ -77,6 +77,8 @@
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\GL\EGL">
     </Filter>
+    <Filter Include="stars\utils">
+    </Filter>
     <Filter Include="(zlib)\h">
     </Filter>
     <Filter Include="'Marmalade Studio'\iwgx">
@@ -84,9 +86,6 @@
     <Filter Include="(iwtween)">
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
-    </Filter>
-    <Filter Include="stars\utils">
-      <UniqueIdentifier>{29a9042c-1c4f-4abb-801b-5e6206a331c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -808,6 +807,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/dlfcn.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/easyArray.h">
+      <Filter>stars\utils</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/EGL/egl.h">
       <Filter>'Marmalade System (S3E)'\GL\EGL</Filter>
     </ClInclude>
@@ -1336,6 +1338,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/utsname.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/vortex.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/wait.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
     </ClInclude>
@@ -1351,10 +1356,16 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/zlib/h/zlib.h">
       <Filter>(zlib)\h</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/easyArray.h">
-      <Filter>stars\utils</Filter>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/asteroid.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
-    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/vortex.h">
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/comet.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/satellite.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/star.h">
       <Filter>stars\entities</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1462,6 +1473,18 @@
       <Filter>stars\managers</Filter>
     </ClCompile>
     <ClCompile Include="..\source\vortex.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\asteroid.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\comet.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\satellite.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\star.cpp">
       <Filter>stars\entities</Filter>
     </ClCompile>
   </ItemGroup>

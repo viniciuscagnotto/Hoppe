@@ -1,6 +1,8 @@
 #include "include.h"
 
-Game::Game()
+Game::Game() :m_numVortex(0),
+m_pObjectsContainer(0),
+m_gameSpeed(s_kGameInitialSpeed)
 {
 	m_type = kScene_Game;
 
@@ -16,22 +18,30 @@ void Game::Init()
 	Scene::Init();
 
 	//Background (Parallax)
-	m_background.Create(ResourceManager::kResource_Background_Space, 1.5f);
+	m_background.Create(ResourceManager::kResource_Background_Space, 0.2f);
 	if (m_background.GetContainer())
 		AddChild(m_background.GetContainer());
 
-	m_backEarth.Create(ResourceManager::kResource_Background_Earth, 3.0f);
+	m_backEarth.Create(ResourceManager::kResource_Background_Earth, 0.5f);
 	if (m_backEarth.GetContainer())
 		AddChild(m_backEarth.GetContainer());
 
-	m_backSatellite.Create(ResourceManager::kResource_Background_Satellite, 5.0f);
+	m_backSatellite.Create(ResourceManager::kResource_Background_Satellite, 0.65f);
 	if (m_backSatellite.GetContainer())
 		AddChild(m_backSatellite.GetContainer());
+
+	m_pObjectsContainer = new CNode();
+	AddChild(m_pObjectsContainer);
 
 	//Loading Player
 	m_player.Init();
 	m_player.AddTo(this);
-	
+
+	//vortex
+	m_numVortex = 0;	
+
+	//Game variables
+	m_gameSpeed = s_kGameInitialSpeed;
 }
 
 void Game::Cleanup()
@@ -51,6 +61,10 @@ void Game::Cleanup()
 		RemoveChild(m_backSatellite.GetContainer());
 	m_backSatellite.Destroy();
 
+	RemoveChild(m_pObjectsContainer);
+	delete(m_pObjectsContainer);
+	m_pObjectsContainer = 0;
+
 	Scene::Cleanup();
 }
 
@@ -60,9 +74,10 @@ void Game::Update(float deltaTime, float alphaMul)
 		return;
 
 	Scene::Update(deltaTime, alphaMul);
-	m_background.Update();
-	m_backEarth.Update();
-	m_backSatellite.Update();
+
+	m_background.Update(m_gameSpeed);
+	m_backEarth.Update(m_gameSpeed);
+	m_backSatellite.Update(m_gameSpeed);
 
 	m_player.Update();
 	UpdateVortexList();
@@ -71,16 +86,16 @@ void Game::Update(float deltaTime, float alphaMul)
 		HandleTouch();
 }
 
+
 void Game::UpdateVortexList(){
-	for (unsigned int i = 0; i < m_vortexList.Size(); i++){
-		Vortex *pVortex = m_vortexList.GetAt(i);
+	for (uint i = 0; i < m_numVortex; i++){
+		Vortex *pVortex = &m_arrayVortex[i];
 		if (pVortex){
-			pVortex->Update();
+			pVortex->Update(m_gameSpeed);
 			if (pVortex->CanDestroyMe()){
 				pVortex->Cleanup();
-				delete pVortex;
-				m_vortexList.RemoveAt(i);
-				i--;
+				m_arrayVortex.RemoveAt(i);
+				m_numVortex--;
 				continue;
 			}
 
@@ -98,15 +113,11 @@ void Game::UpdateVortexList(){
 
 
 void Game::CleanupVortexList(){
-	for (unsigned int i = 0; i < m_vortexList.Size(); i++){
-		Vortex *pVortex = m_vortexList.GetAt(i);
-		if (pVortex){
-			pVortex->Cleanup();
-			delete pVortex;
-		}
+	for (uint i = 0; i < m_numVortex; i++){
+		m_arrayVortex[i].Cleanup();
+		m_arrayVortex[i] = Vortex();
 	}
-
-	m_vortexList.RemoveAll();
+	m_numVortex = 0;
 }
 
 void Game::Render()
@@ -118,9 +129,9 @@ void Game::Render()
 void Game::HandleTouch()
 {
 	Scene::HandleTouch();
-	
-	Vortex *newVortex = new Vortex();
-	newVortex->Init((float)g_pInput->m_X, (float)g_pInput->m_Y);
-	newVortex->AddTo(this);
-	m_vortexList.Add(newVortex);
+	if (m_numVortex < s_kMaxVortex){
+		m_arrayVortex[m_numVortex++] = Vortex();
+		m_arrayVortex[m_numVortex - 1].Init((float)g_pInput->m_X, (float)g_pInput->m_Y);
+		m_arrayVortex[m_numVortex - 1].AddTo(m_pObjectsContainer);
+	}
 }

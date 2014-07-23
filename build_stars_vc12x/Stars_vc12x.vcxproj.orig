@@ -1004,10 +1004,12 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/MarmaladeVersion.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/alloca.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/assert.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/asteroid.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/audioManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/byteswap.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cderror.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cdjpeg.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/comet.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/ctype.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/customize.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/dir.h" />
@@ -1142,6 +1144,7 @@
     <ClInclude Include="c:/marmalade/7.2/extensions/s3ewebview/h/s3eWebView.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3eWindow.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/satellite.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/sceneManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sched.h" />
@@ -1158,6 +1161,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/signal.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/socket.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/star.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/stat.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/stdarg.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/stdbool.h" />
@@ -1211,7 +1215,9 @@
     <ClCompile Include="..\modules\soundengine\source\IwSoundSpec.cpp" />
     <ClCompile Include="..\modules\soundengine\source\IwSoundWAV.cpp" />
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp" />
+    <ClCompile Include="..\source\asteroid.cpp" />
     <ClCompile Include="..\source\audioManager.cpp" />
+    <ClCompile Include="..\source\comet.cpp" />
     <ClCompile Include="..\source\customize.cpp" />
     <ClCompile Include="..\source\game.cpp" />
     <ClCompile Include="..\source\gameObject.cpp" />
@@ -1227,9 +1233,11 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3efacebook\interface\s3eFacebook_interface.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3eflurry\interface\s3eFlurry_interface.cpp" />
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp" />
+    <ClCompile Include="..\source\satellite.cpp" />
     <ClCompile Include="..\source\savedataManager.cpp" />
     <ClCompile Include="..\source\sceneManager.cpp" />
     <ClCompile Include="..\source\spriteManager.cpp" />
+    <ClCompile Include="..\source\star.cpp" />
     <ClCompile Include="..\source\store.cpp" />
     <ClCompile Include="..\source\timerManager.cpp" />
     <ClCompile Include="..\source\vortex.cpp" />

@@ -7,6 +7,10 @@ public:
 	enum EResources{
 		kResource_Entity_Player = 0,
 		kResource_Entity_Vortex,
+		kResource_Entity_Asteroid,
+		kResource_Entity_Comet,
+		kResource_Entity_Satellite,
+		kResource_Entity_Star,
 
 		kResource_Background_Space,
 		kResource_Background_Earth,

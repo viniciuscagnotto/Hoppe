@@ -1,3 +1,6 @@
+//Typedefs
+typedef unsigned int uint;
+
 //Iw API - Marmelade
 #include "IwGx.h"
 #include "Iw2D.h"
@@ -41,6 +44,10 @@ using namespace Iw2DSceneGraph;
 #include "gameObject.h"
 #include "player.h"
 #include "vortex.h"
+#include "asteroid.h"
+#include "comet.h"
+#include "satellite.h"
+#include "star.h"
 
 //scenes
 #include "mainMenu.h"

@@ -1,8 +1,8 @@
 #include "include.h"
 
-Vortex::Vortex()
+Vortex::Vortex() :m_alphaDeduction(0.0f)
 {
-
+	m_type = kGameObjectType_Vortex;
 }
 
 Vortex::~Vortex()
@@ -10,9 +10,11 @@ Vortex::~Vortex()
 	Cleanup();
 }
 
-void Vortex::Init(float posX, float posY)
+void Vortex::Init(float posX, float posY, float speedYRatio)
 {
 	GameObject::Init(ResourceManager::kResource_Entity_Vortex, posX, posY, 0.25f, 0.25f);
+	m_speedYRatio = speedYRatio;
+	m_alphaDeduction = 0.03f;
 }
 
 void Vortex::Cleanup()
@@ -21,13 +23,17 @@ void Vortex::Cleanup()
 
 }
 
-void Vortex::Update()
+void Vortex::Update(float gameSpeed)
 {
-	GameObject::Update();
+	if (m_destroyMe)
+		return; 
+
+	GameObject::Update(gameSpeed);
 
 	if (GetAlpha() > 0){
-		AddAlpha(-0.05f);
+		AddAlpha(-m_alphaDeduction);
 	}else{
+		SetVisible(false);
 		m_destroyMe = true;
 	}
 }

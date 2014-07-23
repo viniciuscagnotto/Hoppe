@@ -4,9 +4,7 @@
 class SpriteObject : public CSprite
 {
 public:
-	CIw2DImage* m_pTexture;
-
-	SpriteObject() : m_pTexture(0){};
+	SpriteObject() {};
 	bool IsInScene();
 	float RealW(){ return m_W * m_ScaleX; };
 	float RealH(){ return m_H * m_ScaleY; };

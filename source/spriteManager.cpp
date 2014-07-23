@@ -19,8 +19,7 @@ SpriteObject* SpriteManager::CreateSpriteObject(ResourceManager::EResources id)
 	pSpriteObject->m_Y = 0;
 	pSpriteObject->m_AnchorX = 0.5f;
 	pSpriteObject->m_AnchorY = 0.5f;
-	pSpriteObject->m_pTexture = g_pResourceManager->GetResource(id);
-	pSpriteObject->SetImage(pSpriteObject->m_pTexture);
+	pSpriteObject->SetImage(g_pResourceManager->GetResource(id));
 	return pSpriteObject;
 }
 
@@ -30,7 +29,6 @@ void SpriteManager::DeleteSpriteObject(SpriteObject *pSpriteObject)
 		return;
 
 	pSpriteObject->SetImage(0);
-	pSpriteObject->m_pTexture = 0;
 	delete pSpriteObject;
 	pSpriteObject = 0;
 }

@@ -4,7 +4,9 @@ GameObject::GameObject() :m_pParent(0),
 m_pSprite1(0),
 m_pSprite2(0),
 m_speed(0.0f),
-m_destroyMe(false)
+m_speedYRatio(0.0f),
+m_destroyMe(false),
+m_type(kGameObjectType_Count)
 {
 
 }
@@ -34,15 +36,24 @@ void GameObject::Cleanup()
 	if (!m_pSprite1 || !m_pSprite2 || !m_pParent)
 		return;
 
-	m_pParent->SafeDeleteObject(m_pSprite1);
-	m_pParent->SafeDeleteObject(m_pSprite2);
+	if (m_pParent->IsChild(m_pSprite1))
+		m_pParent->RemoveChild(m_pSprite1);
 
+	if (m_pParent->IsChild(m_pSprite2))
+		m_pParent->RemoveChild(m_pSprite2);
+
+	g_pSpriteManager->DeleteSpriteObject(m_pSprite1);
+	g_pSpriteManager->DeleteSpriteObject(m_pSprite2);
+	
 	m_pSprite1 = 0;
 	m_pSprite2 = 0;
 	m_pParent = 0;
+
+	m_speed = 0.0f;
+	m_destroyMe = false;
 }
 
-void GameObject::Update()
+void GameObject::Update(float gameSpeed)
 {
 	if (!m_pSprite1 || !m_pSprite2)
 		return; 
@@ -71,18 +82,24 @@ void GameObject::Update()
 			m_pSprite2->m_X = m_pSprite1->m_X + IwGxGetScreenWidth();
 	}
 
+	float speed = m_speedYRatio * gameSpeed;
+	if (speed > 0){
+		m_pSprite1->m_Y += speed;
+		m_pSprite2->m_Y += speed;
+	}
+
 }
 
 
-void GameObject::AddTo(Scene *pScene)
+void GameObject::AddTo(CNode *pContainer)
 {
 	if (!m_pSprite1 || !m_pSprite2)
 		return;
 
-	pScene->AddChild(m_pSprite1);
-	pScene->AddChild(m_pSprite2);
+	pContainer->AddChild(m_pSprite1);
+	pContainer->AddChild(m_pSprite2);
 	
-	m_pParent = pScene;
+	m_pParent = pContainer;
 }
 
 void GameObject::AddAlpha(float amount){
@@ -115,6 +132,14 @@ void GameObject::SetAlpha(float newAlpha){
 		m_pSprite1->m_Alpha = 1.0f;
 		m_pSprite2->m_Alpha = 1.0f;
 	}
+}
+
+void GameObject::SetVisible(bool visible){
+	if (!m_pSprite1 || !m_pSprite2)
+		return;
+
+	m_pSprite1->m_IsVisible	= visible;
+	m_pSprite2->m_IsVisible = visible;
 }
 
 bool GameObject::CheckHit(GameObject* gameObject){

@@ -35,6 +35,8 @@
     </Filter>
     <Filter Include="'Marmalade Studio'\iw2dscenegraph">
     </Filter>
+    <Filter Include="'Marmalade System (S3E)'\GL">
+    </Filter>
     <Filter Include="'Marmalade Studio'\iw2d">
     </Filter>
     <Filter Include="stars">
@@ -51,7 +53,7 @@
     </Filter>
     <Filter Include="'Marmalade System (S3E)'\GL\GLES 2.0">
     </Filter>
-    <Filter Include="'Marmalade System (S3E)'\GL">
+    <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
     </Filter>
     <Filter Include="'Marmalade Studio'\iwresmanager">
     </Filter>
@@ -84,8 +86,6 @@
     <Filter Include="'Marmalade Studio'\iwgx">
     </Filter>
     <Filter Include="(iwtween)">
-    </Filter>
-    <Filter Include="'Marmalade System (S3E)'\stdc headers\sys">
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -781,6 +781,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/assert.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/asteroid.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/audioManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
@@ -792,6 +795,9 @@
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cdjpeg.h">
       <Filter>(libjpeg)\h</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/comet.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/ctype.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
@@ -1195,6 +1201,9 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/ext/s3edebugHeap.h">
       <Filter>'Marmalade System (S3E)'\Extensions</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/satellite.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/savedataManager.h">
       <Filter>stars\managers</Filter>
     </ClInclude>
@@ -1242,6 +1251,9 @@
     </ClInclude>
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/spriteManager.h">
       <Filter>stars\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/star.h">
+      <Filter>stars\entities</Filter>
     </ClInclude>
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/stat.h">
       <Filter>'Marmalade System (S3E)'\stdc headers\sys</Filter>
@@ -1398,8 +1410,14 @@
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp">
       <Filter>(iwtween)</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\asteroid.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\source\audioManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\comet.cpp">
+      <Filter>stars\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\source\customize.cpp">
       <Filter>stars\scenes</Filter>
@@ -1446,6 +1464,9 @@
     <ClCompile Include="c:\marmalade\7.2\extensions\s3ewebview\interface\s3eWebView_interface.cpp">
       <Filter>Extensions\s3eWebView\interface</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\satellite.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\source\savedataManager.cpp">
       <Filter>stars\managers</Filter>
     </ClCompile>
@@ -1454,6 +1475,9 @@
     </ClCompile>
     <ClCompile Include="..\source\spriteManager.cpp">
       <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\star.cpp">
+      <Filter>stars\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\source\store.cpp">
       <Filter>stars\scenes</Filter>

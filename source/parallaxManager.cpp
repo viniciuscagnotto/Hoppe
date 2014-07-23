@@ -4,17 +4,16 @@ ParallaxManager::ParallaxManager() : m_pContainer(0),
 m_pSprite1(0),
 m_pSprite2(0),
 m_pSprite3(0),
+m_speedRatio(0.0f),
 m_isInitiated(false){
 
 }
 
-void ParallaxManager::Create(ResourceManager::EResources id, float startingSpeed){
+void ParallaxManager::Create(ResourceManager::EResources id, float speedRatio){
 	if (m_isInitiated)
 		return;
 
-	m_startingSpeed = startingSpeed;
-	m_speed = startingSpeed;
-
+	m_speedRatio = speedRatio;
 	m_pContainer = new CSprite();
 
 	m_pSprite1 = g_pSpriteManager->CreateSpriteObject(id);
@@ -35,13 +34,13 @@ void ParallaxManager::Create(ResourceManager::EResources id, float startingSpeed
 	m_isInitiated = true;
 }
 
-void ParallaxManager::Update(){
+void ParallaxManager::Update(float gameSpeed){
 	if (!m_isInitiated)
 		return;
 
-	m_pSprite1->m_Y += m_speed;
-	m_pSprite2->m_Y += m_speed;
-	m_pSprite3->m_Y += m_speed;
+	m_pSprite1->m_Y += (gameSpeed * m_speedRatio);
+	m_pSprite2->m_Y += (gameSpeed * m_speedRatio);
+	m_pSprite3->m_Y += (gameSpeed * m_speedRatio);
 	
 	if (m_pSprite1->m_Y > IwGxGetScreenHeight())
 		m_pSprite1->m_Y = m_pSprite3->m_Y - m_pSprite3->m_H;

@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-
+	m_type = kGameObjectType_Player;
 }
 
 Player::~Player()
@@ -14,7 +14,7 @@ void Player::Init()
 {
 	float playerX = IwGxGetScreenWidth() * 0.5f;
 	float playerY = IwGxGetScreenHeight() * 0.8f;
-	GameObject::Init(ResourceManager::kResource_Entity_Player, playerX, playerY, 0.5f, 0.7f);
+	GameObject::Init(ResourceManager::kResource_Entity_Player, playerX, playerY, 0.5f, 0.5f);
 }
 
 void Player::Cleanup()

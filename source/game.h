@@ -5,15 +5,21 @@
 class Game : public Scene
 {
 public:
-	static const int s_kMaxVortex = 16;
+	static const uint s_kGameInitialSpeed = 2.0f;
+	static const uint s_kMaxVortex = 1;
 
 private:
 	ParallaxManager m_background;
 	ParallaxManager m_backEarth;
 	ParallaxManager m_backSatellite;
 
-	EasyArray<Vortex *, s_kMaxVortex> m_vortexList;
+	float m_gameSpeed;
+
+	EasyArray<Vortex, s_kMaxVortex> m_arrayVortex;
+	uint m_numVortex;
 	Player m_player;
+
+	CNode *m_pObjectsContainer;
 
 public:
 	Game();

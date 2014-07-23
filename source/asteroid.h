@@ -1,22 +1,21 @@
-#if !defined(__VORTEX_H__)
-#define __VORTEX_H__
+#if !defined(__ASTEROID_H__)
+#define __ASTEROID_H__
 
-class Vortex : public GameObject
+class Asteroid : public GameObject
 {
 public:
 
 
 private:
-	float m_alphaDeduction;
 
 public:
-	Vortex();
-	~Vortex();
+	Asteroid();
+	~Asteroid();
 
 	void Init(float posX, float posY, float speedYRatio = 1.0f);
 	void Cleanup();
 	void Update(float gameSpeed = 0.0f);
 };
 
-#endif  // __VORTEX_H__
+#endif  // __ASTEROID_H__
 

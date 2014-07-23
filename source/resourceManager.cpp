@@ -17,6 +17,10 @@ ResourceManager::~ResourceManager(){
 void ResourceManager::Init(){
 	RegisterResource(kResource_Entity_Player, "textures/star.png");
 	RegisterResource(kResource_Entity_Vortex, "textures/vortex.png");
+	RegisterResource(kResource_Entity_Asteroid, "textures/vortex.png");
+	RegisterResource(kResource_Entity_Comet, "textures/vortex.png");
+	RegisterResource(kResource_Entity_Satellite, "textures/vortex.png");
+	RegisterResource(kResource_Entity_Star, "textures/vortex.png");
 
 	RegisterResource(kResource_Background_Space, "textures/back_space.jpg");
 	RegisterResource(kResource_Background_Earth, "textures/back_earth.png");
@@ -39,5 +43,4 @@ void ResourceManager::RegisterResource(EResources id, const char * fileName){
 
 CIw2DImage *ResourceManager::GetResource(EResources id){
 	return m_resourcesMap[id];
-	return 0;
 }

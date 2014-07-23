@@ -14,6 +14,14 @@ files
 	player.cpp
 	vortex.h
 	vortex.cpp
+	asteroid.h
+	asteroid.cpp
+	comet.h
+	comet.cpp
+	satellite.h
+	satellite.cpp
+	star.h
+	star.cpp
 
 	[stars main]
 	include.h
