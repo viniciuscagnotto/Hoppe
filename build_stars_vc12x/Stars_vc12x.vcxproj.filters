@@ -1368,6 +1368,15 @@
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/star.h">
       <Filter>stars\entities</Filter>
     </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/blackHole.h">
+      <Filter>stars\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/utils.h">
+      <Filter>stars\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/triggersManager.h">
+      <Filter>stars\managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c:\marmalade\7.2\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp">
@@ -1486,6 +1495,15 @@
     </ClCompile>
     <ClCompile Include="..\source\star.cpp">
       <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\blackHole.cpp">
+      <Filter>stars\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\triggersManager.cpp">
+      <Filter>stars\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\utils.cpp">
+      <Filter>stars\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

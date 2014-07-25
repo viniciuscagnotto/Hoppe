@@ -10,6 +10,7 @@ public:
 		kResource_Entity_Asteroid,
 		kResource_Entity_Comet,
 		kResource_Entity_Satellite,
+		kResource_Entity_BlackHole,
 		kResource_Entity_Star,
 
 		kResource_Background_Space,
@@ -21,8 +22,15 @@ public:
 		kResource_Count
 	};
 
+	enum EFonts{
+		kFont_Arial_8 = 0,
+
+		kFont_Count
+	};
+
 private:
 	CIw2DImage *m_resourcesMap[kResource_Count];
+	CIw2DFont *m_fontsMap[kFont_Count];
 
 public:
 	ResourceManager();
@@ -30,9 +38,11 @@ public:
 
 	void Init();
 	void Destroy();
+
 	void RegisterResource(EResources id, const char * fileName);
 	CIw2DImage *GetResource(EResources id);
-
+	void RegisterFont(EFonts id, const char * fileName);
+	CIw2DFont *GetFont(EFonts id);
 };
 
 extern ResourceManager* g_pResourceManager;

@@ -3,6 +3,7 @@
 Player::Player()
 {
 	m_type = kGameObjectType_Player;
+	Init();
 }
 
 Player::~Player()
@@ -26,5 +27,27 @@ void Player::Cleanup()
 void Player::Update()
 {
 	GameObject::Update();
+}
 
+void Player::Interact(GameObject *go){
+	switch (go->GetType()){
+		case kGameObjectType_Vortex:
+		{
+			if(CheckHit(go)){
+				if (GetDistanceX(go) >= 0){
+					SetSpeed(-3.0f);
+				}else{
+					SetSpeed(3.0f);
+				}
+			}
+			break;
+		}
+		case kGameObjectType_Asteroid:
+		{
+
+			break;
+		}
+		default:
+			break;
+	};
 }

@@ -2,24 +2,42 @@
 #define __GAME_H__
 
 
+#define FONT_DESIGN_WIDTH       320
+#define FONT_HEIGHT             15
+
+#define METER					10
+
+
+
 class Game : public Scene
 {
 public:
-	static const uint s_kGameInitialSpeed = 2.0f;
+	static const uint s_kInitialSpeed = 2;
+	static const uint s_kMaxSpeed = 10;
+	static const uint s_kMaxGameObjects = 64;
 	static const uint s_kMaxVortex = 1;
 
 private:
+	TriggersManager m_triggers;
+
 	ParallaxManager m_background;
 	ParallaxManager m_backEarth;
 	ParallaxManager m_backSatellite;
 
+	float m_gameSpeedIncrease;
 	float m_gameSpeed;
+	float m_distance;
+	bool m_paused;
 
-	EasyArray<Vortex, s_kMaxVortex> m_arrayVortex;
+	EasyArray<GameObject *, s_kMaxGameObjects> m_gameObjects;
+	uint m_numGameObjects;
 	uint m_numVortex;
-	Player m_player;
+	//Player *m_pPlayer;
 
 	CNode *m_pObjectsContainer;
+
+
+	CLabel *m_distanceText;
 
 public:
 	Game();
@@ -31,8 +49,8 @@ public:
 	void Render();
 	void HandleTouch();
 
-	void CleanupVortexList();
-	void UpdateVortexList();
+	void CleanupGameObjects();
+	void UpdateGameObjects();
 };
 
 #endif  // __GAME_H__

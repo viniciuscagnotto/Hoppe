@@ -17,6 +17,7 @@ public:
 	void Init();
 	void Cleanup();
 	void Update();
+	void Interact(GameObject* go);
 };
 
 #endif  // __PLAYER_H__

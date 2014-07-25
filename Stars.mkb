@@ -20,6 +20,8 @@ files
 	comet.cpp
 	satellite.h
 	satellite.cpp
+	blackHole.h
+	blackHole.cpp
 	star.h
 	star.cpp
 
@@ -29,6 +31,8 @@ files
     main.cpp
 
 	[stars utils]
+	utils.h
+	utils.cpp
 	easyArray.h
 
 	[stars managers]
@@ -48,6 +52,8 @@ files
 	timerManager.cpp 
 	parallaxManager.h
 	parallaxManager.cpp
+	triggersManager.h
+	triggersManager.cpp
 
 	[stars scenes]
     game.h

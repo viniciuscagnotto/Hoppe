@@ -8,6 +8,8 @@ CTweenManager*  g_pTweener = 0;
 
 int main()
 {
+	srand(time(NULL));
+
     Iw2DInit();
 	g_pSaveDataManager = new SaveDataManager();
 	g_pResourceManager = new ResourceManager();

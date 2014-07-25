@@ -1,11 +1,16 @@
 #include "include.h"
 
 Game::Game() :m_numVortex(0),
+m_numGameObjects(0),
 m_pObjectsContainer(0),
-m_gameSpeed(s_kGameInitialSpeed)
+m_gameSpeed((float)s_kInitialSpeed),
+m_paused(true),
+m_distance(0)
+//m_pPlayer(0)
 {
 	m_type = kScene_Game;
-
+	for (uint i = 0; i < s_kMaxGameObjects; i++)
+		m_gameObjects[i] = 0;
 }
 
 Game::~Game()
@@ -15,6 +20,7 @@ Game::~Game()
 
 void Game::Init()
 {
+	m_paused = true;
 	Scene::Init();
 
 	//Background (Parallax)
@@ -33,23 +39,58 @@ void Game::Init()
 	m_pObjectsContainer = new CNode();
 	AddChild(m_pObjectsContainer);
 
-	//Loading Player
-	m_player.Init();
-	m_player.AddTo(this);
+	//triggers
+	m_triggers.Reset();
 
-	//vortex
-	m_numVortex = 0;	
+	//game objects
+	for (uint i = 0; i < s_kMaxGameObjects; i++)
+		m_gameObjects[i] = 0;
+	m_numGameObjects = 0;
+	m_numVortex = 0;
+
+	//Loading Player
+	Player *pPlayer = new Player();
+	pPlayer->AddTo(this);
+	m_gameObjects[m_numGameObjects++] = pPlayer;
 
 	//Game variables
-	m_gameSpeed = s_kGameInitialSpeed;
+	m_gameSpeed = (float)s_kInitialSpeed;
+	m_gameSpeedIncrease = 0.0025f;
+	m_paused = false;
+	m_distance = 0;
+
+
+	//Load Distance Label - TODO: Change way to load labels
+	float fontScale = (float)IwGxGetScreenWidth() / FONT_DESIGN_WIDTH;
+	float actualFontHeight = FONT_HEIGHT * fontScale;
+	
+	m_distanceText = new CLabel();
+	m_distanceText->m_X = 50 * fontScale;
+	m_distanceText->m_Y = 10 * fontScale;
+	m_distanceText->m_W = FONT_DESIGN_WIDTH;
+	m_distanceText->m_H = actualFontHeight;
+	m_distanceText->m_Text = "0m";
+	m_distanceText->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
+	m_distanceText->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
+	m_distanceText->m_Font = g_pResourceManager->GetFont(ResourceManager::kFont_Arial_8);
+	m_distanceText->m_ScaleX = fontScale;
+	m_distanceText->m_ScaleY = fontScale;
+	m_distanceText->m_Color = CColor(0xff, 0xff, 0x30, 0xff);
+	AddChild(m_distanceText);
 }
 
 void Game::Cleanup()
 {
-	m_player.Cleanup();
-	CleanupVortexList();
+	//Player
+	//m_pPlayer->Cleanup();
+	//delete m_pPlayer;
+	//m_pPlayer = 0;
 
-	if(IsChild(m_background.GetContainer()))
+	//Game Objects
+	CleanupGameObjects();
+
+	//Parallax
+	if (IsChild(m_background.GetContainer()))
 		RemoveChild(m_background.GetContainer());
 	m_background.Destroy();
 
@@ -61,9 +102,19 @@ void Game::Cleanup()
 		RemoveChild(m_backSatellite.GetContainer());
 	m_backSatellite.Destroy();
 
-	RemoveChild(m_pObjectsContainer);
-	delete(m_pObjectsContainer);
-	m_pObjectsContainer = 0;
+	//Container
+	if (m_pObjectsContainer){
+		RemoveChild(m_pObjectsContainer);
+		delete(m_pObjectsContainer);
+		m_pObjectsContainer = 0;
+	}
+
+	//Distance Text
+	if (m_distanceText){
+		RemoveChild(m_distanceText);
+		delete m_distanceText;
+		m_distanceText = 0;
+	}
 
 	Scene::Cleanup();
 }
@@ -73,51 +124,78 @@ void Game::Update(float deltaTime, float alphaMul)
 	if (!CheckCurrent())
 		return;
 
+	if (m_paused)
+		return;
+
 	Scene::Update(deltaTime, alphaMul);
 
 	m_background.Update(m_gameSpeed);
 	m_backEarth.Update(m_gameSpeed);
 	m_backSatellite.Update(m_gameSpeed);
 
-	m_player.Update();
-	UpdateVortexList();
+	//m_pPlayer->Update();
+	UpdateGameObjects();
 	
+	if (m_distanceText){
+		char str[32];
+		snprintf(str, 32, "D: %d - S: %d", (int)floorf(m_distance / METER), (int)floorf(m_gameSpeed));
+		m_distanceText->m_Text = str;
+	}
+
+
 	if (CheckTouch())
 		HandleTouch();
+
+	//Update Speed
+	m_distance += m_gameSpeed;
+	m_gameSpeed += m_gameSpeedIncrease;
+	if (m_gameSpeed > (float)s_kMaxSpeed)
+		m_gameSpeed = (float)s_kMaxSpeed;
 }
 
 
-void Game::UpdateVortexList(){
-	for (uint i = 0; i < m_numVortex; i++){
-		Vortex *pVortex = &m_arrayVortex[i];
-		if (pVortex){
-			pVortex->Update(m_gameSpeed);
-			if (pVortex->CanDestroyMe()){
-				pVortex->Cleanup();
-				m_arrayVortex.RemoveAt(i);
-				m_numVortex--;
-				continue;
-			}
+void Game::UpdateGameObjects(){
+	//Remove Objects
+	for (uint i = 0; i < m_numGameObjects; i++){
+		GameObject *pGameObject = m_gameObjects[i];
+		if (!pGameObject)
+			continue;
 
-			if (pVortex->CheckHit(&m_player)){
-				if (pVortex->GetDistanceX(&m_player) >= 0){
-					m_player.SetSpeed(3.0f);
-				}else{
-					m_player.SetSpeed(-3.0f);
-				}
-			}
+		pGameObject->Update(m_gameSpeed);
+		if (pGameObject->CanDestroyMe()){
+			if (pGameObject->GetType() == GameObject::kGameObjectType_Vortex)
+				m_numVortex--;
+
+			pGameObject->Cleanup();
+			delete pGameObject;
+			pGameObject = 0;
+			m_gameObjects.RemoveAt(i);
+			m_numGameObjects--;
+			i--;
+			continue;
+		}
+
+		for (uint j = i; j < m_numGameObjects; j++){
+			pGameObject->Interact(m_gameObjects[j]);
 		}
 	}
 }
 
 
+void Game::CleanupGameObjects(){
+	for (uint i = 0; i < m_numGameObjects; i++){
+		GameObject *pGameObject = m_gameObjects[i];
+		if (!pGameObject)
+			continue;
 
-void Game::CleanupVortexList(){
-	for (uint i = 0; i < m_numVortex; i++){
-		m_arrayVortex[i].Cleanup();
-		m_arrayVortex[i] = Vortex();
+		pGameObject->Cleanup();
+		delete pGameObject;
+		pGameObject = 0;
+		m_gameObjects[i] = 0;
+
 	}
 	m_numVortex = 0;
+	m_numGameObjects = 0;
 }
 
 void Game::Render()
@@ -130,8 +208,10 @@ void Game::HandleTouch()
 {
 	Scene::HandleTouch();
 	if (m_numVortex < s_kMaxVortex){
-		m_arrayVortex[m_numVortex++] = Vortex();
-		m_arrayVortex[m_numVortex - 1].Init((float)g_pInput->m_X, (float)g_pInput->m_Y);
-		m_arrayVortex[m_numVortex - 1].AddTo(m_pObjectsContainer);
+		Vortex *newVortex = new Vortex();
+		newVortex->Init((float)g_pInput->m_X, (float)g_pInput->m_Y);
+		newVortex->AddTo(m_pObjectsContainer);
+		m_gameObjects[m_numGameObjects++] = newVortex;
+		m_numVortex++;
 	}
 }

@@ -10,6 +10,7 @@ public:
 		kGameObjectType_Asteroid, 
 		kGameObjectType_Comet, 
 		kGameObjectType_Satellite,
+		kGameObjectType_BlackHole,
 		kGameObjectType_Star,
 
 		kGameObjectType_Count
@@ -27,11 +28,12 @@ protected:
 
 public:
 	GameObject();
-	~GameObject();
+	virtual ~GameObject();
 
-	void Init(ResourceManager::EResources id, float posX, float posY, float scaleX, float scaleY);
-	void Cleanup();
-	void Update(float gameSpeed = 0.0f);
+	virtual void Init(ResourceManager::EResources id, float posX, float posY, float scaleX, float scaleY);
+	virtual void Cleanup();
+	virtual void Update(float gameSpeed = 0.0f);
+	virtual void Interact(GameObject *go) {};
 
 	void AddTo(CNode *pScene);
 	bool CheckHit(GameObject* gameObject);
@@ -48,6 +50,7 @@ public:
 
 	SpriteObject* GetSprite1(){ return m_pSprite1; };
 	SpriteObject* GetSprite2(){ return m_pSprite2; };
+	EGameObjectType GetType(){ return m_type; };
 };
 
 #endif  // __GAME_OBJECT_H__

@@ -1006,6 +1006,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/assert.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/asteroid.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/audioManager.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/blackHole.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/byteswap.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cderror.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/cdjpeg.h" />
@@ -1185,6 +1186,7 @@
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/tiniconv/source/tiniconv.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/tiniconv/source/tiniconv_int.h" />
     <ClInclude Include="c:/marmalade/7.2/modules/third_party/libjpeg/h/transupp.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/triggersManager.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/type_traits.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/c++/typeinfo.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/types.h" />
@@ -1192,6 +1194,7 @@
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/uio.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/un.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/unistd.h" />
+    <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/utils.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/utime.h" />
     <ClInclude Include="c:/marmalade/7.2/s3e/h/std/sys/utsname.h" />
     <ClInclude Include="c:/Users/Vinicius/Desktop/Yes or No/Stars/source/vortex.h" />
@@ -1217,6 +1220,7 @@
     <ClCompile Include="c:\marmalade\7.2\modules\iwtween\source\IwTween.cpp" />
     <ClCompile Include="..\source\asteroid.cpp" />
     <ClCompile Include="..\source\audioManager.cpp" />
+    <ClCompile Include="..\source\blackHole.cpp" />
     <ClCompile Include="..\source\comet.cpp" />
     <ClCompile Include="..\source\customize.cpp" />
     <ClCompile Include="..\source\game.cpp" />
@@ -1240,6 +1244,8 @@
     <ClCompile Include="..\source\star.cpp" />
     <ClCompile Include="..\source\store.cpp" />
     <ClCompile Include="..\source\timerManager.cpp" />
+    <ClCompile Include="..\source\triggersManager.cpp" />
+    <ClCompile Include="..\source\utils.cpp" />
     <ClCompile Include="..\source\vortex.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

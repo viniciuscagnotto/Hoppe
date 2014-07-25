@@ -23,11 +23,13 @@ using namespace Iw2DSceneGraph;
 #include <list>
 #include <map>
 #include <vector>
+#include <time.h>
 
 //main
 #include "main.h"
 
 //utils
+#include "utils.h"
 #include "easyArray.h"
 
 //managers
@@ -39,6 +41,7 @@ using namespace Iw2DSceneGraph;
 #include "audioManager.h"
 #include "timerManager.h"
 #include "sceneManager.h"
+#include "triggersManager.h"
 
 //entities
 #include "gameObject.h"
@@ -47,6 +50,7 @@ using namespace Iw2DSceneGraph;
 #include "asteroid.h"
 #include "comet.h"
 #include "satellite.h"
+#include "blackHole.h"
 #include "star.h"
 
 //scenes
