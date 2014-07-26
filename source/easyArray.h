@@ -14,6 +14,14 @@ public:
 		}
 	}
 
+	void AddAt(uint index, T item){
+		for (uint i = N - 1; i > index; i--){
+			m_items[i] = m_items[i - 1];
+		}
+
+		m_items[index] = item;
+	}
+
 	unsigned int MaxSize(){ return N; };
 
 	T& operator[](uint index){ return m_items[index]; };

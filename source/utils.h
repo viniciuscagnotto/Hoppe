@@ -1,11 +1,21 @@
 #if !defined(__UTILS_H__)
 #define __UTILS_H__
 
-struct Point{
+struct PointFloat{
 	float x;
 	float y;
 
-	Point(float valX = 0.0f, float valY = 0.0f){
+	PointFloat(float valX = 0.0f, float valY = 0.0f){
+		x = valX;
+		y = valY;
+	};
+};
+
+struct PointInt{
+	int x;
+	int y;
+
+	PointInt(int valX = 0, int valY = 0){
 		x = valX;
 		y = valY;
 	};

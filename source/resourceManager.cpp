@@ -20,13 +20,14 @@ ResourceManager::~ResourceManager(){
 
 void ResourceManager::Init(){
 	//Resources
-	RegisterResource(kResource_Entity_Player, "textures/star.png");
+	RegisterResource(kResource_Entity_Player, "textures/astronaut.png");
 	RegisterResource(kResource_Entity_Vortex, "textures/vortex.png");
-	RegisterResource(kResource_Entity_Asteroid, "textures/asteroid.png");
-	RegisterResource(kResource_Entity_Comet, "textures/vortex.png");
-	RegisterResource(kResource_Entity_Satellite, "textures/vortex.png");
-	RegisterResource(kResource_Entity_BlackHole, "textures/vortex.png");
-	RegisterResource(kResource_Entity_Star, "textures/vortex.png");
+	RegisterResource(kResource_Entity_Asteroid_Small, "textures/asteroid_small.png");
+	RegisterResource(kResource_Entity_Asteroid_Big, "textures/asteroid.png");
+	RegisterResource(kResource_Entity_Comet, "textures/comet.png");
+	RegisterResource(kResource_Entity_Satellite, "textures/satellite.png");
+	RegisterResource(kResource_Entity_BlackHole, "textures/black_hole.png");
+	RegisterResource(kResource_Entity_Star, "textures/star.png");
 
 	RegisterResource(kResource_Background_Space, "textures/back_space.jpg");
 	RegisterResource(kResource_Background_Earth, "textures/back_earth.png");

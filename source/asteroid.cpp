@@ -10,10 +10,20 @@ Asteroid::~Asteroid()
 	Cleanup();
 }
 
-void Asteroid::Init(float posX, float posY, float speedYRatio)
+void Asteroid::Init(TriggersManager::ETriggerType triggerType, float posX, float posY, float speedYRatio)
 {
-	GameObject::Init(ResourceManager::kResource_Entity_Asteroid, posX, posY, 1.0f, 1.0f);
+	ResourceManager::EResources resource = ResourceManager::kResource_Entity_Asteroid_Small;
+	if (triggerType == TriggersManager::kTriggerType_Asteroid_Big ||
+		triggerType == TriggersManager::kTriggerType_Asteroid_Big_Shower ||
+		triggerType == TriggersManager::kTriggerType_Asteroid_Big_Wall){
+		resource = ResourceManager::kResource_Entity_Asteroid_Big;
+	}
+
+	GameObject::Init(resource, posX, posY, 1.0f, 1.0f);
 	m_speedYRatio = speedYRatio;
+	m_triggerType = triggerType;
+	m_speed = RandomFloat(-3.0f, 3.0f);
+
 }
 
 void Asteroid::Cleanup()
@@ -28,4 +38,5 @@ void Asteroid::Update(float gameSpeed)
 		return;
 
 	GameObject::Update(gameSpeed);
+
 }

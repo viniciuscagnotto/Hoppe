@@ -38,19 +38,19 @@ public:
 	};
 
 	struct STriggerRange{
-		Point distanceRange;
-		Point amountRange;
+		PointInt distanceRange;
+		PointInt amountRange;
 		ETriggerType type;
 		float chance;
 
 		STriggerRange(){
-			distanceRange = Point();
-			amountRange = Point();
+			distanceRange = PointInt();
+			amountRange = PointInt();
 			chance = 1.0f;
 			type = kTriggerType_Count;
 		};
 
-		STriggerRange(ETriggerType t, float c, Point dRange, Point aRange){
+		STriggerRange(ETriggerType t, float c, PointInt dRange, PointInt aRange){
 			type = t;
 			chance = c;
 			distanceRange = dRange;
@@ -60,16 +60,16 @@ public:
 
 	struct STrigger{
 		ETriggerType type;
-		float distance;
-		uint amount;
+		int distance;
+		int amount;
 
 		STrigger(){
 			type = kTriggerType_Count;
-			distance = 0.0f;
+			distance = 0;
 			amount = 0;
 		};
 
-		STrigger(ETriggerType t, float d, uint a){
+		STrigger(ETriggerType t, int d, int a){
 			type = t;
 			distance = d;
 			amount = a;
@@ -80,7 +80,7 @@ private:
 	EasyArray<STriggerRange, s_kMaxTriggers> m_triggers;
 	uint m_numTriggers;
 
-	EasyArray<ETriggerType, s_kLastTriggers> m_lastTriggers;
+	EasyArray<STrigger, s_kLastTriggers> m_lastTriggers;
 
 public:
 	TriggersManager();
@@ -88,8 +88,9 @@ public:
 
 	void Reset();
 	void InitTriggers();
-	STrigger GenerateTrigger(float distance, float gameSpeed);
-	STriggerRange GetTriggerAtDistance(float distance);
+	STrigger GenerateTrigger(int distance);
+	STriggerRange GetTriggerAtDistance(int distance);
+	bool HasTriggetAtDistance(int distance);
 };
 
 #endif  // __TRIGGERS_MANAGER_H__

@@ -8,14 +8,13 @@
 #define METER					10
 
 
-
 class Game : public Scene
 {
 public:
 	static const uint s_kInitialSpeed = 2;
-	static const uint s_kMaxSpeed = 10;
+	static const uint s_kMaxSpeed = 12;
 	static const uint s_kMaxGameObjects = 64;
-	static const uint s_kMaxVortex = 1;
+	static const uint s_kMaxVortex = 4;
 
 private:
 	TriggersManager m_triggers;
@@ -32,8 +31,7 @@ private:
 	EasyArray<GameObject *, s_kMaxGameObjects> m_gameObjects;
 	uint m_numGameObjects;
 	uint m_numVortex;
-	//Player *m_pPlayer;
-
+	
 	CNode *m_pObjectsContainer;
 
 
@@ -49,8 +47,11 @@ public:
 	void Render();
 	void HandleTouch();
 
+	void ProcessTriggers();
 	void CleanupGameObjects();
 	void UpdateGameObjects();
+
+	int GetDistance() { return (int)floorf(m_distance / METER); };
 };
 
 #endif  // __GAME_H__

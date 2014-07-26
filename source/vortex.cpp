@@ -1,6 +1,7 @@
 #include "include.h"
 
-Vortex::Vortex() :m_alphaDeduction(0.0f)
+Vortex::Vortex() :m_alphaDeduction(0.0f),
+m_force(0.0f)
 {
 	m_type = kGameObjectType_Vortex;
 }
@@ -14,7 +15,8 @@ void Vortex::Init(float posX, float posY, float speedYRatio)
 {
 	GameObject::Init(ResourceManager::kResource_Entity_Vortex, posX, posY, 0.25f, 0.25f);
 	m_speedYRatio = speedYRatio;
-	m_alphaDeduction = 0.03f;
+	m_alphaDeduction = 0.09f;
+	m_force = 0.05f;
 }
 
 void Vortex::Cleanup()

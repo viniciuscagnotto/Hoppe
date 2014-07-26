@@ -8,7 +8,7 @@ public:
 
 
 private:
-
+	bool m_isAlive;
 
 public:
 	Player();
@@ -18,6 +18,8 @@ public:
 	void Cleanup();
 	void Update();
 	void Interact(GameObject* go);
+
+	bool IsAlive(){ return m_isAlive; };
 };
 
 #endif  // __PLAYER_H__

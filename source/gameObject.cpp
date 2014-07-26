@@ -4,19 +4,22 @@ GameObject::GameObject() :m_pParent(0),
 m_pSprite1(0),
 m_pSprite2(0),
 m_speed(0.0f),
+m_maxSpeed(5.0f),
 m_speedYRatio(0.0f),
 m_destroyMe(false),
-m_type(kGameObjectType_Count)
+m_type(kGameObjectType_Count),
+m_triggerType(TriggersManager::kTriggerType_Count)
 {
 
 }
 
 GameObject::~GameObject()
 {
+
 	Cleanup();
 }
 
-void GameObject::Init(ResourceManager::EResources id, float posX, float posY, float scaleX = 1.0f, float scaleY = 1.0f)
+void GameObject::Init(ResourceManager::EResources id, float posX, float posY, float scaleX, float scaleY)
 {
 	m_pSprite1 = g_pSpriteManager->CreateSpriteObject(id);
 	m_pSprite1->m_X = posX;
@@ -55,6 +58,9 @@ void GameObject::Cleanup()
 
 void GameObject::Update(float gameSpeed)
 {
+	if (m_destroyMe)
+		return;
+
 	if (!m_pSprite1 || !m_pSprite2)
 		return; 
 
@@ -88,6 +94,8 @@ void GameObject::Update(float gameSpeed)
 		m_pSprite2->m_Y += speed;
 	}
 
+	if ((m_pSprite1->m_Y - m_pSprite1->m_H * 0.5f) > IwGxGetScreenHeight() + 100.0f)
+		m_destroyMe = true;
 }
 
 
@@ -194,4 +202,13 @@ float GameObject::GetDistanceX(GameObject* gameObject){
 	if (pInSceneObject && pInSceneObject2)
 		return pInSceneObject2->m_X - pInSceneObject->m_X;
 	return 0;
+}
+
+void GameObject::AddSpeed(float amount){
+	m_speed += amount;
+	if (m_speed < -m_maxSpeed)
+		m_speed = -m_maxSpeed;
+
+	if (m_speed > m_maxSpeed)
+		m_speed = m_maxSpeed;
 }

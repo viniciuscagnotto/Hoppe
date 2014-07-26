@@ -6,7 +6,6 @@ m_pObjectsContainer(0),
 m_gameSpeed((float)s_kInitialSpeed),
 m_paused(true),
 m_distance(0)
-//m_pPlayer(0)
 {
 	m_type = kScene_Game;
 	for (uint i = 0; i < s_kMaxGameObjects; i++)
@@ -28,11 +27,11 @@ void Game::Init()
 	if (m_background.GetContainer())
 		AddChild(m_background.GetContainer());
 
-	m_backEarth.Create(ResourceManager::kResource_Background_Earth, 0.5f);
+	//m_backEarth.Create(ResourceManager::kResource_Background_Earth, 0.5f);
 	if (m_backEarth.GetContainer())
 		AddChild(m_backEarth.GetContainer());
 
-	m_backSatellite.Create(ResourceManager::kResource_Background_Satellite, 0.65f);
+	//m_backSatellite.Create(ResourceManager::kResource_Background_Satellite, 0.65f);
 	if (m_backSatellite.GetContainer())
 		AddChild(m_backSatellite.GetContainer());
 
@@ -55,7 +54,7 @@ void Game::Init()
 
 	//Game variables
 	m_gameSpeed = (float)s_kInitialSpeed;
-	m_gameSpeedIncrease = 0.0025f;
+	m_gameSpeedIncrease = 0.002f;
 	m_paused = false;
 	m_distance = 0;
 
@@ -81,11 +80,6 @@ void Game::Init()
 
 void Game::Cleanup()
 {
-	//Player
-	//m_pPlayer->Cleanup();
-	//delete m_pPlayer;
-	//m_pPlayer = 0;
-
 	//Game Objects
 	CleanupGameObjects();
 
@@ -127,6 +121,11 @@ void Game::Update(float deltaTime, float alphaMul)
 	if (m_paused)
 		return;
 
+	if (!((Player *)m_gameObjects[0])->IsAlive()){
+		g_pSceneManager->SwitchTo(g_pSceneManager->Find(Scene::kScene_MainMenu));
+		return;
+	}
+
 	Scene::Update(deltaTime, alphaMul);
 
 	m_background.Update(m_gameSpeed);
@@ -138,13 +137,15 @@ void Game::Update(float deltaTime, float alphaMul)
 	
 	if (m_distanceText){
 		char str[32];
-		snprintf(str, 32, "D: %d - S: %d", (int)floorf(m_distance / METER), (int)floorf(m_gameSpeed));
+		snprintf(str, 32, "D: %d - S: %d", GetDistance(), (int)floorf(m_gameSpeed));
 		m_distanceText->m_Text = str;
 	}
 
-
 	if (CheckTouch())
 		HandleTouch();
+
+	//Check Triggers
+	ProcessTriggers();
 
 	//Update Speed
 	m_distance += m_gameSpeed;
@@ -153,6 +154,26 @@ void Game::Update(float deltaTime, float alphaMul)
 		m_gameSpeed = (float)s_kMaxSpeed;
 }
 
+void Game::ProcessTriggers(){
+	if (GetDistance() % 100 == 0){
+		TriggersManager::STrigger newTrigger = m_triggers.GenerateTrigger(GetDistance());
+		switch (newTrigger.type){
+			case TriggersManager::kTriggerType_Asteroid_Small:
+			case TriggersManager::kTriggerType_Asteroid_Big:
+			{
+				for (uint i = 0; i < newTrigger.amount; i++){
+					Asteroid *newAsteroid = new Asteroid();
+					newAsteroid->Init(newTrigger.type, RandomFloat(0.0f, IwGxGetScreenWidth()), -50.0f - (100.0f * i), 0.7f);
+					newAsteroid->AddTo(m_pObjectsContainer);
+					m_gameObjects[m_numGameObjects++] = newAsteroid;
+				}
+				break;
+			}
+			default:
+				break;
+		}
+	}
+}
 
 void Game::UpdateGameObjects(){
 	//Remove Objects

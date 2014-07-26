@@ -20,8 +20,10 @@ protected:
 	EGameObjectType m_type;
 	bool m_destroyMe;
 	float m_speed;
+	float m_maxSpeed;
 	float m_speedYRatio;
 	CNode *m_pParent;
+	TriggersManager::ETriggerType m_triggerType;
 
 	SpriteObject* m_pSprite1;
 	SpriteObject* m_pSprite2;
@@ -30,7 +32,7 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	virtual void Init(ResourceManager::EResources id, float posX, float posY, float scaleX, float scaleY);
+	virtual void Init(ResourceManager::EResources id, float posX, float posY, float scaleX = 1.0f, float scaleY = 1.0f);
 	virtual void Cleanup();
 	virtual void Update(float gameSpeed = 0.0f);
 	virtual void Interact(GameObject *go) {};
@@ -39,7 +41,7 @@ public:
 	bool CheckHit(GameObject* gameObject);
 	float GetDistanceX(GameObject* gameObject);
 
-	void AddSpeed(float amount){ m_speed += amount; };
+	void AddSpeed(float amount);
 	void SetSpeed(float newSpeed){ m_speed = newSpeed; };
 	void AddAlpha(float amount);
 	void SetAlpha(float newAlpha);
