@@ -23,7 +23,6 @@ void Asteroid::Init(TriggersManager::ETriggerType triggerType, float posX, float
 	m_speedYRatio = speedYRatio;
 	m_triggerType = triggerType;
 	m_speed = RandomFloat(-3.0f, 3.0f);
-
 }
 
 void Asteroid::Cleanup()

@@ -4,7 +4,7 @@
 # tool during the build process.
 
 config = {}
-cmdline = ['C:/Marmalade/7.2/s3e/makefile_builder/mkb.py', 'c:/Users/Vinicius/Desktop/Yes or No/Stars/Stars.mkb', '--buildenv=VC12X', '--debug', '--x86', '--no-ide', '--make', '--deploy-only']
+cmdline = ['C:/Marmalade/7.2/s3e/makefile_builder/mkb.py', 'c:/Users/Vinicius/Desktop/Yes or No/Stars/Stars.mkb', '--buildenv=VC12X', '--fake-vc-call', '--deploy-only']
 mkb = 'c:/Users/Vinicius/Desktop/Yes or No/Stars/Stars.mkb'
 mkf = ['c:\\marmalade\\7.2\\extensions\\s3ewebview\\s3ewebview.mkf', 'c:\\marmalade\\7.2\\modules\\iwutil\\iwutil.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\libjpeg\\libjpeg.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\libpng\\libpng.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\zlib\\zlib.mkf', 'c:\\marmalade\\7.2\\extensions\\s3efacebook\\s3efacebook.mkf', 'c:\\marmalade\\7.2\\modules\\iw2d\\iw2d.mkf', 'c:\\marmalade\\7.2\\modules\\iwgx\\iwgx.mkf', 'c:\\marmalade\\7.2\\modules\\iwgl\\iwgl.mkf', 'c:\\marmalade\\7.2\\modules\\iwgeom\\iwgeom.mkf', 'c:\\marmalade\\7.2\\modules\\iwresmanager\\iwresmanager.mkf', 'c:\\marmalade\\7.2\\modules\\iwgxfont\\iwgxfont.mkf', 'c:\\marmalade\\7.2\\modules\\third_party\\tiniconv\\tiniconv.mkf', 'c:\\marmalade\\7.2\\modules\\iw2dscenegraph\\iw2dscenegraph.mkf', 'c:\\marmalade\\7.2\\modules\\iw2dscenegraphcore\\iw2dscenegraphcore.mkf', 'c:\\marmalade\\7.2\\modules\\iwtween\\iwtween.mkf', 'c:\\users\\vinicius\\desktop\\yes or no\\stars\\modules\\soundengine\\soundengine.mkf', 'c:\\marmalade\\7.2\\extensions\\s3eflurry\\s3eflurry.mkf']
 
