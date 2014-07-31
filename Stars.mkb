@@ -35,6 +35,9 @@ files
 	utils.cpp
 	easyArray.h
 
+	[stars huds]
+
+
 	[stars managers]
 	savedataManager.h
 	savedataManager.cpp
