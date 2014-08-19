@@ -1,0 +1,46 @@
+includepath h
+includepath source
+
+files
+{
+	(h)
+	core.h
+
+	[managers]
+	savedataManager.h
+	resourceManager.h
+	spriteManager.h
+	audioManager.h
+    inputManager.h
+    timerManager.h
+	parallaxManager.h
+	
+	[utils]
+	utils.h
+	easyArray.h
+
+	(source)
+	[managers]
+	savedataManager.cpp
+	resourceManager.cpp
+	spriteManager.cpp
+	audioManager.cpp
+	inputManager.cpp 
+    timerManager.cpp 
+	parallaxManager.cpp
+
+	[utils]
+	utils.cpp
+}
+
+subprojects
+{
+    s3eWebView
+    s3eFacebook
+    iw2d
+    iw2dscenegraph
+    iw2dscenegraphcore
+    iwtween
+    SoundEngine
+    s3eFlurry
+}

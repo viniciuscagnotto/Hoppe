@@ -25,6 +25,9 @@
 #ifndef IW_ASSERTION_CHANNEL_WEBVIEW
 #   define IW_ASSERTION_CHANNEL_WEBVIEW 1
 #endif
+#ifndef IW_MKF_CORE
+#   define IW_MKF_CORE 1
+#endif
 #ifndef IW_MKF_IW2D
 #   define IW_MKF_IW2D 1
 #endif
@@ -72,6 +75,9 @@
 #endif
 #ifndef IW_MKF_SOUNDENGINE
 #   define IW_MKF_SOUNDENGINE 1
+#endif
+#ifndef IW_MKF_TEMPLATE
+#   define IW_MKF_TEMPLATE 1
 #endif
 #ifndef IW_MKF_TINICONV
 #   define IW_MKF_TINICONV 1

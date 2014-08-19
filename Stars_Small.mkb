@@ -7,72 +7,22 @@ options
 files
 {
     (source)
-	[stars entities]
+	[source init]
+	main.cpp
+	header.h
+	game.h
+	game.cpp
+
+	[source managers]
+	triggersManager.h
+	triggersManager.cpp
+
+	[source entities]
 	gameObject.h
 	gameObject.cpp
 	player.h
 	player.cpp
-	vortex.h
-	vortex.cpp
-	asteroid.h
-	asteroid.cpp
-	comet.h
-	comet.cpp
-	satellite.h
-	satellite.cpp
-	blackHole.h
-	blackHole.cpp
-	star.h
-	star.cpp
 
-	[stars main]
-	include.h
-    main.h
-    main.cpp
-
-	[stars utils]
-	utils.h
-	utils.cpp
-	easyArray.h
-
-	[stars huds]
-
-
-	[stars managers]
-	savedataManager.h
-	savedataManager.cpp
-	resourceManager.h
-	resourceManager.cpp
-	spriteManager.h
-	spriteManager.cpp
-    audioManager.h
-    audioManager.cpp
-    inputManager.h
-    inputManager.cpp 
-    sceneManager.h
-    sceneManager.cpp
-	timerManager.h
-	timerManager.cpp 
-	parallaxManager.h
-	parallaxManager.cpp
-	triggersManager.h
-	triggersManager.cpp
-
-	[stars scenes]
-    game.h
-    game.cpp
-    mainMenu.h
-    mainMenu.cpp
-	options.h
-	options.cpp
-	store.h
-	store.cpp
-	customize.h
-	customize.cpp
-	items.h
-	items.cpp
-	getStars.h
-	getStars.cpp
 }
 
 assets
@@ -95,6 +45,8 @@ subprojects
     iwtween
     SoundEngine
     s3eFlurry
+	core
+	template
 }
 
 deployments

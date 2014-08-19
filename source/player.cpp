@@ -1,4 +1,4 @@
-#include "include.h"
+#include "header.h"
 
 Player::Player()
 {
@@ -34,7 +34,7 @@ void Player::Interact(GameObject *go){
 	if (!m_isAlive)
 		return;
 
-	switch (go->GetType()){
+	/*switch (go->GetType()){
 		case kGameObjectType_Vortex:
 		{
 			Vortex *pVortex = (Vortex *)go;
@@ -64,5 +64,5 @@ void Player::Interact(GameObject *go){
 			break;
 		default:
 			break;
-	};
+	};*/
 }

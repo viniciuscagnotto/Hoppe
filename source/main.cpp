@@ -1,10 +1,8 @@
-#include "include.h"
+#include "header.h"
 
 #define FRAME_TIME  (30.0f / 1000.0f)
 //game ID
 #define FLURRY_API_KEY "WQFTM6SVNXKJ7958HXNP"
-						
-CTweenManager*  g_pTweener = 0;
 
 int main()
 {

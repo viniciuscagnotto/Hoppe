@@ -1,0 +1,46 @@
+includepath h
+includepath source
+
+files
+{
+	(h)
+	template.h
+
+	[managers]
+	sceneManager.h
+    
+	[scenes]
+	gameplay.h
+    mainMenu.h
+    options.h
+	store.h
+	customize.h
+	items.h
+	iap.h
+	
+	(source)
+	[managers]
+	sceneManager.cpp
+
+	[scenes]
+	gameplay.cpp
+    mainMenu.cpp
+	options.cpp
+	store.cpp
+	customize.cpp
+	items.cpp
+	iap.cpp
+}
+
+subprojects
+{
+    s3eWebView
+    s3eFacebook
+    iw2d
+    iw2dscenegraph
+    iw2dscenegraphcore
+    iwtween
+    SoundEngine
+    s3eFlurry
+    core
+}

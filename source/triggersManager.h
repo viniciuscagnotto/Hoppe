@@ -1,4 +1,4 @@
-#if !defined(__TRIGGERS_MANAGER_H__)
+#ifndef __TRIGGERS_MANAGER_H__
 #define __TRIGGERS_MANAGER_H__
 
 class TriggersManager

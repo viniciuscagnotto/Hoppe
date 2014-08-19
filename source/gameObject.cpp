@@ -1,4 +1,4 @@
-#include "include.h"
+#include "header.h"
 
 GameObject::GameObject() :m_pParent(0),
 m_pSprite1(0),
