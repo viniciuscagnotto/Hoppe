@@ -66,12 +66,12 @@ subprojects
 
 deployments
 {
-    iphone-bundle-url-name="com.yesornogames.countingstarts"
+    iphone-bundle-url-name="com.yesornogames.corococorun"
     iphone-bundle-url-schemes="fd<FACEBOOK_APP_ID>"
 	
 	# Note the App/Bundle ID must be set to the same value as an app registered
     # through iTunes Connect or the app will not be recognised by game center
-    iphone-appid="com.yesornogames.countingstarts"
+    iphone-appid="com.yesornogames.corococorun"
 
 }
 
