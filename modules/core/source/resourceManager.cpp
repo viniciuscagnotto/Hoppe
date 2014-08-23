@@ -3,68 +3,45 @@
 ResourceManager* g_pResourceManager = 0;
 
 ResourceManager::ResourceManager(){
-	for (unsigned int i = 0; i < kResource_Count; i++){
-		m_resourcesMap[i] = 0;
+	for (unsigned int i = 0; i < s_kMaxGraphics; i++){
+		m_graphics[i] = 0;
 	}
 
-	for (unsigned int i = 0; i < kFont_Count; i++){
-		m_fontsMap[i] = 0;
+	for (unsigned int i = 0; i < s_kMaxFonts; i++){
+		m_fonts[i] = 0;
 	}
-
-	Init();
 }
 
 ResourceManager::~ResourceManager(){
 	Destroy();
 }
 
-void ResourceManager::Init(){
-	//Resources
-	RegisterResource(kResource_Entity_Player, "textures/astronaut.png");
-	RegisterResource(kResource_Entity_Vortex, "textures/vortex.png");
-	RegisterResource(kResource_Entity_Asteroid_Small, "textures/asteroid_small.png");
-	RegisterResource(kResource_Entity_Asteroid_Big, "textures/asteroid.png");
-	RegisterResource(kResource_Entity_Comet, "textures/comet.png");
-	RegisterResource(kResource_Entity_Satellite, "textures/satellite.png");
-	RegisterResource(kResource_Entity_BlackHole, "textures/black_hole.png");
-	RegisterResource(kResource_Entity_Star, "textures/star.png");
-
-	RegisterResource(kResource_Background_Space, "textures/back_space.jpg");
-	RegisterResource(kResource_Background_Earth, "textures/back_earth.png");
-	RegisterResource(kResource_Background_Satellite, "textures/back_sate.png");
-	
-	RegisterResource(kResource_Button_StartGame, "textures/start_game.png");
-
-	//Fonts
-	RegisterFont(kFont_Arial_8, "fonts/arial8.gxfont");
-}
-
 void ResourceManager::Destroy(){
-	for (unsigned int i = 0; i < kResource_Count; i++){
-		if (m_resourcesMap[i])
-			delete m_resourcesMap[i];
-		m_resourcesMap[i] = 0;
+	for (unsigned int i = 0; i < s_kMaxGraphics; i++){
+		if (m_graphics[i])
+			delete m_graphics[i];
+		m_graphics[i] = 0;
 	}
 
-	for (unsigned int i = 0; i < kFont_Count; i++){
-		if (m_fontsMap[i])
-			delete m_fontsMap[i];
-		m_fontsMap[i] = 0;
+	for (unsigned int i = 0; i < s_kMaxFonts; i++){
+		if (m_fonts[i])
+			delete m_fonts[i];
+		m_fonts[i] = 0;
 	}
 }
 
-void ResourceManager::RegisterResource(EResources id, const char * fileName){
-	m_resourcesMap[id] = Iw2DCreateImage(fileName);
+void ResourceManager::RegisterGraphic(uint index, const char * fileName){
+	m_graphics[index] = Iw2DCreateImage(fileName);
 }
 
-CIw2DImage *ResourceManager::GetResource(EResources id){
-	return m_resourcesMap[id];
+CIw2DImage *ResourceManager::GetGraphic(uint index){
+	return m_graphics[index];
 }
 
-void ResourceManager::RegisterFont(EFonts id, const char * fileName){
-	m_fontsMap[id] = Iw2DCreateFont(fileName);
+void ResourceManager::RegisterFont(uint index, const char * fileName){
+	m_fonts[index] = Iw2DCreateFont(fileName);
 }
 
-CIw2DFont *ResourceManager::GetFont(EFonts id){
-	return m_fontsMap[id];
+CIw2DFont *ResourceManager::GetFont(uint index){
+	return m_fonts[index];
 }

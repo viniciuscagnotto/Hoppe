@@ -12,14 +12,14 @@ bool SpriteObject::IsInScene(){
 	return false;
 }
 
-SpriteObject* SpriteManager::CreateSpriteObject(ResourceManager::EResources id)
+SpriteObject* SpriteManager::CreateSpriteObject(uint resourceIndex)
 {
 	SpriteObject *pSpriteObject = new SpriteObject();
 	pSpriteObject->m_X = 0;
 	pSpriteObject->m_Y = 0;
 	pSpriteObject->m_AnchorX = 0.5f;
 	pSpriteObject->m_AnchorY = 0.5f;
-	pSpriteObject->SetImage(g_pResourceManager->GetResource(id));
+	pSpriteObject->SetImage(g_pResourceManager->GetGraphic(resourceIndex));
 	return pSpriteObject;
 }
 

@@ -9,24 +9,24 @@ m_isInitiated(false){
 
 }
 
-void ParallaxManager::Create(ResourceManager::EResources id, float speedRatio){
+void ParallaxManager::Create(uint resourceIndex, float speedRatio){
 	if (m_isInitiated)
 		return;
 
 	m_speedRatio = speedRatio;
 	m_pContainer = new CSprite();
 
-	m_pSprite1 = g_pSpriteManager->CreateSpriteObject(id);
+	m_pSprite1 = g_pSpriteManager->CreateSpriteObject(resourceIndex);
 	m_pSprite1->m_AnchorX = m_pSprite1->m_AnchorY = 0;
 	m_pContainer->AddChild(m_pSprite1);
 	m_pSprite1->m_Y = -(m_pSprite1->m_H - IwGxGetScreenHeight());
 
-	m_pSprite2 = g_pSpriteManager->CreateSpriteObject(id);
+	m_pSprite2 = g_pSpriteManager->CreateSpriteObject(resourceIndex);
 	m_pSprite2->m_AnchorX = m_pSprite2->m_AnchorY = 0;
 	m_pContainer->AddChild(m_pSprite2);
 	m_pSprite2->m_Y = m_pSprite1->m_Y - m_pSprite1->m_H;
 
-	m_pSprite3 = g_pSpriteManager->CreateSpriteObject(id);
+	m_pSprite3 = g_pSpriteManager->CreateSpriteObject(resourceIndex);
 	m_pSprite3->m_AnchorX = m_pSprite3->m_AnchorY = 0;
 	m_pContainer->AddChild(m_pSprite3);
 	m_pSprite3->m_Y = m_pSprite2->m_Y - m_pSprite2->m_H;

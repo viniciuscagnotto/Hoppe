@@ -5,11 +5,11 @@ class AudioManager
 {
 public:
 	struct SAudio{
-		SAudio() :m_pSoundData(0), m_pSoundSpec(0) {}
+		SAudio() :pSoundData(0), pSoundSpec(0) {}
 		~SAudio();
-		unsigned int m_nameHash; // Hashed string name of sound effect
-		CIwSoundData* m_pSoundData; // Sound effect data
-		CIwSoundSpec* m_pSoundSpec; // Sound effect specification
+		unsigned int nameHash; // Hashed string name of sound effect
+		CIwSoundData* pSoundData; // Sound effect data
+		CIwSoundSpec* pSoundSpec; // Sound effect specification
 
 		bool Load(const char* filename);
 	};
@@ -21,7 +21,7 @@ public:
 	AudioManager();
 	~AudioManager();
 
-	SAudio* findSound(unsigned int name_hash);
+	SAudio* FindSound(unsigned int nameHash);
 	void Update();
 	
 	static void PlayMusic(const char* filename, bool repeat = true);
@@ -31,7 +31,7 @@ public:
     void PlaySound(const char* filename);
 };
 
-extern AudioManager*   g_pAudio;
+extern AudioManager* g_pAudio;
 
 #endif  // __AUDIO_MANAGER_H__
 

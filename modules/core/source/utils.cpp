@@ -3,14 +3,28 @@
 CTweenManager*  g_pTweener = 0;
 
 //Randon Functions
-int RandomInt(int from, int to){
+int L_RandomInt(int from, int to){
 	return from + (rand() % ((to - from) + 1));
 }
 
-float RandomFloat(float from, float to){
+float L_RandomFloat(float from, float to){
 	return from + (to - from) * rand() / ((float)RAND_MAX);
 }
 
-float Random(){
-	return RandomFloat(0.0f, 1.0f);
+float L_Random(){
+	return L_RandomFloat(0.0f, 1.0f);
+}
+
+//Bit State Functions
+bool L_GetBitState(int flagHolder, int bitState){
+	return (flagHolder & bitState) != 0;
+}
+
+void L_SetBitState(int *pFlagHolder, int bitState, bool state){
+	if (state){
+		*pFlagHolder |= bitState;
+		return;
+	}
+
+	*pFlagHolder &= ~bitState;
 }

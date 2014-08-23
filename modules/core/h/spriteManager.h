@@ -13,7 +13,7 @@ public:
 class SpriteManager
 {
 public:
-	SpriteObject* CreateSpriteObject(ResourceManager::EResources id);
+	SpriteObject* CreateSpriteObject(uint resourceIndex);
 	void DeleteSpriteObject(SpriteObject *pSpriteObject);
 	bool Intersects(SpriteObject *pObject1, SpriteObject *pObject2);
 };

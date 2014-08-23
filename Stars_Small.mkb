@@ -14,14 +14,30 @@ files
 	game.cpp
 
 	[source managers]
-	triggersManager.h
-	triggersManager.cpp
-
+	sceneManager.h
+	sceneManager.cpp
+	
 	[source entities]
 	gameObject.h
 	gameObject.cpp
 	player.h
 	player.cpp
+
+	[source scenes]
+	gameplay.h
+    gameplay.cpp
+    mainMenu.h
+    mainMenu.cpp
+	options.h
+	options.cpp
+	store.h
+	store.cpp
+	customize.h
+	customize.cpp
+	items.h
+	items.cpp
+	iap.h
+	iap.cpp
 
 }
 
@@ -46,7 +62,6 @@ subprojects
     SoundEngine
     s3eFlurry
 	core
-	template
 }
 
 deployments

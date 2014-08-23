@@ -1,25 +1,25 @@
 #include "core.h"
 
-AudioManager*  g_pAudio = 0;
+AudioManager* g_pAudio = 0;
 
 bool AudioManager::SAudio::Load(const char* filename)
 {
-    m_nameHash = IwHashString(filename);
-    m_pSoundData = CIwSoundWAV::Create(filename, 0, 0);
-	if (m_pSoundData == 0)
+    nameHash = IwHashString(filename);
+    pSoundData = CIwSoundWAV::Create(filename, 0, 0);
+	if (pSoundData == 0)
         return false;
-    m_pSoundSpec = new CIwSoundSpec();
-	m_pSoundSpec->SetData(m_pSoundData);
+    pSoundSpec = new CIwSoundSpec();
+	pSoundSpec->SetData(pSoundData);
 
     return true;
 }
 
 AudioManager::SAudio::~SAudio()
 {
-    if (m_pSoundSpec != 0)
-		delete m_pSoundSpec;
-    if (m_pSoundData != 0)
-		delete m_pSoundData;
+    if (pSoundSpec != 0)
+		delete pSoundSpec;
+    if (pSoundData != 0)
+		delete pSoundData;
 }
 
 AudioManager::AudioManager()
@@ -34,10 +34,10 @@ AudioManager::~AudioManager()
     IwSoundTerminate();
 }
 
-AudioManager::SAudio* AudioManager::findSound(unsigned int name_hash)
+AudioManager::SAudio* AudioManager::FindSound(unsigned int nameHash)
 {
 	for (std::list<SAudio*>::iterator it = m_sounds.begin(); it != m_sounds.end(); it++)
-        if ((*it)->m_nameHash == name_hash)
+		if ((*it)->nameHash == nameHash)
             return *it;
     return 0;
 }
@@ -61,7 +61,7 @@ void AudioManager::StopMusic()
 
 AudioManager::SAudio* AudioManager::PreloadSound(const char* filename)
 {
-	SAudio* pSound = findSound(IwHashString(filename));
+	SAudio* pSound = FindSound(IwHashString(filename));
 	if (pSound == 0)
     {
 		pSound = new SAudio();
@@ -80,5 +80,5 @@ void AudioManager::PlaySound(const char* filename)
 {
     SAudio* pSound = PreloadSound(filename);
 	if (pSound != 0)
-		pSound->m_pSoundSpec->Play();
+		pSound->pSoundSpec->Play();
 }

@@ -1,16 +1,25 @@
 #ifndef __HEADER_H__
 #define __HEADER_H__
 
-#include "template.h"
+#include "core.h"
+
+//managers
+#include "sceneManager.h"
 
 //game
 #include "game.h"
 
-//managers
-#include "triggersManager.h"
-
 //entities
 #include "gameObject.h"
 #include "player.h"
+
+//scenes
+#include "mainMenu.h"
+#include "gameplay.h"
+#include "options.h"
+#include "store.h"
+#include "items.h"
+#include "customize.h"
+#include "iap.h"
 
 #endif //__HEADER_H__

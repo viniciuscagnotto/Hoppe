@@ -16,7 +16,6 @@ public:
 	void Init();
 	void Cleanup();
 	void Update();
-	void Interact(GameObject* go);
 
 	bool IsAlive(){ return m_isAlive; };
 };

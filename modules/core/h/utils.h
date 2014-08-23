@@ -24,9 +24,12 @@ struct PointInt{
 };
 
 //Random Functions
-int RandomInt(int from, int to);
-float RandomFloat(float from, float to);
-float Random();
+int L_RandomInt(int from, int to);
+float L_RandomFloat(float from, float to);
+float L_Random();
 
+//Bit State functions
+bool L_GetBitState(int flagHolder, int bitState);
+void L_SetBitState(int *flagHolder, int bitState, bool state);
 
 #endif //__UTILS_H__

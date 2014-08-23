@@ -2,35 +2,35 @@
 
 InputManager* g_pInput = 0;
 
-void InputManager::TouchButtonCB(s3ePointerEvent* event)
+void InputManager::TouchButtonCB(s3ePointerEvent* pEvent)
 {
-    g_pInput->m_PrevTouched = g_pInput->m_Touched;
-    g_pInput->m_Touched = event->m_Pressed != 0;
-    g_pInput->m_X = event->m_x;
-    g_pInput->m_Y = event->m_y;
+    g_pInput->m_prevTouched = g_pInput->m_touched;
+	g_pInput->m_touched = pEvent->m_Pressed != 0;
+	g_pInput->m_x = pEvent->m_x;
+	g_pInput->m_y = pEvent->m_y;
 }
 
-void InputManager::TouchMotionCB(s3ePointerMotionEvent* event)
+void InputManager::TouchMotionCB(s3ePointerMotionEvent* pEvent)
 {
-    g_pInput->m_X = event->m_x;
-    g_pInput->m_Y = event->m_y;
+	g_pInput->m_x = pEvent->m_x;
+	g_pInput->m_y = pEvent->m_y;
 }
 
-void InputManager::MultiTouchButtonCB(s3ePointerTouchEvent* event)
+void InputManager::MultiTouchButtonCB(s3ePointerTouchEvent* pEvent)
 {
-    g_pInput->m_PrevTouched = g_pInput->m_Touched;
-    g_pInput->m_Touched = event->m_Pressed != 0;
-    g_pInput->m_X = event->m_x;
-    g_pInput->m_Y = event->m_y;
+    g_pInput->m_prevTouched = g_pInput->m_touched;
+	g_pInput->m_touched = pEvent->m_Pressed != 0;
+	g_pInput->m_x = pEvent->m_x;
+	g_pInput->m_y = pEvent->m_y;
 }
 
-void InputManager::MultiTouchMotionCB(s3ePointerTouchMotionEvent* event)
+void InputManager::MultiTouchMotionCB(s3ePointerTouchMotionEvent* pEvent)
 {
-    g_pInput->m_X = event->m_x;
-    g_pInput->m_Y = event->m_y;
+	g_pInput->m_x = pEvent->m_x;
+	g_pInput->m_y = pEvent->m_y;
 }
 
-InputManager::InputManager() : m_Touched(false), m_PrevTouched(false)
+InputManager::InputManager() : m_touched(false), m_prevTouched(false)
 {
     // Set touch event callback handlers, single and multi-touch devices have different callbacks assigned
     if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE) != 0)
@@ -52,7 +52,7 @@ void InputManager::Update()
 
 void InputManager::Reset()
 {
-    m_PrevTouched = false;
-    m_Touched = false;
+    m_prevTouched = false;
+    m_touched = false;
 }
 

@@ -14,7 +14,7 @@ private:
 public:
 	ParallaxManager();
 
-	void Create(ResourceManager::EResources id, float speedRatio);
+	void Create(uint resourceIndex, float speedRatio);
 	void Update(float gameSpeed);
 	void Reset();
 	void Destroy();

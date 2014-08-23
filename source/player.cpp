@@ -1,8 +1,7 @@
 #include "header.h"
 
-Player::Player()
+Player::Player() :GameObject(kGameObjectType_Player)
 {
-	m_type = kGameObjectType_Player;
 	Init();
 }
 
@@ -13,9 +12,9 @@ Player::~Player()
 
 void Player::Init()
 {
-	float playerX = IwGxGetScreenWidth() * 0.5f;
-	float playerY = IwGxGetScreenHeight() * 0.8f;
-	GameObject::Init(ResourceManager::kResource_Entity_Player, playerX, playerY);
+	float playerX = (float)IwGxGetScreenWidth() * 0.5f;
+	float playerY = (float)IwGxGetScreenHeight() * 0.5f;
+	GameObject::Init(Game::kGameGraphics_Entity_Player, playerX, playerY);
 	m_isAlive = true;
 }
 
@@ -28,41 +27,7 @@ void Player::Cleanup()
 void Player::Update()
 {
 	GameObject::Update();
-}
 
-void Player::Interact(GameObject *go){
-	if (!m_isAlive)
-		return;
+	m_pSprite->m_X += 5.0f;
 
-	/*switch (go->GetType()){
-		case kGameObjectType_Vortex:
-		{
-			Vortex *pVortex = (Vortex *)go;
-			if (CheckHit(go)){
-				if (GetDistanceX(go) >= 0){
-					if (m_speed > 0){
-						SetSpeed(0.0f);
-					}
-
-					AddSpeed(-pVortex->GetForce());
-				}
-				else{
-					if (m_speed < 0){
-						SetSpeed(0.0f);
-					}
-
-					AddSpeed(pVortex->GetForce());
-				}
-			}
-			break;
-		}
-		case kGameObjectType_Asteroid:
-			if (CheckHit(go)){
-				m_isAlive = false;
-			}
-
-			break;
-		default:
-			break;
-	};*/
 }
