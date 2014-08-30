@@ -5,6 +5,7 @@ class SpriteObject : public CSprite
 {
 public:
 	SpriteObject() {};
+	void Cleanup();
 	bool IsInScene();
 	float RealW(){ return m_W * m_ScaleX; };
 	float RealH(){ return m_H * m_ScaleY; };

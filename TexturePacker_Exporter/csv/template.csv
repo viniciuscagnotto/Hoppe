@@ -1,0 +1,3 @@
+add_texture;{{texture.trimmedName}};{{texture.fullName}}
+{% for sprite in allSprites %}add_sprite;{{sprite.trimmedName}};{{sprite.frameRect.x}};{{sprite.frameRect.y}};{{sprite.frameRect.width}};{{sprite.frameRect.height}}{% if not forloop.last %}
+{% endif %}{% endfor %}

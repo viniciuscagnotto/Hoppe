@@ -2,6 +2,12 @@
 
 SpriteManager* g_pSpriteManager = 0;
 
+void SpriteObject::Cleanup(){
+	m_Image = 0;
+	m_W = 0;
+	m_H = 0;
+}
+
 bool SpriteObject::IsInScene(){
 	if (m_X + RealW() * 0.5f > 0 &&
 		m_X - RealW() * 0.5f < IwGxGetScreenWidth() &&
@@ -28,7 +34,7 @@ void SpriteManager::DeleteSpriteObject(SpriteObject *pSpriteObject)
 	if (!pSpriteObject)
 		return;
 
-	pSpriteObject->SetImage(0);
+	pSpriteObject->Cleanup();
 	delete pSpriteObject;
 	pSpriteObject = 0;
 }

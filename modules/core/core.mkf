@@ -5,6 +5,9 @@ files
 {
 	(h)
 	core.h
+	
+	[io]
+	csvCommands.h
 
 	[managers]
 	savedataManager.h
@@ -19,7 +22,10 @@ files
 	utils.h
 	easyArray.h
 
-	(source)
+	(source)	
+	[io]
+	csvCommands.cpp
+
 	[managers]
 	savedataManager.cpp
 	resourceManager.cpp

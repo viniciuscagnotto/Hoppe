@@ -33,6 +33,7 @@ using namespace Iw2DSceneGraph;
 #include "easyArray.h"
 
 //managers
+#include "csvCommands.h"
 #include "savedataManager.h"
 #include "resourceManager.h"
 #include "spriteManager.h"
