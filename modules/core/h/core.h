@@ -22,10 +22,13 @@ using namespace Iw2DSceneGraph;
 #include "s3eFlurry.h"
 
 //C++
+#include <stdlib.h>
 #include <iostream>
 #include <list>
 #include <map>
 #include <vector>
+#include <string>
+#include <sstream>
 #include <time.h>
 
 //utils
