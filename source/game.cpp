@@ -33,6 +33,9 @@ void Game::LoadResources(){
 	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Space, "textures/back_space.jpg");
 	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Button_StartGame, "textures/start_game.png");
 
+	//Atlases
+	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_FazendeiroRun, (uint)kGameAtlases_FazendeiroRun, "atlas/fazendeiro_run");
+
 	//Fonts
 	g_pResourceManager->RegisterFont((uint)kGameFonts_Arial_8, "fonts/arial8.gxfont");
 

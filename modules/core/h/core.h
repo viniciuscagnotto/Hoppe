@@ -35,8 +35,13 @@ using namespace Iw2DSceneGraph;
 #include "utils.h"
 #include "easyArray.h"
 
-//managers
+//graphics
+#include "customAtlas.h"
+
+//io
 #include "csvCommands.h"
+
+//managers
 #include "savedataManager.h"
 #include "resourceManager.h"
 #include "spriteManager.h"

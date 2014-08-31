@@ -17,7 +17,16 @@ public:
 		//Buttons
 		kGameGraphics_Button_StartGame,
 
+		//Atlases
+		kGameGraphics_Atlas_FazendeiroRun,
+
 		kGameGraphics_Count
+	};
+
+	enum EGameAtlases{
+		kGameAtlases_FazendeiroRun = 0,
+
+		kGameAtlases_Count
 	};
 
 	enum EGameFonts{

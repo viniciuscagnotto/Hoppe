@@ -8,6 +8,12 @@ public:
 
 private:
 	SpriteObject* m_pStartGame;
+	
+	SpriteObject* m_pFazendeiroRun1;
+	SpriteObject* m_pFazendeiroRun2;
+	SpriteObject* m_pFazendeiroRun3;
+	SpriteObject* m_pFazendeiroRun4;
+	SpriteObject* m_pFazendeiroRun5;
 
 public:
 	MainMenu();

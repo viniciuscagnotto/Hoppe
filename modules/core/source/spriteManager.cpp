@@ -3,6 +3,10 @@
 SpriteManager* g_pSpriteManager = 0;
 
 void SpriteObject::Cleanup(){
+	m_Atlas = 0;
+	m_AnimDuration = 0.0f;
+	m_AnimRepeat = 0;
+	
 	m_Image = 0;
 	m_W = 0;
 	m_H = 0;
@@ -26,6 +30,19 @@ SpriteObject* SpriteManager::CreateSpriteObject(uint resourceIndex)
 	pSpriteObject->m_AnchorX = 0.5f;
 	pSpriteObject->m_AnchorY = 0.5f;
 	pSpriteObject->SetImage(g_pResourceManager->GetGraphic(resourceIndex));
+	return pSpriteObject;
+}
+
+SpriteObject* SpriteManager::CreateAnimatedSprite(uint atlasIndex, float duration, int repeat)
+{
+	SpriteObject *pSpriteObject = new SpriteObject();
+	pSpriteObject->m_X = 0;
+	pSpriteObject->m_Y = 0;
+	pSpriteObject->m_AnchorX = 0.5f;
+	pSpriteObject->m_AnchorY = 0.5f;
+	pSpriteObject->SetAtlas((CAtlas *)g_pResourceManager->GetAtlas(atlasIndex));
+	pSpriteObject->SetAnimDuration(duration);
+	pSpriteObject->SetAnimRepeat(repeat);
 	return pSpriteObject;
 }
 

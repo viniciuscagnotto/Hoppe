@@ -6,6 +6,10 @@ files
 	(h)
 	core.h
 	
+	[graphics]
+	customAtlas.h
+
+
 	[io]
 	csvCommands.h
 
@@ -23,6 +27,7 @@ files
 	easyArray.h
 
 	(source)	
+
 	[io]
 	csvCommands.cpp
 

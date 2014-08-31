@@ -15,6 +15,7 @@ class SpriteManager
 {
 public:
 	SpriteObject* CreateSpriteObject(uint resourceIndex);
+	SpriteObject* CreateAnimatedSprite(uint atlasIndex, float duration = 1.0f, int repeat = 1);
 	void DeleteSpriteObject(SpriteObject *pSpriteObject);
 	bool Intersects(SpriteObject *pObject1, SpriteObject *pObject2);
 };
