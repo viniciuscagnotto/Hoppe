@@ -5,7 +5,7 @@ class GameObject
 {
 public:
 	enum EGameObjectType{
-		kGameObjectType_Player = 0,
+		kGameObjectType_Galinha = 0,
 		
 		kGameObjectType_Count
 	};
@@ -21,6 +21,7 @@ public:
 	GameObject(EGameObjectType gameObjectType);
 	virtual ~GameObject();
 
+	virtual void Init(float posX, float posY, float scaleX = 1.0f, float scaleY = 1.0f);
 	virtual void Init(Game::EGameGraphics id, float posX, float posY, float scaleX = 1.0f, float scaleY = 1.0f);
 	virtual void Cleanup();
 	virtual void Update();
@@ -36,6 +37,7 @@ public:
 	bool IsVisible(){ return m_pSprite ? m_pSprite->m_IsVisible : false; };
 	bool CanDestroyMe(){ return m_destroyMe; };
 
+	void RunAnimation(uint animationState){ m_pSprite->RunAnimation(animationState); };
 	SpriteObject* GetSprite(){ return m_pSprite; };
 };
 

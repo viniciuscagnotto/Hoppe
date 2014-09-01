@@ -22,6 +22,15 @@ GameObject::~GameObject()
 	Cleanup();
 }
 
+void GameObject::Init(float posX, float posY, float scaleX, float scaleY)
+{
+	m_pSprite = g_pSpriteManager->CreateSpriteObject();
+	m_pSprite->m_X = posX;
+	m_pSprite->m_Y = posY;
+	m_pSprite->m_ScaleX = scaleX;
+	m_pSprite->m_ScaleY = scaleY;
+}
+
 void GameObject::Init(Game::EGameGraphics id, float posX, float posY, float scaleX, float scaleY)
 {
 	m_pSprite = g_pSpriteManager->CreateSpriteObject((uint)id);

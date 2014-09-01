@@ -1,7 +1,6 @@
 #include "header.h"
 
-Gameplay::Gameplay() : Scene(kScene_Gameplay), 
-m_pPlayer(0)
+Gameplay::Gameplay() : Scene(kScene_Gameplay)
 {
 	
 }
@@ -20,17 +19,11 @@ void Gameplay::Init()
 	if (m_background.GetContainer())
 		AddChild(m_background.GetContainer());
 
-	//Loading Player
-	m_pPlayer = new Player();
-	m_pPlayer->AddTo(this);
 }
 
 void Gameplay::Cleanup()
 {
-	//Cleanup Player
-	delete m_pPlayer;
-	m_pPlayer = 0;
-
+	
 	//Cleanup Background
 	if (IsChild(m_background.GetContainer()))
 		RemoveChild(m_background.GetContainer());
@@ -47,7 +40,6 @@ void Gameplay::Update(float deltaTime, float alphaMul)
 	Scene::Update(deltaTime, alphaMul);
 	
 	m_background.Update(1.0f);
-	m_pPlayer->Update();
 
 	if (CheckTouch())
 		HandleTouch();

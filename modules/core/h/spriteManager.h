@@ -4,9 +4,36 @@
 class SpriteObject : public CSprite
 {
 public:
-	SpriteObject() {};
+	static const uint s_kMaxAnimations = 16;
+
+	struct SAnimation{
+		CAtlas *animationAtlas;
+		float duration;
+		int repeat;
+
+		SAnimation(){
+			Cleanup();
+		};
+
+		void Cleanup(){
+			animationAtlas = 0;
+			duration = 1.0f;
+			repeat = 1;
+		};
+	};
+
+private:
+	EasyArray<SAnimation, s_kMaxAnimations> m_animations;
+	uint m_animationState;
+
+public:
+	SpriteObject();
 	void Cleanup();
 	bool IsInScene();
+
+	void AddAnimation(uint animationState, uint atlasIndex, float duration = 1.0f, int repeat = 1);
+	void RunAnimation(uint animationState);
+
 	float RealW(){ return m_W * m_ScaleX; };
 	float RealH(){ return m_H * m_ScaleY; };
 };
@@ -14,8 +41,8 @@ public:
 class SpriteManager
 {
 public:
+	SpriteObject* CreateSpriteObject();
 	SpriteObject* CreateSpriteObject(uint resourceIndex);
-	SpriteObject* CreateAnimatedSprite(uint atlasIndex, float duration = 1.0f, int repeat = 1);
 	void DeleteSpriteObject(SpriteObject *pSpriteObject);
 	bool Intersects(SpriteObject *pObject1, SpriteObject *pObject2);
 };

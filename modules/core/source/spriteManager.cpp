@@ -2,7 +2,18 @@
 
 SpriteManager* g_pSpriteManager = 0;
 
+//Sprite Object --------------------------------------------------------------
+SpriteObject::SpriteObject():m_animationState(0){
+	for (uint i = 0; i < s_kMaxAnimations; i++)
+		m_animations[i] = SAnimation();
+	Cleanup();
+}
+
 void SpriteObject::Cleanup(){
+	for (uint i = 0; i < s_kMaxAnimations; i++)
+		m_animations[i].Cleanup();
+	m_animationState = 0;
+
 	m_Atlas = 0;
 	m_AnimDuration = 0.0f;
 	m_AnimRepeat = 0;
@@ -10,6 +21,8 @@ void SpriteObject::Cleanup(){
 	m_Image = 0;
 	m_W = 0;
 	m_H = 0;
+	m_AnchorX = 0.5f;
+	m_AnchorY = 0.5f;
 }
 
 bool SpriteObject::IsInScene(){
@@ -22,27 +35,29 @@ bool SpriteObject::IsInScene(){
 	return false;
 }
 
-SpriteObject* SpriteManager::CreateSpriteObject(uint resourceIndex)
-{
+void SpriteObject::AddAnimation(uint animationState, uint atlasIndex, float duration, int repeat){
+	SAnimation *pAnimation = &m_animations[animationState];
+	pAnimation->animationAtlas = (CAtlas *)g_pResourceManager->GetAtlas(atlasIndex);
+	pAnimation->duration = duration;
+	pAnimation->repeat = repeat;
+}
+
+void SpriteObject::RunAnimation(uint animationState){
+	SetAtlas(m_animations[animationState].animationAtlas);
+	SetAnimDuration(m_animations[animationState].duration);
+	SetAnimRepeat(m_animations[animationState].repeat);
+}
+
+//Sprite Manager --------------------------------------------------------
+SpriteObject* SpriteManager::CreateSpriteObject(){
 	SpriteObject *pSpriteObject = new SpriteObject();
-	pSpriteObject->m_X = 0;
-	pSpriteObject->m_Y = 0;
-	pSpriteObject->m_AnchorX = 0.5f;
-	pSpriteObject->m_AnchorY = 0.5f;
-	pSpriteObject->SetImage(g_pResourceManager->GetGraphic(resourceIndex));
 	return pSpriteObject;
 }
 
-SpriteObject* SpriteManager::CreateAnimatedSprite(uint atlasIndex, float duration, int repeat)
+SpriteObject* SpriteManager::CreateSpriteObject(uint resourceIndex)
 {
 	SpriteObject *pSpriteObject = new SpriteObject();
-	pSpriteObject->m_X = 0;
-	pSpriteObject->m_Y = 0;
-	pSpriteObject->m_AnchorX = 0.5f;
-	pSpriteObject->m_AnchorY = 0.5f;
-	pSpriteObject->SetAtlas((CAtlas *)g_pResourceManager->GetAtlas(atlasIndex));
-	pSpriteObject->SetAnimDuration(duration);
-	pSpriteObject->SetAnimRepeat(repeat);
+	pSpriteObject->SetImage(g_pResourceManager->GetGraphic(resourceIndex));
 	return pSpriteObject;
 }
 

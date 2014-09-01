@@ -20,8 +20,8 @@ files
 	[source entities]
 	gameObject.h
 	gameObject.cpp
-	player.h
-	player.cpp
+	galinha.h
+	galinha.cpp
 
 	[source scenes]
 	gameplay.h
@@ -46,6 +46,7 @@ assets
     (data)
     audio
     textures
+    atlas
 
     (data-ram/data-gles1, data)
     .

@@ -7,8 +7,7 @@ public:
 
 private:
 	ParallaxManager m_background;
-	Player *m_pPlayer;
-
+	
 public:
 	Gameplay();
 	~Gameplay();

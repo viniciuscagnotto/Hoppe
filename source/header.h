@@ -11,7 +11,7 @@
 
 //entities
 #include "gameObject.h"
-#include "player.h"
+#include "galinha.h"
 
 //scenes
 #include "mainMenu.h"

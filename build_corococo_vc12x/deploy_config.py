@@ -18,6 +18,7 @@ assets = {}
 assets['Default'] = [
     ('c:/Users/Vinicius/Desktop/Yes or No/Corococo/data/audio', 'audio', 0),
     ('c:/Users/Vinicius/Desktop/Yes or No/Corococo/data/textures', 'textures', 0),
+    ('c:/Users/Vinicius/Desktop/Yes or No/Corococo/data/atlas', 'atlas', 0),
     ('c:/Users/Vinicius/Desktop/Yes or No/Corococo/data-ram/data-gles1,c:/Users/Vinicius/Desktop/Yes or No/Corococo/data', '.', 0),
     ('c:/marmalade/7.4/extensions/s3ewebview/s3eWebView.js', 's3eWebView.js', 0),
 ]
