@@ -15,7 +15,7 @@ void Gameplay::Init()
 	Scene::Init();
 
 	//Background (Parallax)
-	m_background.Create(Game::kGameGraphics_Background_Space, 0.2f);
+	m_background.Create(Game::kGameGraphics_Background_Space, 3);
 	if (m_background.GetContainer())
 		AddChild(m_background.GetContainer());
 
