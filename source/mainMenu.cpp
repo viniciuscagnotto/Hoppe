@@ -1,9 +1,7 @@
 #include "header.h"
 
 MainMenu::MainMenu() : Scene(kScene_MainMenu),
-m_pStartGame(0),
-m_pFazendeiroRun(0),
-m_pGalinha(0)
+m_pStartGame(0)
 {
 
 }
@@ -24,31 +22,12 @@ void MainMenu::Init()
 	m_pStartGame->m_Y = IwGxGetScreenHeight() * 0.5f;
 	AddChild(m_pStartGame);
 
-	/////////- ANIMATION TEST----------------------
-	//Fazendeiro Run 
-	m_pFazendeiroRun = g_pSpriteManager->CreateSpriteObject();
-	m_pFazendeiroRun->m_X = IwGxGetScreenWidth() * 0.2f;
-	m_pFazendeiroRun->m_Y = IwGxGetScreenHeight() * 0.2f;
-
-	m_pFazendeiroRun->AddAnimation(0, Game::kGameGraphics_Atlas_FazendeiroRun, 0.4f, 99);
-	m_pFazendeiroRun->RunAnimation(0);
-	AddChild(m_pFazendeiroRun);
-
-	//Galinha
-	m_pGalinha = new Galinha();
-	m_pGalinha->AddTo(this);
 }
 
 void MainMenu::Cleanup()
 {
 	SafeDeleteObject(m_pStartGame);
 	m_pStartGame = 0;
-
-	SafeDeleteObject(m_pFazendeiroRun);
-	m_pFazendeiroRun = 0;
-
-	delete m_pGalinha;
-	m_pGalinha = 0;
 
 	Scene::Cleanup();
 }

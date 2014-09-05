@@ -9,20 +9,13 @@ class Game
 public:
 	enum EGameGraphics{
 		//Atlases - ALWAYS FIRST
-		kGameGraphics_Atlas_FazendeiroRun = 0,
-		kGameGraphics_Atlas_Galinha_Run,
-		kGameGraphics_Atlas_Galinha_Run_Catarro,
-		kGameGraphics_Atlas_Galinha_Damage,
-		kGameGraphics_Atlas_Galinha_Apaixonada,
-
+		
 		//Entities
-		kGameGraphics_Entity_Player,
-
+		
 		//Backgrounds
-		kGameGraphics_Background_Space,
-
+		
 		//Buttons
-		kGameGraphics_Button_StartGame,
+		kGameGraphics_Button_StartGame = 0,
 
 		kGameGraphics_Count
 	};

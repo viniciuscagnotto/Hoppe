@@ -20,9 +20,7 @@ files
 	[source entities]
 	gameObject.h
 	gameObject.cpp
-	galinha.h
-	galinha.cpp
-
+	
 	[source scenes]
 	gameplay.h
     gameplay.cpp

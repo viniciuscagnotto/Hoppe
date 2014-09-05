@@ -29,16 +29,10 @@ void Game::LoadResources(){
 	g_pResourceManager = new ResourceManager();
 	
 	//Graphics
-	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_Player, "textures/star.png");
-	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Space, "textures/back_space.jpg");
 	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Button_StartGame, "textures/start_game.png");
 
 	//Atlases
-	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_FazendeiroRun, "atlas/fazendeiro_run");
-	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_Galinha_Run, "atlas/galinha_run");
-	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_Galinha_Run_Catarro, "atlas/galinha_run_catarro");
-	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_Galinha_Damage, "atlas/galinha_damage");
-	g_pResourceManager->RegisterAtlas((uint)kGameGraphics_Atlas_Galinha_Apaixonada, "atlas/galinha_apaixonada");
+	
 
 	//Fonts
 	g_pResourceManager->RegisterFont((uint)kGameFonts_Arial_8, "fonts/arial8.gxfont");

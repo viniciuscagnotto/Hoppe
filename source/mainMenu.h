@@ -9,9 +9,6 @@ public:
 private:
 	SpriteObject* m_pStartGame;
 	
-	SpriteObject* m_pFazendeiroRun;
-	Galinha* m_pGalinha;
-
 public:
 	MainMenu();
     ~MainMenu();

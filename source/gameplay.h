@@ -6,7 +6,6 @@ class Gameplay : public Scene
 public:
 
 private:
-	ParallaxManager m_background;
 	
 public:
 	Gameplay();
