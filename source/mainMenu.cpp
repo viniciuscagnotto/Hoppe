@@ -30,7 +30,7 @@ void MainMenu::Init()
 	m_pFazendeiroRun->m_X = IwGxGetScreenWidth() * 0.2f;
 	m_pFazendeiroRun->m_Y = IwGxGetScreenHeight() * 0.2f;
 
-	m_pFazendeiroRun->AddAnimation(0, Game::kGameAtlases_FazendeiroRun, 0.4f, 99);
+	m_pFazendeiroRun->AddAnimation(0, Game::kGameGraphics_Atlas_FazendeiroRun, 0.4f, 99);
 	m_pFazendeiroRun->RunAnimation(0);
 	AddChild(m_pFazendeiroRun);
 

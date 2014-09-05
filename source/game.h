@@ -8,8 +8,15 @@ class Game
 {
 public:
 	enum EGameGraphics{
+		//Atlases - ALWAYS FIRST
+		kGameGraphics_Atlas_FazendeiroRun = 0,
+		kGameGraphics_Atlas_Galinha_Run,
+		kGameGraphics_Atlas_Galinha_Run_Catarro,
+		kGameGraphics_Atlas_Galinha_Damage,
+		kGameGraphics_Atlas_Galinha_Apaixonada,
+
 		//Entities
-		kGameGraphics_Entity_Player = 0,
+		kGameGraphics_Entity_Player,
 
 		//Backgrounds
 		kGameGraphics_Background_Space,
@@ -17,24 +24,7 @@ public:
 		//Buttons
 		kGameGraphics_Button_StartGame,
 
-		//Atlases
-		kGameGraphics_Atlas_FazendeiroRun,
-		kGameGraphics_Atlas_Galinha_Run,
-		kGameGraphics_Atlas_Galinha_Run_Catarro,
-		kGameGraphics_Atlas_Galinha_Damage,
-		kGameGraphics_Atlas_Galinha_Apaixonada,
-
 		kGameGraphics_Count
-	};
-
-	enum EGameAtlases{
-		kGameAtlases_FazendeiroRun = 0,
-		kGameAtlases_Galinha_Run,
-		kGameAtlases_Galinha_Run_Catarro,
-		kGameAtlases_Galinha_Damage,
-		kGameAtlases_Galinha_Apaixonada,
-
-		kGameAtlases_Count
 	};
 
 	enum EGameFonts{

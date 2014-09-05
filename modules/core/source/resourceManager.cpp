@@ -50,7 +50,7 @@ CIw2DImage *ResourceManager::GetGraphic(uint index){
 	return m_graphics[index];
 }
 
-void ResourceManager::RegisterAtlas(uint textureIndex, uint atlasIndex, const char *fileName){
+void ResourceManager::RegisterAtlas(uint textureIndex, const char *fileName){
 	std::string spritesheetName = fileName;
 	spritesheetName += ".png";
 	RegisterGraphic(textureIndex, spritesheetName.c_str());
@@ -62,14 +62,14 @@ void ResourceManager::RegisterAtlas(uint textureIndex, uint atlasIndex, const ch
 	if (!pCoord || !pCoord->numRows)
 		return;
 
-	m_atlases[atlasIndex] = new CustomAtlas(GetGraphic(textureIndex));
+	m_atlases[textureIndex] = new CustomAtlas(GetGraphic(textureIndex));
 	for (uint i = 0; i < pCoord->numRows; i++){
 		int16 x = (int16)pCoord->rows[i].GetAsInt(2);
 		int16 y = (int16)pCoord->rows[i].GetAsInt(3);
 		int16 width = (int16)pCoord->rows[i].GetAsInt(4);
 		int16 height = (int16)pCoord->rows[i].GetAsInt(5);
-		m_atlases[atlasIndex]->SetFrameSize(width, height);
-		m_atlases[atlasIndex]->AddFrame(x, y, width, height);
+		m_atlases[textureIndex]->SetFrameSize(width, height);
+		m_atlases[textureIndex]->AddFrame(x, y, width, height);
 	}
 
 	delete pCoord;

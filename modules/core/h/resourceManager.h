@@ -23,7 +23,7 @@ public:
 
 	void RegisterGraphic(uint index, const char * fileName);
 	CIw2DImage *GetGraphic(uint index);
-	void RegisterAtlas(uint textureIndex, uint atlasIndex, const char * fileName);
+	void RegisterAtlas(uint textureIndex, const char * fileName);
 	CustomAtlas *GetAtlas(uint index);
 	void RegisterFont(uint index, const char * fileName);
 	CIw2DFont *GetFont(uint index);
