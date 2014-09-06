@@ -30,6 +30,10 @@ void Game::LoadResources(){
 	
 	//Graphics
 	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Button_StartGame, "textures/start_game.png");
+	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_BlackCircle, "textures/black_circle.png");
+	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_BlackSquare, "textures/black_square.png");
+	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteCircle, "textures/white_circle.png");
+	g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteSquare, "textures/white_square.png");
 
 	//Atlases
 	
@@ -48,7 +52,7 @@ void Game::Update(){
 		g_pTweener->Update(FRAME_TIME);
 		g_pSceneManager->Update(FRAME_TIME);
 
-		Iw2DSurfaceClear(0xff000000);
+		Iw2DSurfaceClear(0xff666666);
 		g_pSceneManager->Render();
 		Iw2DSurfaceShow();
 

@@ -11,7 +11,8 @@
 
 //entities
 #include "gameObject.h"
-#include "galinha.h"
+#include "square.h"
+#include "circle.h"
 
 //scenes
 #include "mainMenu.h"

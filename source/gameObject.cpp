@@ -3,7 +3,8 @@
 GameObject::GameObject() : m_pParent(0),
 m_pSprite(0),
 m_destroyMe(false),
-m_type(kGameObjectType_Count)
+m_type(kGameObjectType_Count),
+m_color(kGameObjectColor_Count)
 {
 
 }
@@ -42,11 +43,13 @@ void GameObject::Init(Game::EGameGraphics id, float posX, float posY, float scal
 
 void GameObject::Cleanup()
 {
-	if (!m_pSprite ||  !m_pParent)
+	if (!m_pSprite)
 		return;
 
-	if (m_pParent->IsChild(m_pSprite))
-		m_pParent->RemoveChild(m_pSprite);
+	if (m_pParent){
+		if (m_pParent->IsChild(m_pSprite))
+			m_pParent->RemoveChild(m_pSprite);
+	}
 
 	g_pSpriteManager->DeleteSpriteObject(m_pSprite);
 	
@@ -70,6 +73,16 @@ void GameObject::AddTo(CNode *pContainer)
 
 	pContainer->AddChild(m_pSprite);
 	m_pParent = pContainer;
+}
+
+void GameObject::RemoveFromParent(){
+	if (!m_pParent)
+		return;
+
+	if (m_pParent->IsChild(m_pSprite))
+		m_pParent->RemoveChild(m_pSprite);
+
+	m_pParent = 0;
 }
 
 void GameObject::AddAlpha(float amount){
@@ -101,6 +114,40 @@ void GameObject::SetVisible(bool visible){
 		return;
 
 	m_pSprite->m_IsVisible = visible;
+}
+
+void GameObject::SetScale(float scaleX, float scaleY){
+	if (!m_pSprite)
+		return;
+
+	m_pSprite->m_ScaleX = scaleX;
+	m_pSprite->m_ScaleY = scaleY;
+}
+
+void GameObject::SetPosition(float posX, float posY){
+	if (!m_pSprite)
+		return;
+
+	m_pSprite->m_X = posX;
+	m_pSprite->m_Y = posY;
+}
+
+float GameObject::GetWidth(bool half){
+	if (!m_pSprite)
+		return 0.0f;
+
+	if (half)
+		return m_pSprite->RealW() * 0.5f;
+	return m_pSprite->RealW();
+}
+
+float GameObject::GetHeight(bool half){
+	if (!m_pSprite)
+		return 0.0f;
+
+	if (half)
+		return m_pSprite->RealH() * 0.5f;
+	return m_pSprite->RealH();
 }
 
 bool GameObject::CheckHit(GameObject* pGameObject){

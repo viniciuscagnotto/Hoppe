@@ -20,7 +20,11 @@ files
 	[source entities]
 	gameObject.h
 	gameObject.cpp
-	
+	circle.h
+	circle.cpp
+	square.h
+	square.cpp
+
 	[source scenes]
 	gameplay.h
     gameplay.cpp

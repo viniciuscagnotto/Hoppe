@@ -10,12 +10,16 @@ public:
 	enum EGameGraphics{
 		//Atlases - ALWAYS FIRST
 		
-		//Entities
-		
 		//Backgrounds
 		
 		//Buttons
 		kGameGraphics_Button_StartGame = 0,
+
+		//Entities
+		kGameGraphics_Entity_BlackCircle,
+		kGameGraphics_Entity_BlackSquare,
+		kGameGraphics_Entity_WhiteSquare,
+		kGameGraphics_Entity_WhiteCircle,
 
 		kGameGraphics_Count
 	};

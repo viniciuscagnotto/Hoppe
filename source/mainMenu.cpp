@@ -57,7 +57,7 @@ void MainMenu::HandleTouch()
 
 	if (m_pStartGame){
 		if (m_pStartGame->HitTest(g_pInput->m_x, g_pInput->m_y)){
-			g_pAudio->PlaySound("audio/button.wav");
+			//g_pAudio->PlaySound("audio/button.wav");
 			SwitchTo(kScene_Gameplay);
 		}
 	}
