@@ -36,6 +36,8 @@ public:
 
 	float RealW(){ return m_W * m_ScaleX; };
 	float RealH(){ return m_H * m_ScaleY; };
+
+	bool HitTest(int posX, int posY, float extraW = 0.0f, float extraH = 0.0f);
 };
 
 class SpriteManager

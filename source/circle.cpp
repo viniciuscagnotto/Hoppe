@@ -1,8 +1,7 @@
 #include "header.h"
 
 Circle::Circle(GameObject::EGameObjectColor color) :GameObject(kGameObjectType_Circle),
-m_isActive(false),
-m_tapped(false),
+state(0),
 m_speed(0.0f),
 m_pReceiver(0)
 {

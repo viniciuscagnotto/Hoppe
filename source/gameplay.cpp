@@ -1,7 +1,7 @@
 #include "header.h"
 
 uint Gameplay::s_numLines = Gameplay::s_kDefaultLines;
-bool Gameplay::s_isPaused = false;
+bool Gameplay::s_isPaused = true;
 
 Gameplay::Gameplay() : Scene(kScene_Gameplay),
 m_topAdsHeight(0.0f),
@@ -62,9 +62,41 @@ void Gameplay::Init(){
 		m_lines[i]->pRight->SetIsShooter(!m_lines[i]->pLeft->IsShooter());
 		m_lines[i]->pRight->SetupCircles(m_pCirclesContainer);
 	}
+
+	m_timers.Add(new Timer(6.0f, 999, &Gameplay::Switch, (void *)this));
+	m_timers.Add(new Timer(2.0f, 999, &Gameplay::Shoot, (void *)this));
+	s_isPaused = false;
+}
+
+void Gameplay::Shoot(Timer* pTimer, void* pUserData){
+	Gameplay *pGame = (Gameplay *)pUserData;
+	pGame->RandomShoot();
+}
+
+void Gameplay::RandomShoot(){
+	int index = L_RandomInt(0, s_numLines - 1);
+	while (m_lines[index]->IsSwitching())
+		index = L_RandomInt(0, s_numLines - 1);
+
+	m_lines[index]->Shoot(L_RandomFloat(4.0f, 8.0f));
+}
+
+void Gameplay::Switch(Timer* pTimer, void* pUserData){
+	Gameplay *pGame = (Gameplay *)pUserData;
+	pGame->RandomSwitch();
+}
+
+void Gameplay::RandomSwitch(){
+	if (L_Random() > 0.7f){
+		m_lines[L_RandomInt(0, s_numLines - 1)]->RandomSwitch();
+	}else{
+		m_lines[L_RandomInt(0, s_numLines - 1)]->ChangeShooter();
+	}
 }
 
 void Gameplay::Cleanup(){
+	m_timers.Clear();
+
 	for (uint i = 0; i < s_kMaxLines; i++){
 		m_lines[i]->isBusy = false;
 		m_lines[i]->pLeft->RemoveFromParent();
@@ -74,6 +106,7 @@ void Gameplay::Cleanup(){
 	if (IsChild(m_pCirclesContainer))
 		RemoveChild(m_pCirclesContainer);
 	
+	s_isPaused = true;
 	Scene::Cleanup();
 }
 
@@ -85,6 +118,7 @@ void Gameplay::Update(float deltaTime, float alphaMul)
 	Scene::Update(deltaTime, alphaMul);
 	
 	if (!s_isPaused){
+		m_timers.Update(deltaTime);
 		for (uint i = 0; i < s_numLines; i++)
 			m_lines[i]->Update();
 	}
@@ -107,7 +141,9 @@ void Gameplay::HandleTouch()
 		
 	}else{
 		for (uint i = 0; i < s_numLines; i++)
-			m_lines[i]->Shoot(7.0f);
+			m_lines[i]->CheckTap(g_pInput->m_x, g_pInput->m_y);
+
+
 	}
 
 }

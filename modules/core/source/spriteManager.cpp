@@ -48,6 +48,20 @@ void SpriteObject::RunAnimation(uint animationState){
 	SetAnimRepeat(m_animations[animationState].repeat);
 }
 
+bool SpriteObject::HitTest(int posX, int posY, float extraW, float extraH){
+
+	float left = m_X - (RealW() * 0.5f) - extraW;
+	float right = m_X + (RealW() * 0.5f) + extraW;
+	float up = m_Y + (RealH() * 0.5f) + extraH;
+	float down = m_Y - (RealH() * 0.5f) - extraH;
+
+	if (posX < left || posX > right || posY < down || posY > up)
+		return false;
+
+	return true;
+}
+
+
 //Sprite Manager --------------------------------------------------------
 SpriteObject* SpriteManager::CreateSpriteObject(){
 	SpriteObject *pSpriteObject = new SpriteObject();

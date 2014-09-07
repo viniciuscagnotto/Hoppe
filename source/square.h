@@ -10,6 +10,7 @@ public:
 private:
 	EasyArray<Circle*, s_kMaxCircles> m_circles;
 	float m_circleInitialPos;
+	float m_circleInitialScale;
 
 public:
 	Square(EGameObjectColor color);
@@ -19,10 +20,14 @@ public:
 	void Cleanup();
 	void Update();
 
+	void SetReceiver(SquareObject *pReceiver);
 	void AddCirclesTo(CNode *pContainer, float posX);
 	void RemoveCirclesFromParent();
 
-	void Shoot(float speed, Square *pReceiver);
+	void Shoot(float speed);
+	void CheckTap(float x, float y);
+
+	static void OnGameOver(CTween *pTween);
 };
 
 //-SQUARE OBJECT --------------------------------------------------------
@@ -48,7 +53,8 @@ public:
 	~SquareObject();
 
 	void Update();
-
+	
+	void SetReceiver(SquareObject *pReceiver);
 	void AddTo(CNode *pParent);
 	void RemoveFromParent();
 	void SetIsShooter(bool shooter) { m_isShooter = shooter; };
@@ -65,8 +71,10 @@ public:
 	void SetupCircles(CNode *pContainer);
 	
 	void Switch();
-	void Shoot(float speed, SquareObject *pReceiver);
+	void Shoot(float speed);
 	Square *GetFrontSquare();
+
+	void CheckTap(float x, float y);
 };
 
 

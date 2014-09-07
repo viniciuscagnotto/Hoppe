@@ -59,5 +59,7 @@ public:
 
 };
 
+class SquareObject;
+
 #endif  // __GAME_OBJECT_H__
 

@@ -42,68 +42,119 @@ void Square::Update()
 			continue;
 
 		if (m_circles[i]->IsTapped()){
+			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
+				float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
+				Gameplay::s_isPaused = true;
+				g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
+										FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
+										ONCOMPLETE, Square::OnGameOver, END);
+				return;
+			}else{
+				m_circles[i]->AddAlpha(-0.05f);
+				
+				float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
+				m_circles[i]->SetScale(circleScale + 0.05f, circleScale + 0.05f);
+				
+				if (m_circles[i]->GetAlpha() <= 0.0f){
+					m_circles[i]->Reset();
+					m_circles[i]->GetSprite()->m_X = m_circleInitialPos;
+					m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
+				}
+			}
 
 			continue;
 		}
 
 		m_circles[i]->Update();
 		bool reachedDestination = false;
-		//if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetColor()){
-
-		//}
-		//else
-		//{
-			//if (m_circles[i]->CheckHit(m_circles[i]->GetReceiver())){
-
-			//}
-		//}
-
 		if (m_circles[i]->GetSpeed() > 0.0f){
-			if (m_circles[i]->GetSprite()->m_X >= m_circles[i]->GetReceiver()->GetSprite()->m_X)
-				reachedDestination = true;
+			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
+				if (m_circles[i]->GetSprite()->m_X >= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X)
+					reachedDestination = true;
+			}else{
+				if (m_circles[i]->GetSprite()->m_X >= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetWidth(true)){
+					float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
+					Gameplay::s_isPaused = true;
+					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
+						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
+						ONCOMPLETE, Square::OnGameOver, END);
+					return;
+				}
+			}
 		}else{
-			if (m_circles[i]->GetSprite()->m_X <= m_circles[i]->GetReceiver()->GetSprite()->m_X)
-				reachedDestination = true;
+			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
+				if (m_circles[i]->GetSprite()->m_X <= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X)
+					reachedDestination = true;
+			}else{
+				if (m_circles[i]->GetSprite()->m_X <= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X + m_circles[i]->GetReceiver()->GetFrontSquare()->GetWidth(true)){
+					float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
+					Gameplay::s_isPaused = true;
+					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
+						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
+						ONCOMPLETE, Square::OnGameOver, END);
+					return;
+				}
+			}
 		}
 
 		if (reachedDestination){
-			m_circles[i]->SetIsActive(false);
+			m_circles[i]->Reset();
 			m_circles[i]->GetSprite()->m_X = m_circleInitialPos;
+			m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
 		}
+	}
+}
+
+void Square::SetReceiver(SquareObject* pReceiver){
+	for (uint i = 0; i < s_kMaxCircles; i++){
+		m_circles[i]->SetReceiver(pReceiver);
 	}
 }
 
 void Square::AddCirclesTo(CNode *pContainer, float posX){
 	m_circleInitialPos = posX;
+	m_circleInitialScale = GetSprite()->m_ScaleX * 0.7f;
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		m_circles[i]->SetPosition(posX, GetSprite()->m_Y);
-		m_circles[i]->SetScale(GetSprite()->m_ScaleX * 0.7f, GetSprite()->m_ScaleX * 0.7f);
-
-		m_circles[i]->SetIsActive(false);
-		m_circles[i]->SetReceiver(0);
-
+		m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
+		m_circles[i]->Reset();
 		m_circles[i]->AddTo(pContainer);
 	}
 }
 
 void Square::RemoveCirclesFromParent(){
 	for (uint i = 0; i < s_kMaxCircles; i++){
-		m_circles[i]->SetIsActive(false);
-		m_circles[i]->SetReceiver(0);
+		m_circles[i]->Reset();
 		m_circles[i]->RemoveFromParent();
 	}
 }
 
-void Square::Shoot(float speed, Square *pReceiver){	
+void Square::Shoot(float speed){	
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		if (!m_circles[i]->IsActive()){
 			m_circles[i]->SetSpeed(speed);
-			m_circles[i]->SetReceiver(pReceiver);
 			m_circles[i]->SetIsActive(true);
+			m_circles[i]->SetTapped(false);
 			return;
 		}
 	}
 }
+
+void Square::CheckTap(float x, float y){
+	for (uint i = 0; i < s_kMaxCircles; i++){
+		if (m_circles[i]->IsActive() && !m_circles[i]->IsTapped()){
+			if (m_circles[i]->GetSprite()->HitTest(x, y, 15.0f, 5.0f)){
+				m_circles[i]->SetTapped(true);
+				return;
+			}
+		}
+	}
+}
+
+void Square::OnGameOver(CTween *pTween){
+	g_pSceneManager->Find(Scene::kScene_Gameplay)->SwitchTo(Scene::kScene_MainMenu);
+}
+
 
 //- Square Object ------------------------------------------------------------
 SquareObject::SquareObject(bool leftSide):m_front(GameObject::kGameObjectColor_Black),
@@ -122,6 +173,11 @@ m_shootSpeed(0.0f)
 SquareObject::~SquareObject(){
 	delete m_pWhite; m_pWhite = 0;
 	delete m_pBlack; m_pBlack = 0;
+}
+
+void SquareObject::SetReceiver(SquareObject *pReceiver){
+	m_pWhite->SetReceiver(pReceiver);
+	m_pBlack->SetReceiver(pReceiver);
 }
 
 void SquareObject::AddTo(CNode *pParent){
@@ -181,7 +237,7 @@ void SquareObject::SetInitialParams(){
 void SquareObject::Update(){
 	if (m_isSwitching){
 		Switch();
-		return;
+		//return;
 	}
 
 	m_pBlack->Update();
@@ -235,16 +291,17 @@ void SquareObject::Switch(){
 	m_front = (m_front == GameObject::kGameObjectColor_Black ? GameObject::kGameObjectColor_White : GameObject::kGameObjectColor_Black);
 }
 
-void SquareObject::Shoot(float speed, SquareObject *pReceiver){
-	if (m_front == GameObject::kGameObjectColor_Black){
-		m_pBlack->Shoot(speed, pReceiver->GetFrontSquare());
-	}else{
-		m_pWhite->Shoot(speed, pReceiver->GetFrontSquare());
-	}
+void SquareObject::Shoot(float speed){
+	GetFrontSquare()->Shoot(speed);
 }
 
 Square *SquareObject::GetFrontSquare(){
 	if (m_front == GameObject::kGameObjectColor_Black)
 		return m_pBlack;
 	return m_pWhite;
+}
+
+void SquareObject::CheckTap(float x, float y){
+	m_pBlack->CheckTap(x, y);
+	m_pWhite->CheckTap(x, y);
 }

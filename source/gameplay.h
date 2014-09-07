@@ -23,6 +23,10 @@ public:
 		SLine(){
 			pLeft = new SquareObject(true);
 			pRight = new SquareObject(false);
+
+			pLeft->SetReceiver(pRight);
+			pRight->SetReceiver(pLeft);
+
 			isBusy = false;
 		};
 
@@ -43,10 +47,24 @@ public:
 
 		void Shoot(float speed){
 			if (pLeft->IsShooter()){
-				pLeft->Shoot(speed, pRight);
+				pLeft->Shoot(speed);
 			}else{
-				pRight->Shoot(-speed, pLeft);
+				pRight->Shoot(-speed);
 			}
+		};
+
+		void CheckTap(float x, float y){
+			pLeft->CheckTap(x, y);
+			pRight->CheckTap(x, y);
+		};
+
+		void RandomSwitch(){
+			if (L_Random() >= 0.5f){
+				pLeft->SetToSwitch();
+				return;
+			}
+
+			pRight->SetToSwitch();
 		};
 	};
 
@@ -59,6 +77,8 @@ private:
 
 	uint m_points;
 
+	TimerManager m_timers;
+
 public:
 	Gameplay();
 	~Gameplay();
@@ -70,6 +90,12 @@ public:
 	void HandleTouch();
 
 	void Pause();
+
+	static void Shoot(Timer* pTimer, void* pUserData);
+	void RandomShoot();
+
+	static void Switch(Timer* pTimer, void* pUserData);
+	void RandomSwitch();
 };
 
 #endif  // __GAMEPLAY_H__
