@@ -54,6 +54,9 @@ public:
 
 	void RunAnimation(uint animationState){ m_pSprite->RunAnimation(animationState); };
 	SpriteObject* GetSprite(){ return m_pSprite; };
+
+	EGameObjectColor GetColor(){ return m_color; };
+
 };
 
 #endif  // __GAME_OBJECT_H__

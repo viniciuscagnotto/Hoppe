@@ -5,16 +5,15 @@ bool Gameplay::s_isPaused = false;
 
 Gameplay::Gameplay() : Scene(kScene_Gameplay),
 m_topAdsHeight(0.0f),
-m_bottomHudHeight(0.0f)
+m_bottomHudHeight(0.0f),
+m_pCirclesContainer(0),
+m_points(0)
 {
 	for (uint i = 0; i < s_kMaxLines; i++)
 		m_lines[i] = new SLine();
 
-	for (uint i = 0; i < s_kMaxCircles; i++){
-		m_whiteCircles[i] = new Circle(GameObject::kGameObjectColor_White);
-		m_blackCircles[i] = new Circle(GameObject::kGameObjectColor_Black);
-	}
-
+	m_pCirclesContainer = new CNode();
+ 
 	s_numLines = s_kDefaultLines;
 }
 
@@ -28,10 +27,8 @@ Gameplay::~Gameplay()
 		delete m_lines[i]; m_lines[i] = 0;
 	}
 
-	for (uint i = 0; i < s_kMaxCircles; i++){
-		delete m_whiteCircles[i]; m_whiteCircles[i] = 0;
-		delete m_blackCircles[i]; m_blackCircles[i] = 0;
-	}
+	delete m_pCirclesContainer;
+	m_pCirclesContainer = 0;
 }
 
 void Gameplay::Init(){
@@ -46,6 +43,9 @@ void Gameplay::Init(){
 	float scaleX = squareWidth / SPRITE_SIZE;
 	float scaleY = squareHeight / SPRITE_SIZE;
 	
+	m_points = 0;
+	AddChild(m_pCirclesContainer);
+
 	for (uint i = 0; i < s_numLines; i++){
 		float yPosition = m_topAdsHeight + (squareHeight * 0.5f) + (squareHeight * i) + SPACEMENT + (SPACEMENT * i);
 
@@ -53,12 +53,14 @@ void Gameplay::Init(){
 		m_lines[i]->pLeft->SetScale(scaleX, scaleY);
 		m_lines[i]->pLeft->SetPosition(squareWidth * 0.5f, yPosition);
 		m_lines[i]->pLeft->AddTo(this);
+		m_lines[i]->pLeft->SetupCircles(m_pCirclesContainer);
 
 		m_lines[i]->pRight->SetInitialParams();
 		m_lines[i]->pRight->SetScale(scaleX, scaleY);
 		m_lines[i]->pRight->SetPosition(IwGxGetScreenWidth() - squareWidth * 0.5f, yPosition);
 		m_lines[i]->pRight->AddTo(this);
 		m_lines[i]->pRight->SetIsShooter(!m_lines[i]->pLeft->IsShooter());
+		m_lines[i]->pRight->SetupCircles(m_pCirclesContainer);
 	}
 }
 
@@ -69,11 +71,9 @@ void Gameplay::Cleanup(){
 		m_lines[i]->pRight->RemoveFromParent();
 	}
 
-	for (uint i = 0; i < s_kMaxCircles; i++){
-		m_whiteCircles[i]->RemoveFromParent();
-		m_blackCircles[i]->RemoveFromParent();
-	}
-
+	if (IsChild(m_pCirclesContainer))
+		RemoveChild(m_pCirclesContainer);
+	
 	Scene::Cleanup();
 }
 
@@ -84,6 +84,11 @@ void Gameplay::Update(float deltaTime, float alphaMul)
 
 	Scene::Update(deltaTime, alphaMul);
 	
+	if (!s_isPaused){
+		for (uint i = 0; i < s_numLines; i++)
+			m_lines[i]->Update();
+	}
+
 	if (CheckTouch())
 		HandleTouch();
 }
@@ -97,5 +102,22 @@ void Gameplay::Render()
 void Gameplay::HandleTouch()
 {
 	Scene::HandleTouch();
-	SwitchTo(kScene_MainMenu);
+	
+	if (s_isPaused){
+		
+	}else{
+		for (uint i = 0; i < s_numLines; i++)
+			m_lines[i]->Shoot(7.0f);
+	}
+
+}
+
+void Gameplay::Pause(){
+	if (s_isPaused){
+
+	}else{
+
+	}
+
+	s_isPaused = !s_isPaused;
 }

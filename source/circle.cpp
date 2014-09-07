@@ -1,6 +1,10 @@
 #include "header.h"
 
-Circle::Circle(GameObject::EGameObjectColor color) :GameObject(kGameObjectType_Circle)
+Circle::Circle(GameObject::EGameObjectColor color) :GameObject(kGameObjectType_Circle),
+m_isActive(false),
+m_tapped(false),
+m_speed(0.0f),
+m_pReceiver(0)
 {
 	m_color = color;
 	Init();
@@ -23,11 +27,12 @@ void Circle::Init()
 void Circle::Cleanup()
 {
 	GameObject::Cleanup();
-
+	m_pReceiver = 0;
 }
 
 void Circle::Update()
 {
 	GameObject::Update();
 
+	m_pSprite->m_X += m_speed;
 }

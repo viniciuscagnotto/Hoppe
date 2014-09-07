@@ -5,10 +5,11 @@
 class Square : public GameObject
 {
 public:
-
+	static const uint s_kMaxCircles = 8;
 
 private:
-
+	EasyArray<Circle*, s_kMaxCircles> m_circles;
+	float m_circleInitialPos;
 
 public:
 	Square(EGameObjectColor color);
@@ -17,6 +18,11 @@ public:
 	void Init();
 	void Cleanup();
 	void Update();
+
+	void AddCirclesTo(CNode *pContainer, float posX);
+	void RemoveCirclesFromParent();
+
+	void Shoot(float speed, Square *pReceiver);
 };
 
 //-SQUARE OBJECT --------------------------------------------------------
@@ -34,6 +40,9 @@ private:
 	float m_frontPosX;
 	float m_backPosX;
 
+	float m_switchSpeed;
+	float m_shootSpeed;
+
 public:
 	SquareObject(bool leftSide);
 	~SquareObject();
@@ -44,6 +53,8 @@ public:
 	void RemoveFromParent();
 	void SetIsShooter(bool shooter) { m_isShooter = shooter; };
 	bool IsShooter() {return m_isShooter; };
+	bool IsSwitching() { return m_isSwitching; };
+	void SetToSwitch() { m_isSwitching = true; };
 
 	void SetScale(float scaleX, float scaleY);
 	void SetPosition(float posX, float posY);
@@ -51,11 +62,11 @@ public:
 	float GetHeight(bool half = false);
 
 	void SetInitialParams();
+	void SetupCircles(CNode *pContainer);
+	
 	void Switch();
-
-	void onFrontRetreat(CTween* pTween);
-	void onBackAdvance(CTween* pTween);
-
+	void Shoot(float speed, SquareObject *pReceiver);
+	Square *GetFrontSquare();
 };
 
 
