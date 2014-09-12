@@ -10,8 +10,8 @@ public:
 		kScene_Options,
 		kScene_Gameplay,
 		kScene_Store,
-		kScene_Customize,
-		kScene_Items,
+		kScene_Tutorial,
+		kScene_GameOver,
 		kScene_IAP,
 
 		kScene_Count

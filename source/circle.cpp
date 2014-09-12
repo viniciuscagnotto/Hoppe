@@ -29,7 +29,7 @@ void Circle::Cleanup()
 	m_pReceiver = 0;
 }
 
-void Circle::Update()
+void Circle::Update(float deltaTime)
 {
 	GameObject::Update();
 

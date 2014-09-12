@@ -100,8 +100,8 @@ void SceneManager::Init(){
 	Add(new MainMenu());
 	Add(new Options());
 	Add(new Store());
-	Add(new Customize());
-	Add(new Items());
+	Add(new Tutorial());
+	Add(new GameOver());
 	Add(new IAP());
 	Add(new Gameplay());
 }
@@ -141,9 +141,6 @@ void SceneManager::Render()
 
 void SceneManager::Resume()
 {
-	//TODO Save state check
-	//for now, load main menu
-
 	SwitchTo(Find(Scene::kScene_MainMenu));
 }
 

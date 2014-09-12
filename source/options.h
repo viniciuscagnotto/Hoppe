@@ -7,6 +7,15 @@ public:
 
 
 private:
+	SpriteObject *m_pBack;
+	SpriteObject *m_pTitle;
+
+	SpriteObject *m_pSound;
+	SpriteObject *m_pOn;
+	SpriteObject *m_pOff;
+
+	SpriteObject *m_pWhiteCircle;
+	SpriteObject *m_pBlackCircle;
 	
 
 public:

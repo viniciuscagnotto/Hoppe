@@ -21,7 +21,7 @@ public:
 
 	void Init();
 	void Cleanup();
-	void Update();
+	void Update(float deltaTime);
 	
 	bool IsActive() { return L_GetBitState(state, kCircle_Active); };
 	void SetIsActive(bool active){ L_SetBitState(&state, kCircle_Active, active); SetVisible(active); };

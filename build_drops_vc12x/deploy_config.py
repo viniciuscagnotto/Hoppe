@@ -19,6 +19,8 @@ assets['Default'] = [
     ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data/audio', 'audio', 0),
     ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data/textures', 'textures', 0),
     ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data/atlas', 'atlas', 0),
+    ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data/icons', 'icons', 0),
+    ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data/splashscreens', 'splashscreens', 0),
     ('c:/Users/Vinicius/Desktop/Yes or No/Drops/data-ram/data-gles1,c:/Users/Vinicius/Desktop/Yes or No/Drops/data', '.', 0),
     ('c:/marmalade/7.4/extensions/s3ewebview/s3eWebView.js', 's3eWebView.js', 0),
 ]
@@ -73,7 +75,7 @@ class DefaultConfig(DeployConfig):
     ws8_ext_sdk_manifest_part = []
     ws8_ext_device_capabilities = []
     ws81_extra_pri = []
-    iphone_appid = 'com.yesornogames.corococorun'
+    iphone_appid = 'com.yesornogames.dotsrush'
     android_external_jars = ['c:/marmalade/7.4/extensions/s3ewebview/lib/android/s3eWebView.jar', 'c:/marmalade/7.4/extensions/s3efacebook/lib/android/s3eFacebook.jar', 'c:/marmalade/7.4/extensions/s3efacebook/third-party/facebook-android-sdk/libs/android-support-v4.jar', 'c:/marmalade/7.4/extensions/s3efacebook/third-party/facebook-android-sdk/libs/bolts.jar', 'c:/marmalade/7.4/extensions/s3efacebook/lib/android/annotations-4.1.1.4.jar', 'c:/marmalade/7.4/extensions/s3eflurry/lib/android/s3eFlurry.jar', 'c:/marmalade/7.4/extensions/s3eflurry/lib/android/FlurryAgent.jar']
     win8_winrt_extra_res = ['c:/marmalade/7.4/extensions/s3ewebview/source/ws8/WebViewModal.xaml=>']
     wp81_ext_sdk_manifest_part = []
@@ -86,7 +88,7 @@ class DefaultConfig(DeployConfig):
     iphone_extra_string = []
     tizen_so = []
     wp8_ext_native_dll = ['c:/marmalade/7.4/extensions/s3ewebview/lib/wp8/s3eWebViewExtension.dll', 'c:/marmalade/7.4/extensions/s3efacebook/lib/wp8/s3eFacebookExtension.dll', 'c:/marmalade/7.4/extensions/s3eflurry/lib/wp8/s3eFlurryExtension.dll']
-    iphone_bundle_url_name = 'com.yesornogames.corococorun'
+    iphone_bundle_url_name = 'com.yesornogames.dotsrush'
     win8_phone_extra_res = []
     win8_store_extra_res = ['c:/marmalade/7.4/extensions/s3efacebook/third-party/facebook_ws8_lib/Facebook.Client']
     iphone_link_opts = ['-F$MARMALADE_ROOT/extensions/s3eFacebook/third-party/facebook-ios-sdk -framework FacebookSDK -weak_framework AdSupport -weak_framework Accounts -weak_framework Social -lsqlite3', '-framework SystemConfiguration -framework Security']

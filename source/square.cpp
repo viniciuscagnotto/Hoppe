@@ -33,7 +33,7 @@ void Square::Cleanup()
 	GameObject::Cleanup();
 }
 
-void Square::Update()
+void Square::Update(float deltaTime)
 {
 	GameObject::Update();
 
@@ -43,14 +43,19 @@ void Square::Update()
 
 		if (m_circles[i]->IsTapped()){
 			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
-				float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
-				Gameplay::s_isPaused = true;
-				g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
-										FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
+				EndGame();
+				g_pAudio->PlaySound("audio/explosion.wav");
+				g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
+										FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
 										ONCOMPLETE, Square::OnGameOver, END);
 				return;
 			}else{
-				m_circles[i]->AddAlpha(-0.05f);
+				if (m_circles[i]->GetAlpha() == 1.0f){
+					g_pAudio->PlaySound("audio/tap.wav");
+					Gameplay::s_actualScore++;
+				}
+				
+				m_circles[i]->AddAlpha(-0.08f);
 				
 				float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
 				m_circles[i]->SetScale(circleScale + 0.05f, circleScale + 0.05f);
@@ -58,49 +63,55 @@ void Square::Update()
 				if (m_circles[i]->GetAlpha() <= 0.0f){
 					m_circles[i]->Reset();
 					m_circles[i]->GetSprite()->m_X = m_circleInitialPos;
-					m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
+					m_circles[i]->SetScale(1.0f, 1.0f);
 				}
 			}
 
 			continue;
 		}
 
-		m_circles[i]->Update();
+		m_circles[i]->Update(deltaTime);
 		bool reachedDestination = false;
+		Square *pFrontSquare = m_circles[i]->GetReceiver()->GetFrontSquare();
 		if (m_circles[i]->GetSpeed() > 0.0f){
-			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
-				if (m_circles[i]->GetSprite()->m_X >= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X)
+			if (m_circles[i]->GetColor() == pFrontSquare->GetColor()){
+				if (m_circles[i]->GetSprite()->m_X >= pFrontSquare->GetSprite()->m_X - pFrontSquare->GetSprite()->m_W * 0.25f)
 					reachedDestination = true;
 			}else{
-				if (m_circles[i]->GetSprite()->m_X >= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetWidth(true)){
-					float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
-					Gameplay::s_isPaused = true;
-					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
-						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
-						ONCOMPLETE, Square::OnGameOver, END);
+				if (m_circles[i]->GetSprite()->m_X >= pFrontSquare->GetSprite()->m_X - pFrontSquare->GetWidth(true)){
+					EndGame();
+					g_pAudio->PlaySound("audio/explosion.wav");
+					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
+											FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
+											ONCOMPLETE, Square::OnGameOver, END);
 					return;
 				}
 			}
 		}else{
-			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
-				if (m_circles[i]->GetSprite()->m_X <= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X)
+			if (m_circles[i]->GetColor() == pFrontSquare->GetColor()){
+				if (m_circles[i]->GetSprite()->m_X <= pFrontSquare->GetSprite()->m_X + pFrontSquare->GetSprite()->m_W * 0.25f)
 					reachedDestination = true;
 			}else{
-				if (m_circles[i]->GetSprite()->m_X <= m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X + m_circles[i]->GetReceiver()->GetFrontSquare()->GetWidth(true)){
-					float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
-					Gameplay::s_isPaused = true;
-					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, circleScale + 1.5f,
-						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, circleScale + 1.5f,
-						ONCOMPLETE, Square::OnGameOver, END);
+				if (m_circles[i]->GetSprite()->m_X <= pFrontSquare->GetSprite()->m_X + pFrontSquare->GetWidth(true)){
+					EndGame();
+					g_pAudio->PlaySound("audio/explosion.wav");
+					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
+											FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
+											ONCOMPLETE, Square::OnGameOver, END);
 					return;
 				}
 			}
 		}
 
 		if (reachedDestination){
+			Gameplay::s_actualScore++;
+			g_pAudio->PlaySound("audio/tap.wav");
 			m_circles[i]->Reset();
 			m_circles[i]->GetSprite()->m_X = m_circleInitialPos;
-			m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
+			m_circles[i]->SetScale(1.0f, 1.0f);
+
+			//Testing
+			m_circles[i]->GetReceiver()->SetToSwitch();
 		}
 	}
 }
@@ -113,10 +124,9 @@ void Square::SetReceiver(SquareObject* pReceiver){
 
 void Square::AddCirclesTo(CNode *pContainer, float posX){
 	m_circleInitialPos = posX;
-	m_circleInitialScale = GetSprite()->m_ScaleX * 0.7f;
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		m_circles[i]->SetPosition(posX, GetSprite()->m_Y);
-		m_circles[i]->SetScale(m_circleInitialScale, m_circleInitialScale);
+		m_circles[i]->SetScale(1.0f, 1.0f);
 		m_circles[i]->Reset();
 		m_circles[i]->AddTo(pContainer);
 	}
@@ -132,6 +142,7 @@ void Square::RemoveCirclesFromParent(){
 void Square::Shoot(float speed){	
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		if (!m_circles[i]->IsActive()){
+			g_pAudio->PlaySound("audio/shoot.wav");
 			m_circles[i]->SetSpeed(speed);
 			m_circles[i]->SetIsActive(true);
 			m_circles[i]->SetTapped(false);
@@ -141,9 +152,16 @@ void Square::Shoot(float speed){
 }
 
 void Square::CheckTap(float x, float y){
+	float extraWidth = 20.0f;
+	float extraHeight = 8.0f;
+	if (Game::s_is2X){
+		extraWidth = 40.0f;
+		extraHeight = 16.0f;
+	}	
+
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		if (m_circles[i]->IsActive() && !m_circles[i]->IsTapped()){
-			if (m_circles[i]->GetSprite()->HitTest(x, y, 15.0f, 5.0f)){
+			if (m_circles[i]->GetSprite()->HitTest(x, y, extraWidth, extraHeight)){
 				m_circles[i]->SetTapped(true);
 				return;
 			}
@@ -151,10 +169,38 @@ void Square::CheckTap(float x, float y){
 	}
 }
 
-void Square::OnGameOver(CTween *pTween){
-	g_pSceneManager->Find(Scene::kScene_Gameplay)->SwitchTo(Scene::kScene_MainMenu);
+bool Square::HasIncomingCircle(bool isLeft){
+	for (uint i = 0; i < s_kMaxCircles; i++){
+		if (m_circles[i]->IsActive() && !m_circles[i]->IsTapped()){
+			if (isLeft){
+				if (m_circles[i]->GetSprite()->m_X > IwGxGetScreenWidth() * 0.5f)
+					return true;
+			}else{
+				if (m_circles[i]->GetSprite()->m_X < IwGxGetScreenWidth() * 0.5f)
+					return true;
+			}
+		}
+	}
+
+	return false;
 }
 
+void Square::EndGame(){
+	if (Gameplay::s_actualScore > g_pSaveData->m_saveData.topScore){
+		g_pSaveData->m_saveData.topScore = Gameplay::s_actualScore;
+		g_pSaveData->Save();
+
+		//Send to Game Center
+
+	}
+
+	Gameplay::s_paused = false;
+	Gameplay::s_gameOver = true;
+}
+
+void Square::OnGameOver(CTween *pTween){
+	((Gameplay *)g_pSceneManager->Find(Scene::kScene_Gameplay))->SwitchTo(Scene::kScene_GameOver);
+}
 
 //- Square Object ------------------------------------------------------------
 SquareObject::SquareObject(bool leftSide):m_front(GameObject::kGameObjectColor_Black),
@@ -206,9 +252,9 @@ void SquareObject::SetScale(float scaleX, float scaleY){
 
 void SquareObject::SetPosition(float posX, float posY){
 	m_frontPosX = posX;
-	m_backPosX = posX - m_pBlack->GetWidth();
+	m_backPosX = posX - m_pBlack->GetWidth(true);
 	if (!m_left)
-		m_backPosX = posX + m_pBlack->GetWidth();
+		m_backPosX = posX + m_pBlack->GetWidth(true);
 
 	if (m_front == GameObject::kGameObjectColor_Black){
 		m_pBlack->SetPosition(m_frontPosX, posY);
@@ -224,29 +270,33 @@ float SquareObject::GetWidth(bool half){
 }
 
 float SquareObject::GetHeight(bool half){
-	return m_pBlack->GetWidth(half);
+	return m_pBlack->GetHeight(half);
 }
 
 void SquareObject::SetInitialParams(){
 	m_front = (GameObject::EGameObjectColor)L_RandomInt(0, 1);
 	m_isShooter = (bool)L_RandomInt(0, 1);
 
-	m_switchSpeed = 10.0f;
+	m_switchSpeed = (Game::s_is2X ? 20.0f : 10.0f);
 }
 
-void SquareObject::Update(){
+void SquareObject::Update(float deltaTime){
 	if (m_isSwitching){
 		Switch();
 		//return;
 	}
 
-	m_pBlack->Update();
-	m_pWhite->Update();
+	m_pBlack->Update(deltaTime);
+	m_pWhite->Update(deltaTime);
 }
 
 void SquareObject::SetupCircles(CNode *pContainer){
-	m_pBlack->AddCirclesTo(pContainer, m_frontPosX);
-	m_pWhite->AddCirclesTo(pContainer, m_frontPosX);
+	float circlePositionX = m_frontPosX + m_pBlack->GetWidth() * 0.25f;
+	if (!m_left)
+		circlePositionX = m_frontPosX - m_pBlack->GetWidth() * 0.25f;
+
+	m_pBlack->AddCirclesTo(pContainer, circlePositionX);
+	m_pWhite->AddCirclesTo(pContainer, circlePositionX);
 }
 
 void SquareObject::Switch(){
@@ -304,4 +354,15 @@ Square *SquareObject::GetFrontSquare(){
 void SquareObject::CheckTap(float x, float y){
 	m_pBlack->CheckTap(x, y);
 	m_pWhite->CheckTap(x, y);
+}
+
+void SquareObject::SwitchFront(){
+	m_front = m_front == GameObject::kGameObjectColor_Black ? GameObject::kGameObjectColor_White : GameObject::kGameObjectColor_Black;
+}
+
+bool SquareObject::CanSwitch(SquareObject *pShooter){
+	if (pShooter->GetFrontSquare()->HasIncomingCircle(pShooter->IsLeft()))
+		return false;
+
+	return true;
 }

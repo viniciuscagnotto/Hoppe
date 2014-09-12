@@ -7,7 +7,9 @@ public:
 
 
 private:
-	SpriteObject* m_pStartGame;
+	SpriteObject* m_pPlay;
+	SpriteObject* m_pLogo;
+	SpriteObject* m_pSettings;
 	
 public:
 	MainMenu();

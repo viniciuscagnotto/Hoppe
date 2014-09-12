@@ -1,10 +1,12 @@
 #include "core.h"
 
 CSVCommands::SParsedCSV *CSVCommands::ReadFile(const char *fileName){
-	SParsedCSV *parsed = new SParsedCSV();
+	SParsedCSV *parsed = 0;//new SParsedCSV();
 
 	s3eFile *pFile = s3eFileOpen(fileName, "rb");
 	if (pFile){
+		parsed = new SParsedCSV();
+
 		int32 fileSize = s3eFileGetSize(pFile);
 		char* data = (char*)s3eMallocBase(fileSize + 1);
 		memset(data, 0, fileSize);

@@ -14,6 +14,8 @@ files
 	game.cpp
 
 	[source managers]
+	saveData.h
+	saveData.cpp
 	sceneManager.h
 	sceneManager.cpp
 	
@@ -34,10 +36,10 @@ files
 	options.cpp
 	store.h
 	store.cpp
-	customize.h
-	customize.cpp
-	items.h
-	items.cpp
+	tutorial.h
+	tutorial.cpp
+	gameover.h
+	gameover.cpp
 	iap.h
 	iap.cpp
 
@@ -49,6 +51,8 @@ assets
     audio
     textures
     atlas
+	icons
+	splashscreens
 
     (data-ram/data-gles1, data)
     .
@@ -69,12 +73,12 @@ subprojects
 
 deployments
 {
-    iphone-bundle-url-name="com.yesornogames.corococorun"
+    iphone-bundle-url-name="com.yesornogames.dotsrush"
     iphone-bundle-url-schemes="fd<FACEBOOK_APP_ID>"
 	
 	# Note the App/Bundle ID must be set to the same value as an app registered
     # through iTunes Connect or the app will not be recognised by game center
-    iphone-appid="com.yesornogames.corococorun"
+    iphone-appid="com.yesornogames.dotsrush"
 
 }
 

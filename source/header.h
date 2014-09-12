@@ -4,6 +4,7 @@
 #include "core.h"
 
 //managers
+#include "saveData.h"
 #include "sceneManager.h"
 
 //game
@@ -19,8 +20,8 @@
 #include "gameplay.h"
 #include "options.h"
 #include "store.h"
-#include "items.h"
-#include "customize.h"
+#include "gameover.h"
+#include "tutorial.h"
 #include "iap.h"
 
 #endif //__HEADER_H__

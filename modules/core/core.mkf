@@ -14,6 +14,7 @@ files
 	csvCommands.h
 
 	[managers]
+	adsManager.h
 	savedataManager.h
 	resourceManager.h
 	spriteManager.h
@@ -32,6 +33,7 @@ files
 	csvCommands.cpp
 
 	[managers]
+	adsManager.cpp
 	savedataManager.cpp
 	resourceManager.cpp
 	spriteManager.cpp

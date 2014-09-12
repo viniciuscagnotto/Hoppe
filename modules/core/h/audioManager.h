@@ -16,6 +16,7 @@ public:
 
 private:
 	std::list<SAudio*> m_sounds;
+	bool m_isMute;
 
 public:
 	AudioManager();
@@ -29,6 +30,9 @@ public:
     
 	SAudio* PreloadSound(const char* filename);
     void PlaySound(const char* filename);
+
+	void SetMute(bool mute){ m_isMute = mute; };
+	bool IsMute(){ return m_isMute; };
 };
 
 extern AudioManager* g_pAudio;

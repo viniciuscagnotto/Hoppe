@@ -10,15 +10,14 @@ public:
 private:
 	EasyArray<Circle*, s_kMaxCircles> m_circles;
 	float m_circleInitialPos;
-	float m_circleInitialScale;
-
+	
 public:
 	Square(EGameObjectColor color);
 	~Square();
 
 	void Init();
 	void Cleanup();
-	void Update();
+	void Update(float deltaTime);
 
 	void SetReceiver(SquareObject *pReceiver);
 	void AddCirclesTo(CNode *pContainer, float posX);
@@ -26,7 +25,9 @@ public:
 
 	void Shoot(float speed);
 	void CheckTap(float x, float y);
+	bool HasIncomingCircle(bool isLeft);
 
+	void EndGame();
 	static void OnGameOver(CTween *pTween);
 };
 
@@ -52,15 +53,16 @@ public:
 	SquareObject(bool leftSide);
 	~SquareObject();
 
-	void Update();
+	void Update(float deltaTime);
 	
 	void SetReceiver(SquareObject *pReceiver);
 	void AddTo(CNode *pParent);
 	void RemoveFromParent();
 	void SetIsShooter(bool shooter) { m_isShooter = shooter; };
 	bool IsShooter() {return m_isShooter; };
+	bool IsLeft(){ return m_left; };
 	bool IsSwitching() { return m_isSwitching; };
-	void SetToSwitch() { m_isSwitching = true; };
+	void SetToSwitch() { m_isSwitching = true; g_pAudio->PlaySound("audio/switch.wav"); };
 
 	void SetScale(float scaleX, float scaleY);
 	void SetPosition(float posX, float posY);
@@ -73,6 +75,9 @@ public:
 	void Switch();
 	void Shoot(float speed);
 	Square *GetFrontSquare();
+	GameObject::EGameObjectColor GetFront() { return m_front; };
+	void SwitchFront();
+	bool CanSwitch(SquareObject *pShooter);
 
 	void CheckTap(float x, float y);
 };

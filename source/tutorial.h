@@ -1,17 +1,17 @@
-#ifndef __CUSTOMIZE_H__
-#define __CUSTOMIZE_H__
+#ifndef __TUTORIAL_H__
+#define __TUTORIAL_H__
 
-class Customize : public Scene
+class Tutorial : public Scene
 {
 public:
 
 
 private:
-
+	SpriteObject *m_pTutorial;
 
 public:
-	Customize();
-	~Customize();
+	Tutorial();
+	~Tutorial();
 
 	void Init();
 	void Cleanup();
@@ -20,5 +20,5 @@ public:
 	void HandleTouch();
 };
 
-#endif  // __CUSTOMIZE_H__
+#endif  // __TUTORIAL_H__
 

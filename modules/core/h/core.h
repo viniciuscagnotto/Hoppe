@@ -19,6 +19,8 @@ using namespace Iw2DSceneGraph;
 
 //s3e API - Marmelade
 #include "s3e.h"
+#include "s3eOSExec.h"
+#include "s3eWebView.h"
 #include "s3eFlurry.h"
 
 //C++
@@ -42,6 +44,7 @@ using namespace Iw2DSceneGraph;
 #include "csvCommands.h"
 
 //managers
+#include "adsManager.h"
 #include "savedataManager.h"
 #include "resourceManager.h"
 #include "spriteManager.h"

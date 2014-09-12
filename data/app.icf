@@ -19,6 +19,7 @@
 [S3E]
 MemSize = 60000000
 DispFixRot=Portrait
+IOSDispScaleFactor=200
 
 [GX]
 DataCacheSize=80000

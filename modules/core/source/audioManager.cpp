@@ -25,6 +25,7 @@ AudioManager::SAudio::~SAudio()
 AudioManager::AudioManager()
 {
     IwSoundInit();
+	m_isMute = false;
 }
 
 AudioManager::~AudioManager()
@@ -78,6 +79,9 @@ AudioManager::SAudio* AudioManager::PreloadSound(const char* filename)
 
 void AudioManager::PlaySound(const char* filename)
 {
+	if (m_isMute)
+		return;
+
     SAudio* pSound = PreloadSound(filename);
 	if (pSound != 0)
 		pSound->pSoundSpec->Play();

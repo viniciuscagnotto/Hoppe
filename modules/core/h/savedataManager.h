@@ -7,7 +7,6 @@ public:
 	SaveDataManager();
 	~SaveDataManager();
 
-	void Init();
 };
 
 extern SaveDataManager* g_pSaveDataManager;
