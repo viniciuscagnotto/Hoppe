@@ -16,9 +16,10 @@ public:
 		//Atlases - ALWAYS FIRST
 		
 		//Backgrounds
+		kGameGraphics_Background_Main = 0,
 
 		//Logo
-		kGameGraphics_Logo_Main = 0,
+		kGameGraphics_Logo_Main,
 		
 		//Tutorial
 		kGameGraphics_Tutorial_Main,

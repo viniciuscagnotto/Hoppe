@@ -22,6 +22,7 @@ public:
 	void SetReceiver(SquareObject *pReceiver);
 	void AddCirclesTo(CNode *pContainer, float posX);
 	void RemoveCirclesFromParent();
+	void SetAllCirclesToFade();
 
 	void Shoot(float speed);
 	void CheckTap(float x, float y);
@@ -42,6 +43,7 @@ private:
 	bool m_isShooter;
 	bool m_left;
 	bool m_isSwitching;
+	bool m_isSlidingIn;
 
 	float m_frontPosX;
 	float m_backPosX;
@@ -63,18 +65,22 @@ public:
 	bool IsLeft(){ return m_left; };
 	bool IsSwitching() { return m_isSwitching; };
 	void SetToSwitch() { m_isSwitching = true; g_pAudio->PlaySound("audio/switch.wav"); };
+	void SetToSlideIn() { m_isSlidingIn = true; g_pAudio->PlaySound("audio/switch.wav"); };
 
 	void SetScale(float scaleX, float scaleY);
-	void SetPosition(float posX, float posY);
+	void SetPosition(float posX, float posY, bool hidden = false);
 	float GetWidth(bool half = false);
 	float GetHeight(bool half = false);
 
-	void SetInitialParams();
+	void SetInitialParams(bool defineFront = false, GameObject::EGameObjectColor front = GameObject::kGameObjectColor_White);
 	void SetupCircles(CNode *pContainer);
-	
+	void SetAllCirclesToFade();
+
 	void Switch();
-	void Shoot(float speed);
+	void SlideIn();
+	void Shoot(float speed, bool front = true);
 	Square *GetFrontSquare();
+	Square *GetBackSquare();
 	GameObject::EGameObjectColor GetFront() { return m_front; };
 	void SwitchFront();
 	bool CanSwitch(SquareObject *pShooter);

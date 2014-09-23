@@ -1,16 +1,30 @@
 #ifndef __GAMEPLAY_H__
 #define __GAMEPLAY_H__
 
+//#define EXTRA_CIRCLE_DIM 6
+#define EXTRA_SQUARE_DIM 7.5f 
+#define MAX_SCORE 999999999
+#define POINTS_PER_TAP 100
+
 class Gameplay : public Scene
 {
 public:
 	static const uint s_kDefaultLines = 5;
 	static const uint s_kMaxLines = 8;
+	static const int s_kMinSquaresShooting = 2;
+	static const int s_kCircleSpeed = 5;
+
+	static const int s_kTapsToLevel2 = 2;
+	static const int s_kTapsToLevel3 = 5;
+	static const int s_kTapsToLevel4 = 9;
+
 	static uint s_numLines;
 	static bool s_paused;
+	static int s_correctTaps;
+	static bool s_newSquare;
 	static int s_actualScore;
 	static bool s_gameOver;
-
+	
 	struct SLine{
 		SquareObject *pLeft;
 		SquareObject *pRight;
@@ -41,11 +55,11 @@ public:
 			pRight->Update(deltaTime);
 		};
 
-		void Shoot(float speed){
+		void Shoot(float speed, bool front = true){
 			if (pLeft->IsShooter()){
-				pLeft->Shoot(speed);
+				pLeft->Shoot(speed, front);
 			}else{
-				pRight->Shoot(-speed);
+				pRight->Shoot(-speed, front);
 			}
 		};
 
@@ -65,6 +79,21 @@ public:
 				pRight->SetToSwitch();
 		};
 
+		void SwitchBoth(){
+			pLeft->SetToSwitch();
+			pRight->SetToSwitch();
+		};
+
+		void SlideIn(){
+			pLeft->SetToSlideIn();
+			pRight->SetToSlideIn();
+		}
+
+		void SetAllCirclesToFade(){
+			pLeft->SetAllCirclesToFade();
+			pRight->SetAllCirclesToFade();
+		}
+
 		SquareObject *GetShooter(){
 			if (pLeft->IsShooter())
 				return pLeft;
@@ -76,34 +105,14 @@ public:
 private:
 	EasyArray<SLine*, s_kMaxLines> m_lines;
 	CNode *m_pCirclesContainer;
+	TimerManager m_timers;
 
 	float m_bottomHudHeight;
 	float m_topAdsHeight;
 
-	TimerManager m_timers;
-
-	const int m_kMaxEquals = 2;
-
-	const float m_kStartingCircleSpeed = 4.0f;
-	const float m_kMaxCircleSpeed = 20.0f;
-	const float m_kCircleSpeedRange = 1.0f;
 	float m_circleSpeed;
+	int m_numSquaresShooting;
 	
-	const float m_kStartingShootRate = 3.5f;
-	const float m_kMinShootRate = 0.75f;
-	const float m_kShootRateRange = 0.4f;
-	float m_shootRate;
-	
-	const float m_kStartingSwitchRate = 6.2f;
-	const float m_kMinSwitchRate = 3.0f;
-	const float m_kSwitchRateRange = 0.2f;
-	float m_switchRate;
-
-	const float m_kStartingDoubleShotChance = 0.0f;
-	const float m_kMaxDoubleShotChance = 1.0f;
-	const float m_kDoubleShotChanceRange = 0.015f;
-	float m_doubleShotChance;
-
 	//Bottom HUD
 	SpriteObject *m_pBottomHUD;
 	SpriteObject *m_pPauseBtn;
@@ -133,11 +142,11 @@ public:
 
 	static void Shoot(Timer* pTimer, void* pUserData);
 	void RandomShoot();
-
-	static void Switch(Timer* pTimer, void* pUserData);
 	void RandomSwitch();
+	void CheckNextLevel();
+	void SetAllCirclesToFade();
 
-	static void ResetVariables() { s_actualScore = 0; s_paused = false; s_gameOver = false;};
+	static void ResetVariables() { s_actualScore = 0; s_correctTaps = 0; s_paused = false; s_gameOver = false; s_newSquare = false; };
 };
 
 #endif  // __GAMEPLAY_H__

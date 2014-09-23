@@ -40,6 +40,12 @@ void Game::Init(){
 	if (s3eFlurryAvailable())
 		s3eFlurryStartSession(FLURRY_API_KEY);
 
+	g_pFacebookManager = new FacebookManager();
+	//if (!g_pFacebookManager->Init()){
+	//	delete g_pFacebookManager;
+	//	g_pFacebookManager = 0;
+	//}
+
 	g_pAdsManager = new AdsManager();
 	if (g_pAdsManager->Init())
 		g_pAdsManager->NewAd(0, (Iw2DGetSurfaceHeight() * (TOP_ADS_HEIGHT / 100.0f)), AdsManager::kAdProvider_Leadbolt, AdsManager::kAdType_Banner, "566664249");
@@ -54,6 +60,8 @@ void Game::LoadResources(){
 
 	//Graphics
 	if (s_is2X){
+		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Main, "textures/background_2x.png");
+
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Logo_Main, "textures/logo_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Main, "textures/tutorial_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Pause_Main, "textures/pause_2x.png");
@@ -83,6 +91,8 @@ void Game::LoadResources(){
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteCircle, "textures/white_circle_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteSquare, "textures/white_square_2x.png");
 	}else{
+		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Main, "textures/background.png");
+
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Logo_Main, "textures/logo.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Main, "textures/tutorial.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Pause_Main, "textures/pause.png");
@@ -119,7 +129,6 @@ void Game::LoadResources(){
 }
 
 void Game::Update(){
-
 	while (!s3eDeviceCheckQuitRequest()){
 		uint64 newTime = s3eTimerGetMs();
 
@@ -144,6 +153,9 @@ void Game::Cleanup(){
 
 	if (s3eFlurryAvailable())
 		s3eFlurryEndSession();
+
+	if (g_pFacebookManager != 0)
+		delete g_pFacebookManager;
 
 	delete g_pAudio;
 	delete g_pInput;

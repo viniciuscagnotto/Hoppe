@@ -99,7 +99,7 @@ class DefaultConfig(DeployConfig):
     wp8_ext_managed_dll = ['c:/marmalade/7.4/extensions/s3ewebview/lib/wp8/s3eWebViewManaged.dll', 'c:/marmalade/7.4/extensions/s3efacebook/lib/wp8/s3eFacebookManaged.dll', 'c:/marmalade/7.4/extensions/s3efacebook/third-party/facebook_wp8_lib/Facebook.Client.dll', 'c:/marmalade/7.4/extensions/s3efacebook/third-party/facebook_wp8_lib/Facebook.dll', 'c:/marmalade/7.4/extensions/s3eflurry/lib/wp8/FlurryWP8SDK.dll', 'c:/marmalade/7.4/extensions/s3eflurry/lib/wp8/s3eFlurryManaged.dll']
     android_so = ['c:/marmalade/7.4/extensions/s3ewebview/lib/android/libs3eWebView.so', 'c:/marmalade/7.4/extensions/s3efacebook/lib/android/libs3eFacebook.so', 'c:/marmalade/7.4/extensions/s3eflurry/lib/android/libs3eFlurry.so']
     wp8_ext_sdk_ref = []
-    iphone_bundle_url_schemes = 'fd<FACEBOOK_APP_ID>'
+    iphone_bundle_url_schemes = 'fb<955358454521782>'
     osx_extra_res = []
     ws81_extra_res = []
     wp81_ext_native_dll = ['c:/marmalade/7.4/extensions/s3ewebview/lib/wp81/s3eWebViewExtension.dll', 'c:/marmalade/7.4/extensions/s3efacebook/lib/wp81/s3eFacebookExtension.dll']

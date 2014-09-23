@@ -86,7 +86,14 @@ void MainMenu::HandleTouch()
 	if (m_pSettings){
 		if (m_pSettings->HitTest(g_pInput->m_x, g_pInput->m_y)){
 			g_pAudio->PlaySound("audio/click.wav"); 
-			SwitchTo(kScene_Options);
+		//	SwitchTo(kScene_Options);
+
+			if (g_pFacebookManager != 0)
+			{
+				char str[256];
+				snprintf(str, 64, "I just scored 10 points");
+				g_pFacebookManager->PostUpdate(str);
+			}
 		}
 	}
 }

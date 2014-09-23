@@ -2,6 +2,8 @@
 
 uint Gameplay::s_numLines = Gameplay::s_kDefaultLines;
 bool Gameplay::s_paused = false;
+int Gameplay::s_correctTaps = 0;
+bool Gameplay::s_newSquare = false;
 int Gameplay::s_actualScore = 0;
 bool Gameplay::s_gameOver = false;
 
@@ -46,36 +48,44 @@ void Gameplay::Init(){
 	if (g_pAdsManager->IsEnabled())
 		g_pAdsManager->NewAd();
 
+	float extraSquareDim = EXTRA_SQUARE_DIM;
+	if (Game::s_is2X)
+		extraSquareDim *= 2.0f;
+
 	int totalSpace = (Game::s_gameSpacement * s_numLines) + Game::s_gameSpacement;
 	m_topAdsHeight = IwGxGetScreenHeight() * (TOP_ADS_HEIGHT / 100.0f);
-	float squareHeight = m_lines[0]->pLeft->GetHeight();
+	float squareHeight = m_lines[0]->pLeft->GetHeight() - extraSquareDim;
 	m_bottomHudHeight = IwGxGetScreenHeight() - m_topAdsHeight - totalSpace;
 	float m_bottomHudPosY = 0;
 
 	AddChild(m_pCirclesContainer);
-	
+
+	m_numSquaresShooting = s_kMinSquaresShooting;
 	uint numEqualLines = 0;
 	for (uint i = 0; i < s_numLines; i++){
 		float yPosition = m_topAdsHeight + (squareHeight * 0.5f) + (squareHeight * i) + Game::s_gameSpacement + (Game::s_gameSpacement * i);
 
-		m_lines[i]->pLeft->SetInitialParams();
-		m_lines[i]->pLeft->SetPosition(0.0f, yPosition);
-		m_lines[i]->pLeft->AddTo(this);
-		m_lines[i]->pLeft->SetupCircles(m_pCirclesContainer);
-
-		m_lines[i]->pRight->SetInitialParams();
-		if (m_lines[i]->pLeft->GetFront() == m_lines[i]->pRight->GetFront()){
-			numEqualLines++;
-			if (numEqualLines > m_kMaxEquals)
-				m_lines[i]->pRight->SwitchFront();
+		bool hidden = false;
+		bool hasInitialType = false;
+		GameObject::EGameObjectColor initialType = GameObject::kGameObjectColor_White;
+		if (i >= m_numSquaresShooting){
+			hidden = true;
+			hasInitialType = true;
 		}
 
-		m_lines[i]->pRight->SetPosition(IwGxGetScreenWidth(), yPosition);
+		m_lines[i]->pLeft->SetInitialParams(hasInitialType, initialType);
+		m_lines[i]->pLeft->SetPosition(m_lines[i]->pLeft->GetWidth(true), yPosition, hidden);
+		m_lines[i]->pLeft->AddTo(this);
+		m_lines[i]->pLeft->SetIsShooter(true);
+		m_lines[i]->pLeft->SetupCircles(m_pCirclesContainer);
+
+		m_lines[i]->pRight->SetInitialParams(true, m_lines[i]->pLeft->GetFront());
+		m_lines[i]->pRight->SetPosition(IwGxGetScreenWidth() - m_lines[i]->pRight->GetWidth(true) + extraSquareDim, yPosition, hidden);
 		m_lines[i]->pRight->AddTo(this);
-		m_lines[i]->pRight->SetIsShooter(!m_lines[i]->pLeft->IsShooter());
+		m_lines[i]->pRight->SetIsShooter(false);
 		m_lines[i]->pRight->SetupCircles(m_pCirclesContainer);
 
-		m_bottomHudHeight -= m_lines[i]->pLeft->GetHeight();
+		m_bottomHudHeight -= m_lines[i]->pLeft->GetHeight() - extraSquareDim;
 		m_bottomHudPosY = yPosition + (squareHeight * 0.5f) + Game::s_gameSpacement + (m_bottomHudHeight * 0.5f);
 
 	}
@@ -127,12 +137,8 @@ void Gameplay::Init(){
 	m_pOff->m_X = IwGxGetScreenWidth() * 0.6f;
 	m_pOff->m_Y = m_pResumeBtn->m_Y - m_pResumeBtn->m_H - Game::s_gameSpacement * 2;
 
-	m_circleSpeed = L_RandomFloat(m_kStartingCircleSpeed, m_kStartingCircleSpeed + m_kCircleSpeedRange);
-	m_shootRate = L_RandomFloat(m_kStartingShootRate - m_kShootRateRange, m_kStartingShootRate);
-	m_switchRate = L_RandomFloat(m_kStartingSwitchRate - m_kSwitchRateRange, m_kStartingSwitchRate);
-	m_doubleShotChance = m_kStartingDoubleShotChance;
-	m_timers.Add(new Timer(m_switchRate, 1, &Gameplay::Switch, (void *)this));
-	m_timers.Add(new Timer(m_shootRate, 1, &Gameplay::Shoot, (void *)this));
+	m_circleSpeed = s_kCircleSpeed;
+	m_timers.Add(new Timer(3.0f, 1, &Gameplay::Shoot, (void *)this));
 }
 
 void Gameplay::Cleanup(){
@@ -181,69 +187,44 @@ void Gameplay::RandomShoot(){
 	float shootSpeed = m_circleSpeed;
 	if (Game::s_is2X)
 		shootSpeed *= 2.0f;
-	
-	int index = L_RandomInt(0, s_numLines - 1);
-	while (m_lines[index]->IsSwitching())
-		index = L_RandomInt(0, s_numLines - 1);
-	m_lines[index]->Shoot(shootSpeed);
 
-	if (L_Random() < m_doubleShotChance){
-		//Double Shoot
-		int secondIndex = L_RandomInt(0, s_numLines - 1);
-		while (m_lines[secondIndex]->IsSwitching() || secondIndex == index)
-			secondIndex = L_RandomInt(0, s_numLines - 1);
-		m_lines[secondIndex]->Shoot(shootSpeed);
+	uint wrongShooter = L_RandomInt(0, m_numSquaresShooting - 1);
+	for (uint i = 0; i < m_numSquaresShooting; i++){
+		if (i == wrongShooter){
+			m_lines[i]->Shoot(shootSpeed, false);
+		}else{
+			m_lines[i]->Shoot(shootSpeed);
+		}
 	}
-
-	m_circleSpeed = L_RandomFloat(m_circleSpeed, m_circleSpeed + m_kCircleSpeedRange);
-	m_shootRate = L_RandomFloat(m_shootRate - m_kShootRateRange, m_shootRate);
-	m_doubleShotChance = L_RandomFloat(m_doubleShotChance, m_doubleShotChance + m_kDoubleShotChanceRange);
-
-	if (m_circleSpeed > m_kMaxCircleSpeed)
-		m_circleSpeed = m_kMaxCircleSpeed;
-	if (m_shootRate < m_kMinShootRate)
-		m_shootRate = m_kMinShootRate;
-	if (m_doubleShotChance > m_kMaxDoubleShotChance)
-		m_doubleShotChance = m_kMaxDoubleShotChance;
-
-	m_timers.Add(new Timer(m_shootRate, 1, &Gameplay::Shoot, (void *)this));
-}
-
-void Gameplay::Switch(Timer* pTimer, void* pUserData){
-	Gameplay *pGame = (Gameplay *)pUserData;
-	pGame->RandomSwitch();
-
 }
 
 void Gameplay::RandomSwitch(){
-	int index = L_RandomInt(0, s_numLines - 1);
-	while (m_lines[index]->IsSwitching())
-		index = L_RandomInt(0, s_numLines - 1);
-
-	if (L_Random() >= 0.4f){
-		m_lines[index]->RandomSwitch();
-	}else{
-		m_lines[index]->ChangeShooter();
-	}
-	
-	if (L_Random() < m_doubleShotChance){
-		int secondIndex = L_RandomInt(0, s_numLines - 1);
-		while (m_lines[secondIndex]->IsSwitching() || index == secondIndex)
-			secondIndex = L_RandomInt(0, s_numLines - 1);
-
-		if (L_Random() >= 0.4f){
-			m_lines[secondIndex]->RandomSwitch();
-		}else{
-			m_lines[secondIndex]->ChangeShooter();
+	if (!s_newSquare){
+		for (uint i = 0; i < m_numSquaresShooting; i++){
+			float chance = L_Random();
+			if (chance >= 0.70f){
+				m_lines[i]->SwitchBoth();
+			}else if (chance <= 0.4f){
+				m_lines[i]->ChangeShooter();
+			}
 		}
-		
 	}
 
-	m_switchRate = L_RandomFloat(m_switchRate - m_kSwitchRateRange, m_switchRate);
-	if (m_switchRate < m_kMinSwitchRate)
-		m_switchRate = m_kMinSwitchRate;
-	
-	m_timers.Add(new Timer(m_switchRate, 1, &Gameplay::Switch, (void *)this));
+	s_newSquare = false;
+	m_timers.Add(new Timer(0.75f, 1, &Gameplay::Shoot, (void *)this));
+}
+
+void Gameplay::CheckNextLevel(){
+	if (s_correctTaps == s_kTapsToLevel2 || s_correctTaps == s_kTapsToLevel3 || s_correctTaps == s_kTapsToLevel4){
+		m_numSquaresShooting++;
+		s_newSquare = true;
+		m_lines[m_numSquaresShooting - 1]->SlideIn();
+	}
+}
+
+void Gameplay::SetAllCirclesToFade(){
+	for (uint i = 0; i < m_numSquaresShooting; i++)
+		m_lines[i]->SetAllCirclesToFade();
 }
 
 void Gameplay::Update(float deltaTime, float alphaMul)

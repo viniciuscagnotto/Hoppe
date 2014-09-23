@@ -2,19 +2,25 @@
 
 SceneManager* g_pSceneManager = 0;
 
-Scene::Scene() : m_isActive(true), m_isInputActive(false)
+Scene::Scene() : m_isActive(true), 
+m_isInputActive(false), 
+m_pBackground(0)
 {
 
 }
 
-Scene::Scene(Scene::EScenes sceneType) : m_type(sceneType),  m_isActive(true), m_isInputActive(false)
+Scene::Scene(Scene::EScenes sceneType) : m_type(sceneType),  
+m_isActive(true), 
+m_isInputActive(false),
+m_pBackground(0)
 {
 
 }
 
 Scene::~Scene()
 {
-
+	g_pSpriteManager->DeleteSpriteObject(m_pBackground);
+	m_pBackground = 0;
 }
 
 void Scene::Init()

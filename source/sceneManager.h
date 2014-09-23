@@ -18,6 +18,8 @@ public:
 	};
 
 protected:
+	SpriteObject *m_pBackground;
+
     bool m_isActive; // Active state
     bool m_isInputActive; // Input active state
     CTweenManager m_tweener; // Scene local tween manager

@@ -4,6 +4,7 @@
 #define kCircle_Active (1<<0)
 #define kCircle_Tapped (1<<1)
 #define kCircle_Exploding (1<<2)
+#define kCircle_Fading (1<<3)
 
 class Circle : public GameObject
 {
@@ -29,6 +30,8 @@ public:
 	void SetTapped(bool tapped) { L_SetBitState(&state, kCircle_Tapped, tapped); };
 	bool IsExploding() { return L_GetBitState(state, kCircle_Exploding); };
 	void SetExploding(bool exploding) { L_SetBitState(&state, kCircle_Exploding, exploding); };
+	bool IsFading() { return L_GetBitState(state, kCircle_Fading); };
+	void SetFading(bool fading) { L_SetBitState(&state, kCircle_Fading, fading); };
 
 	void Reset(){ SetVisible(false); state = 0; m_speed = 0.0f; SetAlpha(1.0f); }; 
 	

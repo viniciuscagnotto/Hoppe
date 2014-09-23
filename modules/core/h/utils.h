@@ -1,6 +1,10 @@
 #ifndef __UTILS_H__
 #define __UTILS_H__
 
+#define IPHONE5_H 1136
+#define IPHONE4_H 960
+
+
 extern CTweenManager* g_pTweener;
 
 struct PointFloat{

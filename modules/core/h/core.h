@@ -44,6 +44,7 @@ using namespace Iw2DSceneGraph;
 #include "csvCommands.h"
 
 //managers
+#include "facebookManager.h"
 #include "adsManager.h"
 #include "savedataManager.h"
 #include "resourceManager.h"

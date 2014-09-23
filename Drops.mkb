@@ -74,7 +74,7 @@ subprojects
 deployments
 {
     iphone-bundle-url-name="com.yesornogames.dotsrush"
-    iphone-bundle-url-schemes="fd<FACEBOOK_APP_ID>"
+    iphone-bundle-url-schemes="fb<955358454521782>"
 	
 	# Note the App/Bundle ID must be set to the same value as an app registered
     # through iTunes Connect or the app will not be recognised by game center
