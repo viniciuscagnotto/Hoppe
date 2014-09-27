@@ -10,7 +10,8 @@ private:
 	SpriteObject* m_pPlay;
 	SpriteObject* m_pLogo;
 	SpriteObject* m_pSettings;
-	
+	CLabel *m_pBestScore;
+
 public:
 	MainMenu();
     ~MainMenu();

@@ -20,18 +20,18 @@ void Tutorial::Init()
 		g_pAdsManager->NewAd();
 
 	//Tutorial Button
-	m_pTutorial = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Tutorial_Main);
+	/*m_pTutorial = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Tutorial_Main);
 	m_pTutorial->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pTutorial->m_Y = IwGxGetScreenHeight() * 0.5f;
 	AddChild(m_pTutorial);
-
+	*/
 }
 
 void Tutorial::Cleanup()
 {
 
-	SafeDeleteObject(m_pTutorial);
-	m_pTutorial = 0;
+	//SafeDeleteObject(m_pTutorial);
+	//m_pTutorial = 0;
 
 	Scene::Cleanup();
 }

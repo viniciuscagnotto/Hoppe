@@ -46,8 +46,9 @@ void Square::Update(float deltaTime)
 			continue;
 
 		if (m_circles[i]->IsFading()){
-			m_circles[i]->AddAlpha(-0.08f);
-			if (m_circles[i]->GetAlpha() <= 0.0f){
+			float newScale = m_circles[i]->GetSprite()->m_ScaleX - 0.08f;
+			m_circles[i]->SetScale(newScale, newScale);
+			if (newScale <= 0.0f){
 				m_circles[i]->Reset();
 				m_circles[i]->GetSprite()->m_X = m_circleInitialPos;
 				m_circles[i]->SetScale(1.0f, 1.0f);
@@ -57,8 +58,13 @@ void Square::Update(float deltaTime)
 
 		if (m_circles[i]->IsTapped()){
 			if (m_circles[i]->GetColor() == m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
+				if (g_pSaveData->m_saveData.tutorial){
+					m_circles[i]->SetTapped(false);
+					return;
+				}
+
 				EndGame();
-				//g_pAudio->PlaySound("audio/explosion.wav");
+				g_pAudio->PlaySound("audio/explosion.wav");
 				g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
 										FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
 										ONCOMPLETE, Square::OnGameOver, END);
@@ -66,24 +72,25 @@ void Square::Update(float deltaTime)
 			}else{
 				if (m_circles[i]->GetAlpha() == 1.0f){
 					g_pAudio->PlaySound("audio/tap.wav");
-					Gameplay::s_correctTaps++;
-					
-					float fullDistance = floorf(fabsf(GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X));
-					float circleDistance = floorf(fabsf(m_circles[i]->GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X));
-					int points = (int)floorf(circleDistance / fullDistance*POINTS_PER_TAP);
-					Gameplay::s_actualScore += points;
-					if (Gameplay::s_actualScore > MAX_SCORE)
-						Gameplay::s_actualScore = MAX_SCORE;
-					IwTrace(Square, ("POINTS: %d", Gameplay::s_actualScore));
-
-					pGameplay->CheckNextLevel();
 					pGameplay->SetAllCirclesToFade();
+
+					if (!g_pSaveData->m_saveData.tutorial){
+						Gameplay::s_correctTaps++;
+						float fullDistance = floorf(fabsf(GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X));
+						float circleDistance = floorf(fabsf(m_circles[i]->GetSprite()->m_X - m_circles[i]->GetReceiver()->GetFrontSquare()->GetSprite()->m_X));
+						int points = (int)floorf(circleDistance / fullDistance*POINTS_PER_TAP);
+						Gameplay::s_actualScore += points;
+						if (Gameplay::s_actualScore > MAX_SCORE)
+							Gameplay::s_actualScore = MAX_SCORE;
+					
+						pGameplay->CheckNextLevel();
+					}	
 				}
 				
 				m_circles[i]->AddAlpha(-0.08f);
 				
 				float circleScale = m_circles[i]->GetSprite()->m_ScaleX;
-				//m_circles[i]->SetScale(circleScale + 0.05f, circleScale + 0.05f);
+				m_circles[i]->SetScale(circleScale + 0.05f, circleScale + 0.05f);
 				
 				if (m_circles[i]->GetAlpha() <= 0.0f){
 					m_circles[i]->Reset();
@@ -97,6 +104,12 @@ void Square::Update(float deltaTime)
 		}
 
 		m_circles[i]->Update(deltaTime);
+		if (g_pSaveData->m_saveData.tutorial){
+			if (m_circles[i]->GetSprite()->m_X > IwGxGetScreenWidth() * 0.5f)
+				pGameplay->ShowTutorial();
+		}
+
+
 		bool reachedDestination = false;
 		Square *pFrontSquare = m_circles[i]->GetReceiver()->GetFrontSquare();
 		if (m_circles[i]->GetSpeed() > 0.0f){
@@ -107,7 +120,7 @@ void Square::Update(float deltaTime)
 			else{
 				if (m_circles[i]->GetSprite()->m_X >= pFrontSquare->GetSprite()->m_X - pFrontSquare->GetWidth(true)){
 					EndGame();
-					//g_pAudio->PlaySound("audio/explosion.wav");
+					g_pAudio->PlaySound("audio/explosion.wav");
 					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
 						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
 						ONCOMPLETE, Square::OnGameOver, END);
@@ -123,7 +136,7 @@ void Square::Update(float deltaTime)
 			else{
 				if (m_circles[i]->GetSprite()->m_X <= pFrontSquare->GetSprite()->m_X + pFrontSquare->GetWidth(true)){
 					EndGame();
-					//g_pAudio->PlaySound("audio/explosion.wav");
+					g_pAudio->PlaySound("audio/explosion.wav");
 					g_pTweener->Tween(2.0f, FLOAT, &m_circles[i]->GetSprite()->m_ScaleX, 1.7f,
 						FLOAT, &m_circles[i]->GetSprite()->m_ScaleY, 1.7f,
 						ONCOMPLETE, Square::OnGameOver, END);
@@ -173,7 +186,7 @@ void Square::SetAllCirclesToFade(){
 void Square::Shoot(float speed){	
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		if (!m_circles[i]->IsActive()){
-			g_pAudio->PlaySound("audio/shoot.wav");
+			//g_pAudio->PlaySound("audio/shoot.wav");
 			m_circles[i]->SetSpeed(speed);
 			m_circles[i]->SetIsActive(true);
 			m_circles[i]->SetTapped(false);
@@ -183,16 +196,26 @@ void Square::Shoot(float speed){
 }
 
 void Square::CheckTap(float x, float y){
-	float extraWidth = IwGxGetDeviceWidth();//20.0f;
+	float extraWidth = IwGxGetDeviceWidth();
 	float extraHeight = 15.0f;
 	if (Game::s_is2X){
-		//extraWidth = 40.0f;
 		extraHeight = 30.0f;
 	}	
 
 	for (uint i = 0; i < s_kMaxCircles; i++){
 		if (m_circles[i]->IsActive() && !m_circles[i]->IsTapped()){
 			if (m_circles[i]->GetSprite()->HitTest(x, y, extraWidth, extraHeight)){
+				if (g_pSaveData->m_saveData.tutorial){
+					if (m_circles[i]->GetColor() != m_circles[i]->GetReceiver()->GetFrontSquare()->GetColor()){
+						m_circles[i]->SetTapped(true);
+						Gameplay *pGameplay = (Gameplay *)g_pSceneManager->Find(Scene::kScene_Gameplay);
+						pGameplay->RemoveTutorial();
+						return;
+					}
+
+					continue;
+				}
+
 				m_circles[i]->SetTapped(true);
 				return;
 			}

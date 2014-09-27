@@ -7,10 +7,12 @@ public:
 	struct SSaveData{
 		int topScore;
 		bool mute;
+		bool tutorial;
 		
 		SSaveData(){
 			topScore = 0;
 			mute = false;
+			tutorial = true;
 		};
 	};
 

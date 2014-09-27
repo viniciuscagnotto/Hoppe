@@ -7,11 +7,17 @@ public:
 
 
 private:
+	SpriteObject *m_pFacebook;
 	SpriteObject *m_pMainMenu;
 	SpriteObject *m_pPlayAgain;
 
 	SpriteObject *m_pBestScoreTitle;
 	SpriteObject *m_pYourScoreTitle;
+
+	CLabel *m_pBestScore;
+	CLabel *m_pYourScore;
+
+	int m_actualScore;
 
 public:
 	GameOver();

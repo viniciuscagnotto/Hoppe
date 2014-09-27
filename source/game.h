@@ -23,12 +23,15 @@ public:
 		
 		//Tutorial
 		kGameGraphics_Tutorial_Main,
+		kGameGraphics_Tutorial_Arrow,
 
 		//Pause
 		kGameGraphics_Pause_Main,
 		kGameGraphics_Pause_Sound,
 		kGameGraphics_Pause_On,
 		kGameGraphics_Pause_Off,
+		kGameGraphics_Pause_Off_Text,
+		kGameGraphics_Pause_On_Text,
 
 
 		//Buttons
@@ -40,6 +43,7 @@ public:
 		kGameGraphics_Button_Pause,
 		kGameGraphics_Button_MainMenu,
 		kGameGraphics_Button_PlayAgain,
+		kGameGraphics_Button_Facebook,
 
 		//Titles
 		kGameGraphics_Title_Options,
@@ -48,6 +52,7 @@ public:
 
 		//Options
 		kGameGraphics_Options_Sound,
+		kGameGraphics_Options_Tutorial,
 		kGameGraphics_Options_On,
 		kGameGraphics_Options_Off,
 
@@ -61,7 +66,7 @@ public:
 	};
 
 	enum EGameFonts{
-		kGameFonts_Arial_8 = 0,
+		kGameFonts_BestScore = 0,
 
 		kGameFonts_Count
 	};

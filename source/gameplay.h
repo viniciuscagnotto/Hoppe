@@ -1,8 +1,8 @@
 #ifndef __GAMEPLAY_H__
 #define __GAMEPLAY_H__
 
-//#define EXTRA_CIRCLE_DIM 6
-#define EXTRA_SQUARE_DIM 7.5f 
+//#define EXTRA_CIRCLE_DIM 3.5f
+#define EXTRA_SQUARE_DIM 3.5f 
 #define MAX_SCORE 999999999
 #define POINTS_PER_TAP 100
 
@@ -24,6 +24,8 @@ public:
 	static bool s_newSquare;
 	static int s_actualScore;
 	static bool s_gameOver;
+	static bool s_canTap;
+	static bool s_isShowingTutorial;
 	
 	struct SLine{
 		SquareObject *pLeft;
@@ -113,6 +115,8 @@ private:
 	float m_circleSpeed;
 	int m_numSquaresShooting;
 	
+	CLabel *m_pYourScore;
+
 	//Bottom HUD
 	SpriteObject *m_pBottomHUD;
 	SpriteObject *m_pPauseBtn;
@@ -126,7 +130,17 @@ private:
 	SpriteObject *m_pSound;
 	SpriteObject *m_pOn;
 	SpriteObject *m_pOff;
+	SpriteObject *m_pOnText;
+	SpriteObject *m_pOffText;
 
+	//Tutorial
+	SpriteObject *m_pTutorial;
+	SpriteObject *m_pArrow;
+	float m_arrowStartX;
+	float m_arrowEndX;
+	bool m_isAdvancingArrow;
+	bool m_isRetreatingArrow;
+	float m_arrowSpeed;
 
 public:
 	Gameplay();
@@ -145,8 +159,13 @@ public:
 	void RandomSwitch();
 	void CheckNextLevel();
 	void SetAllCirclesToFade();
+	void ShowTutorial();
+	void RemoveTutorial();
 
 	static void ResetVariables() { s_actualScore = 0; s_correctTaps = 0; s_paused = false; s_gameOver = false; s_newSquare = false; };
+
+	void AdvanceArrow();
+	void RetreatArrow();
 };
 
 #endif  // __GAMEPLAY_H__

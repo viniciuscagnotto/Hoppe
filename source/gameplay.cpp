@@ -6,6 +6,8 @@ int Gameplay::s_correctTaps = 0;
 bool Gameplay::s_newSquare = false;
 int Gameplay::s_actualScore = 0;
 bool Gameplay::s_gameOver = false;
+bool Gameplay::s_canTap = true;
+bool Gameplay::s_isShowingTutorial = false;
 
 Gameplay::Gameplay() : Scene(kScene_Gameplay),
 m_topAdsHeight(0.0f),
@@ -19,7 +21,14 @@ m_pPauseScreen(0),
 m_pBottomHUD(0),
 m_pSound(0),
 m_pOn(0),
-m_pOff(0)
+m_pOff(0),
+m_pOnText(0),
+m_pOffText(0),
+m_pYourScore(0),
+m_pTutorial(0),
+m_pArrow(0),
+m_isAdvancingArrow(false),
+m_isRetreatingArrow(false)
 {
 	for (uint i = 0; i < s_kMaxLines; i++)
 		m_lines[i] = new SLine();
@@ -73,6 +82,9 @@ void Gameplay::Init(){
 			hasInitialType = true;
 		}
 
+		if (g_pSaveData->m_saveData.tutorial)
+			hasInitialType = true;
+
 		m_lines[i]->pLeft->SetInitialParams(hasInitialType, initialType);
 		m_lines[i]->pLeft->SetPosition(m_lines[i]->pLeft->GetWidth(true), yPosition, hidden);
 		m_lines[i]->pLeft->AddTo(this);
@@ -95,23 +107,23 @@ void Gameplay::Init(){
 	//Bottom HUD
 	m_pBottomHUD = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Entity_BlackSquare);
 	m_pBottomHUD->m_X = IwGxGetScreenWidth() * 0.5f;
-	m_pBottomHUD->m_Y = m_bottomHudPosY;
-	m_pBottomHUD->m_ScaleX = IwGxGetScreenWidth() / m_pBottomHUD->m_W;
-	m_pBottomHUD->m_ScaleY = m_bottomHudHeight / m_pBottomHUD->m_H;
+	m_pBottomHUD->m_Y = m_bottomHudPosY + (Game::s_is2X ? 4.0f : 8.0f);
+	m_pBottomHUD->m_ScaleX = (IwGxGetScreenWidth() / m_pBottomHUD->m_W) * 2.0f;
+	m_pBottomHUD->m_ScaleY = m_bottomHudHeight / m_pBottomHUD->m_H + 0.075f;
 	AddChild(m_pBottomHUD);
 
 	m_pPauseBtn = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Pause);
 	m_pPauseBtn->m_X = IwGxGetScreenWidth() - m_pPauseBtn->m_W * 0.5f - Game::s_gameSpacement;
-	m_pPauseBtn->m_Y = m_pBottomHUD->m_Y;
+	m_pPauseBtn->m_Y = m_pBottomHUD->m_Y - Game::s_gameSpacement * 1.5f;
 	AddChild(m_pPauseBtn);
 
 	//Pause Stuff
 	m_pAlphaLayer = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Entity_BlackSquare);
 	m_pAlphaLayer->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pAlphaLayer->m_Y = IwGxGetScreenHeight() * 0.5f;
-	m_pAlphaLayer->m_ScaleX = IwGxGetScreenWidth() / m_pAlphaLayer->m_W;
-	m_pAlphaLayer->m_ScaleY = IwGxGetScreenHeight() /m_pAlphaLayer->m_H;
-	m_pAlphaLayer->m_Alpha = 0.65f;
+	m_pAlphaLayer->m_ScaleX = (IwGxGetScreenWidth() / m_pAlphaLayer->m_W) * 2.0f;
+	m_pAlphaLayer->m_ScaleY = (IwGxGetScreenHeight() /m_pAlphaLayer->m_H) * 2.0f;
+	m_pAlphaLayer->m_Alpha = 0.70f;
 	
 	m_pPauseScreen = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_Main);
 	m_pPauseScreen->m_X = IwGxGetScreenWidth() * 0.5f;
@@ -119,7 +131,7 @@ void Gameplay::Init(){
 	
 	m_pResumeBtn = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Resume);
 	m_pResumeBtn->m_X = IwGxGetScreenWidth() * 0.5f;
-	m_pResumeBtn->m_Y = IwGxGetScreenHeight() * 0.5f + m_pResumeBtn->m_H * 0.5f;
+	m_pResumeBtn->m_Y = IwGxGetScreenHeight() * 0.5f + m_pResumeBtn->m_H * 0.7f;
 
 	m_pExitBtn = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Exit);
 	m_pExitBtn->m_X = IwGxGetScreenWidth() * 0.5f;
@@ -127,18 +139,74 @@ void Gameplay::Init(){
 
 	m_pSound = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_Sound);
 	m_pSound->m_X = IwGxGetScreenWidth() * 0.4f;
-	m_pSound->m_Y = m_pResumeBtn->m_Y - m_pResumeBtn->m_H - Game::s_gameSpacement * 2;
+	m_pSound->m_Y = m_pResumeBtn->m_Y - m_pResumeBtn->m_H*1.2f - Game::s_gameSpacement * 2;
 
 	m_pOn = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_On);
 	m_pOn->m_X = IwGxGetScreenWidth() * 0.6f;
-	m_pOn->m_Y = m_pResumeBtn->m_Y - m_pResumeBtn->m_H - Game::s_gameSpacement * 2;
+	m_pOn->m_Y = m_pSound->m_Y;
+
+	m_pOnText = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_On_Text);
+	m_pOnText->m_AnchorX = 0.0f;
+	m_pOnText->m_X = m_pOn->m_X + m_pOn->m_W * 0.5f + Game::s_gameSpacement;
+	m_pOnText->m_Y = m_pSound->m_Y;
 
 	m_pOff = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_Off);
 	m_pOff->m_X = IwGxGetScreenWidth() * 0.6f;
-	m_pOff->m_Y = m_pResumeBtn->m_Y - m_pResumeBtn->m_H - Game::s_gameSpacement * 2;
+	m_pOff->m_Y = m_pSound->m_Y;
 
+	m_pOffText = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Pause_Off_Text);
+	m_pOffText->m_AnchorX = 0.0f;
+	m_pOffText->m_X = m_pOff->m_X + m_pOff->m_W * 0.5f + Game::s_gameSpacement;
+	m_pOffText->m_Y = m_pSound->m_Y;
+
+	//Score
+	float fontScale = 1.0f;
+	if (Game::s_is2X)
+		fontScale = 2.0f;
+
+	m_pYourScore = new CLabel();
+	m_pYourScore->m_AnchorX = 0.0f;
+	m_pYourScore->m_AnchorY = 0.5f;
+	m_pYourScore->m_W = 200 * fontScale;
+	m_pYourScore->m_H = 20 * fontScale;
+	m_pYourScore->m_X = 8.0f * fontScale;
+	m_pYourScore->m_Y = IwGxGetScreenHeight() - (20.0f * fontScale);
+	m_pYourScore->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
+	m_pYourScore->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
+	m_pYourScore->m_Font = g_pResourceManager->GetFont((uint)Game::kGameFonts_BestScore);
+	m_pYourScore->m_ScaleX = m_pYourScore->m_ScaleY = fontScale;
+	m_pYourScore->m_Color = CColor(0xff, 0xff, 0xff, 0xff);
+
+	char str[32];
+	snprintf(str, 32, "SCORE: %d", s_actualScore);
+	m_pYourScore->m_Text = str;
+	AddChild(m_pYourScore);
+
+	//Tutorial
+	m_pTutorial = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Tutorial_Main);
+	m_pTutorial->m_X = IwGxGetScreenWidth() * 0.5f;
+	m_pTutorial->m_Y = IwGxGetScreenHeight() * 0.65f;
+
+	m_pArrow = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Tutorial_Arrow);
+	m_arrowEndX = IwGxGetScreenWidth() * 0.5f + m_pArrow->m_W * 0.5f + Game::s_gameSpacement * 5;
+	m_arrowStartX = m_arrowEndX + (30.f * fontScale);
+	
+	m_pArrow->m_X = m_arrowStartX;
+	m_pArrow->m_Y = m_lines[0]->pLeft->GetFrontSquare()->GetSprite()->m_Y - (4.0f * fontScale);
+	m_isAdvancingArrow = false;
+	m_isRetreatingArrow = false;
+
+	//Init
 	m_circleSpeed = s_kCircleSpeed;
-	m_timers.Add(new Timer(3.0f, 1, &Gameplay::Shoot, (void *)this));
+	float waitTime = 2.0f;
+	s_canTap = true;
+	s_isShowingTutorial = false;
+	if (g_pSaveData->m_saveData.tutorial){
+		s_canTap = false;
+		waitTime = 1.0f;
+	}
+
+	m_timers.Add(new Timer(waitTime, 1, &Gameplay::Shoot, (void *)this));
 }
 
 void Gameplay::Cleanup(){
@@ -174,7 +242,26 @@ void Gameplay::Cleanup(){
 	m_pOn = 0;
 	SafeDeleteObject(m_pOff);
 	m_pOff = 0;
+	SafeDeleteObject(m_pOnText);
+	m_pOnText = 0;
+	SafeDeleteObject(m_pOffText);
+	m_pOffText = 0;
 
+	//Tutorial
+	SafeDeleteObject(m_pTutorial);
+	m_pTutorial = 0;
+	SafeDeleteObject(m_pArrow);
+	m_pArrow = 0;
+
+
+	//Score
+	if (m_pYourScore){
+		RemoveChild(m_pYourScore);
+		delete m_pYourScore;
+		m_pYourScore = 0;
+	}
+
+	s_isShowingTutorial = false;
 	Scene::Cleanup();
 }
 
@@ -184,11 +271,12 @@ void Gameplay::Shoot(Timer* pTimer, void* pUserData){
 }
 
 void Gameplay::RandomShoot(){
-	float shootSpeed = m_circleSpeed;
-	if (Game::s_is2X)
-		shootSpeed *= 2.0f;
+	float shootSpeed = m_circleSpeed * ((float)IwGxGetDeviceWidth()/320);
 
 	uint wrongShooter = L_RandomInt(0, m_numSquaresShooting - 1);
+	if (g_pSaveData->m_saveData.tutorial)
+		wrongShooter = 0;
+
 	for (uint i = 0; i < m_numSquaresShooting; i++){
 		if (i == wrongShooter){
 			m_lines[i]->Shoot(shootSpeed, false);
@@ -196,22 +284,35 @@ void Gameplay::RandomShoot(){
 			m_lines[i]->Shoot(shootSpeed);
 		}
 	}
+
+	g_pAudio->PlaySound("audio/shoot.wav");
 }
 
 void Gameplay::RandomSwitch(){
-	if (!s_newSquare){
-		for (uint i = 0; i < m_numSquaresShooting; i++){
-			float chance = L_Random();
-			if (chance >= 0.70f){
-				m_lines[i]->SwitchBoth();
-			}else if (chance <= 0.4f){
-				m_lines[i]->ChangeShooter();
+	if (!g_pSaveData->m_saveData.tutorial){
+		if (!s_newSquare){
+			for (uint i = 0; i < m_numSquaresShooting; i++){
+				float chance = L_Random();
+				if (chance >= 0.70f){
+					m_lines[i]->SwitchBoth();
+				}else if (chance <= 0.4f){
+					m_lines[i]->ChangeShooter();
+				}
 			}
 		}
 	}
 
 	s_newSquare = false;
-	m_timers.Add(new Timer(0.75f, 1, &Gameplay::Shoot, (void *)this));
+	bool waitTime = 0.70f;
+	if (g_pSaveData->m_saveData.tutorial){
+		g_pSaveData->m_saveData.tutorial = false;
+		s_isShowingTutorial = false;
+
+		g_pSaveData->Save();
+		s_canTap = true;
+	}
+
+	m_timers.Add(new Timer(0.70f, 1, &Gameplay::Shoot, (void *)this));
 }
 
 void Gameplay::CheckNextLevel(){
@@ -219,6 +320,13 @@ void Gameplay::CheckNextLevel(){
 		m_numSquaresShooting++;
 		s_newSquare = true;
 		m_lines[m_numSquaresShooting - 1]->SlideIn();
+		return;
+	}
+
+	if (s_correctTaps > s_kTapsToLevel4){
+		int additionalPoints = s_kTapsToLevel4 - s_correctTaps;
+		if (additionalPoints % 3)
+			m_circleSpeed += 0.33f;
 	}
 }
 
@@ -240,10 +348,23 @@ void Gameplay::Update(float deltaTime, float alphaMul)
 	if (s_paused && !IsChild(m_pPauseScreen))
 		Pause(true);
 
-	if (!s_paused){
+	if (!s_paused && !s_isShowingTutorial){
 		m_timers.Update(deltaTime);
 		for (uint i = 0; i < s_numLines; i++)
 			m_lines[i]->Update(deltaTime);
+
+		if (m_pYourScore){
+			char str[32];
+			snprintf(str, 32, "SCORE: %d", s_actualScore);
+			m_pYourScore->m_Text = str;
+		}	
+	}
+
+	if (s_isShowingTutorial){
+		if (m_isAdvancingArrow)
+			AdvanceArrow();
+		else if (m_isRetreatingArrow)
+			RetreatArrow();
 	}
 
 	if (CheckTouch())
@@ -277,38 +398,45 @@ void Gameplay::HandleTouch()
 		}
 
 		if (g_pSaveData->m_saveData.mute){
-			if (m_pOff){
-				if (m_pOff->HitTest(g_pInput->m_x, g_pInput->m_y)){
+			if (m_pOff && m_pOffText){
+				if (m_pOff->HitTest(g_pInput->m_x, g_pInput->m_y) || m_pOffText->HitTest(g_pInput->m_x, g_pInput->m_y)){
 					g_pSaveData->m_saveData.mute = false;
 					g_pSaveData->Save();
 					g_pAudio->SetMute(false);
 					g_pAudio->PlaySound("audio/click.wav");
 
 					m_pOff->m_IsVisible = false;
+					m_pOffText->m_IsVisible = false;
 					m_pOn->m_IsVisible = true;
+					m_pOnText->m_IsVisible = true;
 				}
 			}
 		}else{
-			if (m_pOn){
-				if (m_pOn->HitTest(g_pInput->m_x, g_pInput->m_y)){
+			if (m_pOn && m_pOnText){
+				if (m_pOn->HitTest(g_pInput->m_x, g_pInput->m_y) || m_pOnText->HitTest(g_pInput->m_x, g_pInput->m_y)){
 					g_pSaveData->m_saveData.mute = true;
 					g_pSaveData->Save();
 					g_pAudio->SetMute(true);
 
 					m_pOff->m_IsVisible = true;
+					m_pOffText->m_IsVisible = true;
 					m_pOn->m_IsVisible = false;
+					m_pOnText->m_IsVisible = false;
 				}
 			}
 		}
 
 	}else{
-		for (uint i = 0; i < s_numLines; i++)
-			m_lines[i]->CheckTap(g_pInput->m_x, g_pInput->m_y);
+		if (s_canTap)
+			for (uint i = 0; i < s_numLines; i++)
+				m_lines[i]->CheckTap(g_pInput->m_x, g_pInput->m_y);
 
-		if (m_pPauseBtn){
-			if (m_pPauseBtn->HitTest(g_pInput->m_x, g_pInput->m_y)){
-				g_pAudio->PlaySound("audio/click.wav");
-				Pause(true);
+		if (!g_pSaveData->m_saveData.tutorial){
+			if (m_pPauseBtn){
+				if (m_pPauseBtn->HitTest(g_pInput->m_x, g_pInput->m_y)){
+					g_pAudio->PlaySound("audio/click.wav");
+					Pause(true);
+				}
 			}
 		}
 	}
@@ -335,15 +463,25 @@ void Gameplay::Pause(bool pause){
 		if (!IsChild(m_pOn))
 			AddChild(m_pOn);
 
+		if (!IsChild(m_pOnText))
+			AddChild(m_pOnText);
+
 		if (!IsChild(m_pOff))
 			AddChild(m_pOff);
 
+		if (!IsChild(m_pOffText))
+			AddChild(m_pOffText);
+		
 		if (g_pSaveData->m_saveData.mute){
 			m_pOff->m_IsVisible = true;
+			m_pOffText->m_IsVisible = true;
 			m_pOn->m_IsVisible = false;
+			m_pOnText->m_IsVisible = false;
 		}else{
 			m_pOff->m_IsVisible = false;
+			m_pOffText->m_IsVisible = false;
 			m_pOn->m_IsVisible = true;
+			m_pOnText->m_IsVisible = true;
 		}
 	}else{
 		if (IsChild(m_pAlphaLayer))
@@ -364,7 +502,64 @@ void Gameplay::Pause(bool pause){
 		if (IsChild(m_pOn))
 			RemoveChild(m_pOn);
 
+		if (IsChild(m_pOnText))
+			RemoveChild(m_pOnText);
+
 		if (IsChild(m_pOff))
 			RemoveChild(m_pOff);
+
+		if (IsChild(m_pOffText))
+			RemoveChild(m_pOffText);
 	}
 }
+
+void Gameplay::ShowTutorial(){
+	if (s_isShowingTutorial)
+		return;
+	s_isShowingTutorial = true;
+	s_canTap = true;
+
+	if (!IsChild(m_pArrow))
+		AddChild(m_pArrow);
+
+	if (!IsChild(m_pTutorial))
+		AddChild(m_pTutorial);
+
+	m_isAdvancingArrow = true;
+	m_arrowSpeed = 1.0f;
+}
+
+void Gameplay::RemoveTutorial(){
+	if (IsChild(m_pArrow))
+		RemoveChild(m_pArrow);
+	if (IsChild(m_pTutorial))
+		RemoveChild(m_pTutorial);
+
+	s_isShowingTutorial = false;
+	m_isAdvancingArrow = false;
+	m_isRetreatingArrow = false;
+}
+
+void Gameplay::AdvanceArrow(){
+	float speed = m_arrowSpeed * (Game::s_is2X ? 2.0f : 1.0f);
+	m_arrowSpeed += 0.20f;
+	m_pArrow->m_X -= speed;
+	if (m_pArrow->m_X <= m_arrowEndX){
+		m_pArrow->m_X = m_arrowEndX;
+		m_isAdvancingArrow = false;
+		m_isRetreatingArrow = true;
+	}
+}
+
+void Gameplay::RetreatArrow(){	
+	float speed = m_arrowSpeed * (Game::s_is2X ? 2.0f : 1.0f);
+	m_arrowSpeed -= 0.20f;
+	m_pArrow->m_X += speed;
+	if (m_pArrow->m_X >= m_arrowStartX){
+		m_arrowSpeed = 1.0f;
+		m_pArrow->m_X = m_arrowStartX;
+		m_isAdvancingArrow = true;
+		m_isRetreatingArrow = false;
+	}
+}
+
