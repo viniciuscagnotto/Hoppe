@@ -34,20 +34,15 @@ files
     mainMenu.cpp
 	options.h
 	options.cpp
-	store.h
-	store.cpp
-	tutorial.h
-	tutorial.cpp
 	gameover.h
 	gameover.cpp
-	iap.h
-	iap.cpp
-
+	
 }
 
 assets
 {
     (data)
+	ads
     audio
     textures
     atlas
@@ -60,6 +55,7 @@ assets
 
 subprojects
 {
+	s3eIOSGameCenter
     s3eWebView
     s3eFacebook
     iw2d

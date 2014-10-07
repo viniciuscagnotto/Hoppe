@@ -17,9 +17,9 @@
 # S3E documentation for details.
 
 [S3E]
-MemSize = 60000000
+MemSize = 9000000
 DispFixRot=Portrait
 IOSDispScaleFactor=200
 
 [GX]
-DataCacheSize=80000
+DataCacheSize=50000

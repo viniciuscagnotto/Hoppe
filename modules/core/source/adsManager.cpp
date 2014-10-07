@@ -17,21 +17,21 @@ bool AdsManager::Init(){
 	// Check ads are enabled
 	if (!IsEnabled())
 		return false;
-
+	
 	// Check that the web view extension is available
 	if (s3eWebViewAvailable() == S3E_FALSE)
 		return false;
-
+	
 	// Create the web view
 	m_pView = s3eWebViewCreate(true);
 	if (!m_pView)
 		return false;
-
+	
 	// Check that the platform is supported
 	m_platform = s3eDeviceGetString(S3E_DEVICE_OS);
 	if (m_platform != "ANDROID" && m_platform != "IPHONE" && m_platform != "WINDOWS" & m_platform != "OSX")
 		return false;
-
+	
 	// Register callbacks
 	s3eWebViewRegister(S3E_WEBVIEW_STARTED_LOADING, AdsManager::StartedLoadingCallback, this, m_pView);
 	s3eWebViewRegister(S3E_WEBVIEW_FINISHED_LOADING, AdsManager::LoadedCallback, this, m_pView);
@@ -81,7 +81,7 @@ void AdsManager::NavigateAd(const std::string& html){
 	s3eWebViewShow(m_pView, 0, m_y, IwGxGetScreenWidth(), m_h);
 
 	// Navigate to the saved ad html file
-	s3eWebViewNavigate(m_pView, "ram://ad_html.html");
+	s3eWebViewNavigate(m_pView, "rom://ads/ad_html.html");
 }
 
 bool AdsManager::NewInneractiveAd(){
@@ -147,7 +147,7 @@ bool AdsManager::NewLeadboltAd(){
 	html.append("<meta name='viewport' content='width=device-width, initial-scale=1.0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />");
 	html.append("<style> #iaAdContainerDiv { text-align: center; } </style>");
 	html.append("</head><body style='margin:0;padding:0;text-align: center;'>");
-	html.append("<script src='http://ad.leadboltads.net/show_app_ad.js?section_id=");
+	html.append("<script type='text/javascript' src='http://ad.leadboltads.net/show_app_ad.js?section_id=");
 	html.append(m_id);
 	html.append("'></script>");
 	html.append("</body></html>");
@@ -179,7 +179,7 @@ bool AdsManager::NewAdmodaAd(){
 }
 
 bool AdsManager::NewAd(int y, int height, EAdProviders provider, EAdType type, const char *id){
-	if (m_pView == 0)
+	if (!m_pView)
 		return false;
 
 	m_y = y;

@@ -19,9 +19,6 @@
 #include "mainMenu.h"
 #include "gameplay.h"
 #include "options.h"
-#include "store.h"
 #include "gameover.h"
-#include "tutorial.h"
-#include "iap.h"
 
 #endif //__HEADER_H__

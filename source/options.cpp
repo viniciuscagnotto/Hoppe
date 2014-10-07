@@ -27,8 +27,8 @@ void Options::Init()
 {
 	Scene::Init();
 
-	if (g_pAdsManager->IsEnabled())
-		g_pAdsManager->NewAd();
+	//if (g_pAdsManager->IsEnabled())
+	//	g_pAdsManager->NewAd();
 
 	//Back Button
 	m_pBack = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Back);

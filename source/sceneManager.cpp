@@ -105,10 +105,7 @@ SceneManager::~SceneManager()
 void SceneManager::Init(){
 	Add(new MainMenu());
 	Add(new Options());
-	Add(new Store());
-	Add(new Tutorial());
 	Add(new GameOver());
-	Add(new IAP());
 	Add(new Gameplay());
 }
 

@@ -37,14 +37,17 @@ void Game::Init(){
 	g_pSpriteManager = new SpriteManager();
 	g_pSceneManager = new SceneManager();
 
-	if (s3eFlurryAvailable())
-		s3eFlurryStartSession(FLURRY_API_KEY);
+	//if (s3eFlurryAvailable())
+	//	s3eFlurryStartSession(FLURRY_API_KEY);
+
+	g_pGameCenterManager = new GameCenterManager();
+	//g_pGameCenterManager->Init();
 
 	g_pFacebookManager = new FacebookManager();
-	//if (!g_pFacebookManager->Init()){
-	//	delete g_pFacebookManager;
-	//	g_pFacebookManager = 0;
-	//}
+	if (!g_pFacebookManager->Init()){
+		delete g_pFacebookManager;
+		g_pFacebookManager = 0;
+	}
 
 	g_pAdsManager = new AdsManager();
 	if (g_pAdsManager->Init())
@@ -60,8 +63,6 @@ void Game::LoadResources(){
 
 	//Graphics
 	if (s_is2X){
-		//g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Main, "textures/background_2x.png");
-
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Logo_Main, "textures/logo_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Main, "textures/tutorial_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Arrow, "textures/arrow_2x.png");
@@ -96,12 +97,7 @@ void Game::LoadResources(){
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteCircle, "textures/white_circle_2x.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteSquare, "textures/white_square_2x.png");
 
-		//Fonts
-		//g_pResourceManager->RegisterFont((uint)kGameFonts_BestScore, "fonts/impact18.gxfont");
-
 	}else{
-		//g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Background_Main, "textures/background.png");
-
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Logo_Main, "textures/logo.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Main, "textures/tutorial.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Tutorial_Arrow, "textures/arrow.png");
@@ -134,9 +130,7 @@ void Game::LoadResources(){
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_BlackCircle, "textures/black_circle.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_BlackSquare, "textures/black_square.png");
 		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteCircle, "textures/white_circle.png");
-		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteSquare, "textures/white_square.png");
-
-		
+		g_pResourceManager->RegisterGraphic((uint)kGameGraphics_Entity_WhiteSquare, "textures/white_square.png");	
 	}
 
 	g_pResourceManager->RegisterFont((uint)kGameFonts_BestScore, "fonts/impact18.gxfont");
@@ -166,12 +160,13 @@ void Game::Update(){
 void Game::Cleanup(){
 	s3eDeviceUnRegister(S3E_DEVICE_PAUSE, (s3eCallback)PauseCB);
 
-	if (s3eFlurryAvailable())
-		s3eFlurryEndSession();
+	//if (s3eFlurryAvailable())
+	//	s3eFlurryEndSession();
 
 	if (g_pFacebookManager != 0)
 		delete g_pFacebookManager;
 
+	delete g_pGameCenterManager;
 	delete g_pAudio;
 	delete g_pInput;
 	delete g_pSceneManager;

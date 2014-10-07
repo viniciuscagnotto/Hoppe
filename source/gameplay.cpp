@@ -54,8 +54,8 @@ Gameplay::~Gameplay()
 void Gameplay::Init(){
 	Scene::Init();
 
-	if (g_pAdsManager->IsEnabled())
-		g_pAdsManager->NewAd();
+	//if (g_pAdsManager->IsEnabled())
+	//	g_pAdsManager->NewAd();
 
 	float extraSquareDim = EXTRA_SQUARE_DIM;
 	if (Game::s_is2X)

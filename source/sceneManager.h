@@ -9,11 +9,8 @@ public:
 		kScene_MainMenu,
 		kScene_Options,
 		kScene_Gameplay,
-		kScene_Store,
-		kScene_Tutorial,
 		kScene_GameOver,
-		kScene_IAP,
-
+		
 		kScene_Count
 	};
 

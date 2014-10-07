@@ -15,6 +15,7 @@ files
 
 	[managers]
 	facebookManager.h
+	gameCenterManager.h
 	adsManager.h
 	savedataManager.h
 	resourceManager.h
@@ -36,6 +37,7 @@ files
 	[managers]
 	facebookManager.cpp
 	adsManager.cpp
+	gameCenterManager.cpp
 	savedataManager.cpp
 	resourceManager.cpp
 	spriteManager.cpp
@@ -50,6 +52,7 @@ files
 
 subprojects
 {
+	s3eIOSGameCenter
     s3eWebView
     s3eFacebook
     iw2d

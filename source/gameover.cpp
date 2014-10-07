@@ -23,8 +23,8 @@ void GameOver::Init()
 {
 	Scene::Init();
 
-	if (g_pAdsManager->IsEnabled())
-		g_pAdsManager->NewAd();
+	//if (g_pAdsManager->IsEnabled())
+	//	g_pAdsManager->NewAd();
 
 	//Buttons
 	m_pFacebook = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Facebook);
@@ -152,7 +152,12 @@ void GameOver::HandleTouch()
 	if (m_pFacebook){
 		if (m_pFacebook->HitTest(g_pInput->m_x, g_pInput->m_y)){
 			//Share Score
-
+			if (g_pFacebookManager != 0)
+			{
+				char str[256];
+				snprintf(str, 256, "I just scored %d points on Dots Rush. Can you beat me?", m_actualScore);
+				g_pFacebookManager->PostUpdate(str);
+			}
 		}
 	}
 

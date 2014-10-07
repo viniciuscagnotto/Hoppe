@@ -18,8 +18,9 @@ MainMenu::~MainMenu()
 void MainMenu::Init()
 {
 	Scene::Init();
-	if (g_pAdsManager->IsEnabled())
-		g_pAdsManager->NewAd();
+	
+	//if (g_pAdsManager->IsEnabled())
+	//	g_pAdsManager->NewAd();
 
 	//Logo
 	m_pLogo = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Logo_Main);
@@ -120,14 +121,6 @@ void MainMenu::HandleTouch()
 		if (m_pSettings->HitTest(g_pInput->m_x, g_pInput->m_y)){
 			g_pAudio->PlaySound("audio/click.wav"); 
 			SwitchTo(kScene_Options);
-
-			//Testing Facebook
-			/*if (g_pFacebookManager != 0)
-			{
-				char str[256];
-				snprintf(str, 64, "I just scored 10 points");
-				g_pFacebookManager->PostUpdate(str);
-			}*/
 		}
 	}
 }

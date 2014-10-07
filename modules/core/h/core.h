@@ -45,6 +45,7 @@ using namespace Iw2DSceneGraph;
 
 //managers
 #include "facebookManager.h"
+#include "gameCenterManager.h"
 #include "adsManager.h"
 #include "savedataManager.h"
 #include "resourceManager.h"

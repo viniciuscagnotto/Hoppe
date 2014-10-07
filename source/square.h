@@ -5,10 +5,10 @@
 class Square : public GameObject
 {
 public:
-	static const uint s_kMaxCircles = 8;
+	//static const uint s_kMaxCircles = 8;
 
 private:
-	EasyArray<Circle*, s_kMaxCircles> m_circles;
+	Circle* m_pCircle;
 	float m_circleInitialPos;
 	
 public:
