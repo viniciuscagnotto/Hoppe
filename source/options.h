@@ -13,14 +13,14 @@ private:
 	SpriteObject *m_pSound;
 	SpriteObject *m_pSoundOn;
 	SpriteObject *m_pSoundOff;
-	SpriteObject *m_pSoundWhiteCircle;
-	SpriteObject *m_pSoundBlackCircle;
+	//SpriteObject *m_pSoundWhiteCircle;
+	//SpriteObject *m_pSoundBlackCircle;
 
 	SpriteObject *m_pTutorial;
 	SpriteObject *m_pTutorialOn;
 	SpriteObject *m_pTutorialOff;
-	SpriteObject *m_pTutorialWhiteCircle;
-	SpriteObject *m_pTutorialBlackCircle;
+	//SpriteObject *m_pTutorialWhiteCircle;
+	//SpriteObject *m_pTutorialBlackCircle;
 	
 
 public:

@@ -5,22 +5,37 @@ class GameObject
 {
 public:
 	enum EGameObjectType{
-		kGameObjectType_Square = 0,
-		kGameObjectType_Circle,
+		kGameObjectType_Text = 0,
+		kGameObjectType_Paint,
 		
 		kGameObjectType_Count
 	};
 
-	enum EGameObjectColor{
-		kGameObjectColor_Black = 0,
-		kGameObjectColor_White,
+	enum ETextType{
+		kText_Filled = 0,
+		kText_Stroke,
 
-		kGameObjectColor_Count
+		kText_Count
+	};
+
+	enum EColor{
+		kColor_Red = 0,
+		kColor_Blue,
+		kColor_Green,
+		kColor_Yellow,
+		kColor_Orange,
+		kColor_Violet,
+		kColor_Indigo,
+
+		kColor_Count
 	};
 
 protected:
 	EGameObjectType m_type;
-	EGameObjectColor m_color;
+	ETextType m_textType;
+	EColor m_textColor;
+	EColor m_color;
+
 	bool m_destroyMe;
 	CNode *m_pParent;
 	SpriteObject* m_pSprite;
@@ -55,8 +70,10 @@ public:
 	void RunAnimation(uint animationState){ m_pSprite->RunAnimation(animationState); };
 	SpriteObject* GetSprite(){ return m_pSprite; };
 
-	EGameObjectColor GetColor(){ return m_color; };
-
+	EGameObjectType GetType(){ return m_type; };
+	ETextType GetTextType(){ return m_textType; };
+	EColor GetTextColor(){ return m_textColor; };
+	EColor GetColor(){ return m_color; };
 };
 
 class SquareObject;

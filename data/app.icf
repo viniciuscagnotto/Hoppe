@@ -16,10 +16,12 @@
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
 
-[S3E]
-MemSize = 9000000
+[S3E]     
+MemSize = 10000000
 DispFixRot=Portrait
 IOSDispScaleFactor=200
 
+MemSizeDebug=10000000
+
 [GX]
-DataCacheSize=50000
+DataCacheSize=100000

@@ -19,13 +19,14 @@ void MainMenu::Init()
 {
 	Scene::Init();
 	
-	//if (g_pAdsManager->IsEnabled())
-	//	g_pAdsManager->NewAd();
+	if (g_pAdsManager->IsEnabled())
+		g_pAdsManager->NewAd();
 
 	//Logo
 	m_pLogo = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Logo_Main);
 	m_pLogo->m_X = IwGxGetScreenWidth() * 0.5f;
 	m_pLogo->m_Y = IwGxGetScreenHeight() * 0.35f;
+	m_pLogo->m_ScaleX = m_pLogo->m_ScaleY = Game::s_scaleFactor;
 	AddChild(m_pLogo);
 
 	//Start Game Button
@@ -42,8 +43,8 @@ void MainMenu::Init()
 
 	//Best Score
 	float fontScale = 1.0f;
-	if (Game::s_is2X)
-		fontScale = 2.0f;
+	//if (Game::s_is2X)
+	//	fontScale = 2.0f;
 	
 	if(g_pSaveData->m_saveData.topScore > 0){
 		m_pBestScore = new CLabel();

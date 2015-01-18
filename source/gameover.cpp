@@ -23,8 +23,8 @@ void GameOver::Init()
 {
 	Scene::Init();
 
-	//if (g_pAdsManager->IsEnabled())
-	//	g_pAdsManager->NewAd();
+	if (g_pAdsManager->IsEnabled())
+		g_pAdsManager->NewAd();
 
 	//Buttons
 	m_pFacebook = g_pSpriteManager->CreateSpriteObject(Game::kGameGraphics_Button_Facebook);
@@ -51,8 +51,8 @@ void GameOver::Init()
 
 
 	float fontScale = 1.0f;
-	if (Game::s_is2X)
-		fontScale = 2.0f;
+	//if (Game::s_is2X)
+	//	fontScale = 2.0f;
 
 	m_pBestScore = new CLabel();
 	m_pBestScore->m_AnchorX = m_pBestScore->m_AnchorY = 0.5f;
@@ -88,14 +88,14 @@ void GameOver::Init()
 	m_pYourScore->m_ScaleX = m_pYourScore->m_ScaleY = fontScale + (0.3f * fontScale);
 	m_pYourScore->m_Color = CColor(0x00, 0x00, 0x00, 0xff);
 
-	char str2[32];
+	/*char str2[32];
 	snprintf(str2, 32, "%d", Gameplay::s_actualScore);
 	m_pYourScore->m_Text = str2;
 	AddChild(m_pYourScore);
 	m_actualScore = Gameplay::s_actualScore;
+	*/
 
-
-	Gameplay::ResetVariables();
+	//Gameplay::ResetVariables();
 }
 
 void GameOver::Cleanup()

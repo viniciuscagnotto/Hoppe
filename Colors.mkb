@@ -22,11 +22,13 @@ files
 	[source entities]
 	gameObject.h
 	gameObject.cpp
-	circle.h
-	circle.cpp
-	square.h
-	square.cpp
-
+	paint.h
+	paint.cpp
+	text.h
+	text.cpp
+	line.h
+	line.cpp
+	
 	[source scenes]
 	gameplay.h
     gameplay.cpp
@@ -69,12 +71,12 @@ subprojects
 
 deployments
 {
-    iphone-bundle-url-name="com.yesornogames.dotsrush"
+    iphone-bundle-url-name="com.yesorno.treacherouscolors"
     iphone-bundle-url-schemes="fb<955358454521782>"
 	
 	# Note the App/Bundle ID must be set to the same value as an app registered
     # through iTunes Connect or the app will not be recognised by game center
-    iphone-appid="com.yesornogames.dotsrush"
+    iphone-appid="com.yesorno.treacherouscolors"
 
 }
 

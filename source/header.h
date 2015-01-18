@@ -12,8 +12,9 @@
 
 //entities
 #include "gameObject.h"
-#include "circle.h"
-#include "square.h"
+#include "paint.h"
+#include "text.h"
+#include "line.h"
 
 //scenes
 #include "mainMenu.h"

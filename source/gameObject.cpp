@@ -4,7 +4,9 @@ GameObject::GameObject() : m_pParent(0),
 m_pSprite(0),
 m_destroyMe(false),
 m_type(kGameObjectType_Count),
-m_color(kGameObjectColor_Count)
+m_textType(kText_Count),
+m_textColor(kColor_Count),
+m_color(kColor_Count)
 {
 
 }
@@ -12,7 +14,10 @@ m_color(kGameObjectColor_Count)
 GameObject::GameObject(GameObject::EGameObjectType gameObjectType) : m_pParent(0),
 m_pSprite(0),
 m_destroyMe(false),
-m_type(gameObjectType)
+m_type(gameObjectType),
+m_textType(kText_Count),
+m_textColor(kColor_Count),
+m_color(kColor_Count)
 {
 
 }
