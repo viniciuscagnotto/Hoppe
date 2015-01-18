@@ -1,1 +1,0 @@
-VC12X;build_colors_vc12x;
